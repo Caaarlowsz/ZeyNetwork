@@ -36,8 +36,4 @@ public class Cooldown implements Listener {
 	public static boolean add(final Player p) {
 		return Cooldown.run.containsKey(p);
 	}
-
-	public static void remove(final Player p) {
-		Cooldown.run.remove(p);
-	}
 }
