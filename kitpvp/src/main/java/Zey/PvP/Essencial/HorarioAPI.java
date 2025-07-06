@@ -7,9 +7,6 @@ import java.util.TimeZone;
 
 public class HorarioAPI {
 
-	public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-	public static Calendar ca = new GregorianCalendar(TimeZone.getTimeZone("America/Sao_Paulo"));
-
 	public static String getHorario() {
 		TimeZone tz = TimeZone.getTimeZone("America/Sao_Paulo");
 		Calendar calendar = GregorianCalendar.getInstance(tz);
