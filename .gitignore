@@ -28,3 +28,6 @@ replay_pid*
 /bin
 /.settings
 /target/
+/utils/.settings
+/kitpvp/.settings
+/kitpvp-api/.settings

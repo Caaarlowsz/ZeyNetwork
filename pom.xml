@@ -12,6 +12,8 @@
 	<name>zeynetwork</name>
 	<description>Servidor de minigames para Minecraft 1.7x e 1.8x, focado em PvP de sopa.</description>
 	<modules>
+		<module>utils</module>
+		<module>kitpvp-api</module>
 		<module>kitpvp</module>
 	</modules>
 	

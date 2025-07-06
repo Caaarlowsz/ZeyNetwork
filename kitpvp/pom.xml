@@ -19,6 +19,16 @@
   		<groupId>org.github.paperspigot</groupId>
   		<artifactId>paperspigot</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>tk.zeynetwork</groupId>
+  		<artifactId>kitpvp-api</artifactId>
+  		<version>0.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>tk.zeynetwork</groupId>
+  		<artifactId>utils</artifactId>
+  		<version>0.0.0</version>
+  	</dependency>
   </dependencies>
   
   <build>
