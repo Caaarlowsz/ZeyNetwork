@@ -21,16 +21,4 @@ public class WarpAPI {
 	public static void setWarp(Player p, String warp) {
 		Warp.put(p, warp);
 	}
-
-	public static void sendItems(Player p) {
-
-		if (getWarp(p) == "Spawn") {
-
-			p.getInventory().setArmorContents(null);
-			p.setFoodLevel(20);
-			p.setFireTicks(0);
-			WarpAPI.setWarp(p, "Spawn");
-
-		}
-	}
 }
