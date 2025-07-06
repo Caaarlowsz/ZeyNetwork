@@ -51,7 +51,6 @@ public class AdminCommand implements CommandExecutor {
 
 					KitAPI.remove(p);
 					Habilidade.removeAbility(p);
-					KitAPI.removeAbility(p);
 
 					Zey.PvP.APIs.WarpAPI.setWarp(p, "Nenhuma");
 

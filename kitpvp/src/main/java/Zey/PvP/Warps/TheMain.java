@@ -82,7 +82,6 @@ public class TheMain implements Listener, CommandExecutor {
 
 					KitAPI.remove(p);
 					Habilidade.removeAbility(p);
-					KitAPI.removeAbility(p);
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 

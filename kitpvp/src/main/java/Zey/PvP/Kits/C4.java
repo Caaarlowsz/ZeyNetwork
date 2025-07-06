@@ -110,7 +110,6 @@ public class C4 implements Listener {
 
 			KitAPI.remove(p);
 			Habilidade.removeAbility(p);
-			KitAPI.removeAbility(p);
 			p.setGameMode(GameMode.SURVIVAL);
 
 			Zey.PvP.APIs.WarpAPI.setWarp(p, "Spawn");
