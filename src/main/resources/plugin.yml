@@ -1,7 +1,7 @@
 name: ZeyPvP
 main: Zey.PvP.Main.Main
 author: OwZey
-version: 1.0
+version: 1.0.1
 commands:
   admin:
   autosoup:

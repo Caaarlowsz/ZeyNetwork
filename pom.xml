@@ -7,7 +7,7 @@
   
 	<groupId>tk.zeynetwork</groupId>
 	<artifactId>zeynetwork</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
   
 	<name>zeynetwork</name>
 	<description>Servidor de minigames para Minecraft 1.7x e 1.8x, focado em PvP de sopa.</description>
