@@ -3,7 +3,6 @@ package Zey.PvP.Essencial;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -12,11 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
-import org.bukkit.plugin.Plugin;
-
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import com.sk89q.worldguard.protection.ApplicableRegionSet;
-import com.sk89q.worldguard.protection.flags.DefaultFlag;
 
 import Zey.PvP.APIs.WarpAPI;
 import Zey.PvP.Main.Main;
@@ -342,21 +336,6 @@ public class KitAPI implements Listener {
 		itemmeta.addEnchant(enchant, level, trueorfalse);
 		item.setItemMeta(itemmeta);
 		p.getInventory().setItem(lugar, item);
-	}
-
-	public static WorldGuardPlugin getWorldGuard() {
-		final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
-		if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
-			return null;
-		}
-		return (WorldGuardPlugin) plugin;
-	}
-
-	@SuppressWarnings("deprecation")
-	public static boolean areaPvP(final Player p) {
-		final ApplicableRegionSet region = getWorldGuard().getRegionManager(p.getWorld())
-				.getApplicableRegions(p.getLocation());
-		return region.allows(DefaultFlag.PVP);
 	}
 
 	public static void Challenge(final Player p) {
