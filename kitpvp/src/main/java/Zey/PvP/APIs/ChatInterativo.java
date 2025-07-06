@@ -21,15 +21,4 @@ public class ChatInterativo {
 		final PlayerList list = MinecraftServer.getServer().getPlayerList();
 		list.getPlayer(p).sendMessage(base);
 	}
-
-	public static void Link(final String p, final String Mensagem, final String LinkAoClicar,
-			final String MouseEncima) {
-		final IChatBaseComponent base = (IChatBaseComponent) new ChatMessage(Mensagem, new Object[0]);
-		base.setChatModifier(new ChatModifier());
-		base.getChatModifier().setChatClickable(new ChatClickable(EnumClickAction.OPEN_URL, LinkAoClicar));
-		base.getChatModifier().a(new ChatHoverable(EnumHoverAction.SHOW_TEXT,
-				(IChatBaseComponent) new ChatMessage(MouseEncima, new Object[0])));
-		final PlayerList list = MinecraftServer.getServer().getPlayerList();
-		list.getPlayer(p).sendMessage(base);
-	}
 }
