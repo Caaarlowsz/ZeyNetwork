@@ -32,12 +32,12 @@ public class KitCommand implements CommandExecutor, Listener {
 
 			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
 				p.sendMessage(String.valueOf(Main.prefix)
-						+ " §7§ §cNo momento, voc§ est§ no /admin. Para pegar um kit, volte ao spawn usando o comando: /spawn");
+						+ " §7» §cNo momento, você está no /admin. Para pegar um kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
 			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Arena") {
 				p.sendMessage(String.valueOf(Main.prefix)
-						+ " §7§ §cVoc§ j§ est§ utilizando um Kit. Para pegar outro, volte ao spawn usando o comando: /spawn");
+						+ " §7» §cVocê já está utilizando um Kit. Para pegar outro, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
 			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Evento") {
