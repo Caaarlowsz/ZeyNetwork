@@ -12,10 +12,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class MyConfigManager implements Listener {
+public class MyConfigManager {
+
 	private JavaPlugin plugin;
 
 	public MyConfigManager(final JavaPlugin plugin) {

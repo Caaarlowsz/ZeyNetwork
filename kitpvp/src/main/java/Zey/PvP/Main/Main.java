@@ -229,7 +229,6 @@ public class Main extends JavaPlugin {
 		Eventos.registerEvents(new TabPersonalizado(this), this);
 		Eventos.registerEvents(new InvCommand(), this);
 		Eventos.registerEvents(new GanharXP(), this);
-		Eventos.registerEvents(new MyConfigManager(this), this);
 		Eventos.registerEvents(new ChatForm(), this);
 		Eventos.registerEvents(new Status(), this);
 		Eventos.registerEvents(new PvPCommand(), this);
