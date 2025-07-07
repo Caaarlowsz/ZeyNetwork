@@ -5,11 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class PvPCommand implements CommandExecutor, Listener {
+public class PvPCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		if (!cmd.getName().equalsIgnoreCase("pvp") || (!sender.hasPermission("zey.pvp.pvp") && !sender.isOp())) {

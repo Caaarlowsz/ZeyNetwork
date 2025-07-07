@@ -8,11 +8,10 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class Habilidade implements Listener {
+public class Habilidade {
 	public static Map<String, String> powerMap;
 
 	static {

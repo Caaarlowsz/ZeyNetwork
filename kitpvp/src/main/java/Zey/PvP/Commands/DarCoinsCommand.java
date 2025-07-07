@@ -5,12 +5,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Main.Main;
 
-public class DarCoinsCommand implements CommandExecutor, Listener {
+public class DarCoinsCommand implements CommandExecutor {
 	public static boolean isNumeric(final String str) {
 		try {
 			Integer.parseInt(str);

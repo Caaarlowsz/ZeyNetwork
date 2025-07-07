@@ -4,11 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class BroadcastCommand implements CommandExecutor, Listener {
+public class BroadcastCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		if (cmd.getName().equalsIgnoreCase("broadcast") || cmd.getName().equalsIgnoreCase("bc")) {
 			if (sender.hasPermission("zey.pvp.bc")) {

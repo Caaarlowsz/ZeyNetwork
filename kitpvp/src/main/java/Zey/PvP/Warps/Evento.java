@@ -25,7 +25,7 @@ import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 
 @SuppressWarnings("unused")
-public class Evento implements Listener, CommandExecutor {
+public class Evento implements CommandExecutor {
 	public static Main plugin;
 
 	public Evento(final Main main) {

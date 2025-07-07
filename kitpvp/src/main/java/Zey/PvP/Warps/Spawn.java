@@ -25,7 +25,7 @@ import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 
 @SuppressWarnings("unused")
-public class Spawn implements Listener, CommandExecutor {
+public class Spawn implements CommandExecutor {
 	public static Main plugin;
 
 	public Spawn(final Main main) {

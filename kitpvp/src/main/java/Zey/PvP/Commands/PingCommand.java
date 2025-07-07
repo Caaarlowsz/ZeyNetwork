@@ -6,11 +6,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class PingCommand implements CommandExecutor, Listener {
+public class PingCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command command, final String c, final String[] args) {
 		if (sender instanceof Player) {
 			final Player p = (Player) sender;

@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import Zey.PvP.Main.Main;
 
 @SuppressWarnings("unused")
-public class WarpRdm implements Listener, CommandExecutor {
+public class WarpRdm implements CommandExecutor {
 	public static Main plugin;
 
 	public WarpRdm(final Main main) {

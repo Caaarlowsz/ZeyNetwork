@@ -4,11 +4,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class SetFps implements Listener, CommandExecutor {
+public class SetFps implements CommandExecutor {
 	public static Main plugin;
 
 	public SetFps(final Main main) {

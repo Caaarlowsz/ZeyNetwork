@@ -5,14 +5,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import Zey.PvP.Main.Main;
 
-public class HeadCommand implements CommandExecutor, Listener {
+public class HeadCommand implements CommandExecutor {
 	Main main;
 
 	public HeadCommand(Main plugin) {

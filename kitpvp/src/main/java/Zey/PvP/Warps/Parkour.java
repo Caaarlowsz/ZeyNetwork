@@ -9,7 +9,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
@@ -25,7 +24,7 @@ import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 
 @SuppressWarnings("unused")
-public class Parkour implements Listener, CommandExecutor {
+public class Parkour implements CommandExecutor {
 	public static Main plugin;
 
 	public Parkour(final Main main) {

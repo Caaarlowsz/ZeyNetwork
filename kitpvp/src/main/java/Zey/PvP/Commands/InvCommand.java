@@ -5,12 +5,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 
 import Zey.PvP.Main.Main;
 
-public class InvCommand implements Listener, CommandExecutor {
+public class InvCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String Label, final String[] args) {
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(String.valueOf(Main.prefix) + " §7» §cApenas jogadores podem usar isso.");

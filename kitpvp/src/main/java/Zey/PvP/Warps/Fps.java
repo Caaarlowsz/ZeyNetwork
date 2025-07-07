@@ -10,7 +10,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
@@ -25,7 +24,7 @@ import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 
 @SuppressWarnings("unused")
-public class Fps implements Listener, CommandExecutor {
+public class Fps implements CommandExecutor {
 	public static Main plugin;
 
 	public Fps(final Main main) {

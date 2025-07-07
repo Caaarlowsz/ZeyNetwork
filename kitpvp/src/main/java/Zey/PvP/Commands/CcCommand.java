@@ -5,11 +5,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class CcCommand implements CommandExecutor, Listener {
+public class CcCommand implements CommandExecutor {
 	public CcCommand(final Main main) {
 	}
 

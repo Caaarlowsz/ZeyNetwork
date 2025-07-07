@@ -8,12 +8,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Main.Main;
 
-public class sKit implements Listener, CommandExecutor {
+public class sKit implements CommandExecutor {
 	public HashMap<String, ItemStack[]> itens;
 	public HashMap<String, ItemStack[]> armor;
 

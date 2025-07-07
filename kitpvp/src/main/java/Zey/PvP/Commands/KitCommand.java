@@ -7,7 +7,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.APIs.WarpAPI;
@@ -17,7 +16,7 @@ import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 
-public class KitCommand implements CommandExecutor, Listener {
+public class KitCommand implements CommandExecutor {
 	public KitCommand(final Main main) {
 	}
 

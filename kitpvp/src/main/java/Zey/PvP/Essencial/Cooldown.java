@@ -4,11 +4,10 @@ import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class Cooldown implements Listener {
+public class Cooldown {
 	public static HashMap<Player, Long> run;
 
 	static {

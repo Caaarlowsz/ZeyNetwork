@@ -6,11 +6,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class GmCommand implements CommandExecutor, Listener {
+public class GmCommand implements CommandExecutor {
 	public GmCommand(final Main main) {
 	}
 

@@ -10,7 +10,6 @@ import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.entity.Snowball;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 import net.minecraft.server.v1_7_R4.EntityFishingHook;
@@ -19,7 +18,7 @@ import net.minecraft.server.v1_7_R4.EntitySnowball;
 import net.minecraft.server.v1_7_R4.Packet;
 import net.minecraft.server.v1_7_R4.PacketPlayOutEntityDestroy;
 
-public class Cordinha extends EntityFishingHook implements Listener {
+public class Cordinha extends EntityFishingHook {
 	private Snowball sb;
 	private EntitySnowball controller;
 	public int a;
