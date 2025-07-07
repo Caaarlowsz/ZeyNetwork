@@ -21,11 +21,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Zey.PvP.Config.ConfigManager;
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Main.Main;
 
-public class ApostasListener extends ConfigManager implements Listener {
+public class ApostasListener implements Listener {
 	public static HashMap<String, Integer> valor;
 	public static HashMap<String, String> apostado;
 	public static HashMap<String, Integer> numero;
