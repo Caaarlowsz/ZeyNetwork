@@ -1,11 +1,10 @@
 package Zey.PvP.Config;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import Zey.PvP.Main.Main;
 
-public class ZeyCoins implements Listener {
+public class ZeyCoins {
 	public static MyConfig PlayerMoney;
 	public static int defaultmoney;
 
