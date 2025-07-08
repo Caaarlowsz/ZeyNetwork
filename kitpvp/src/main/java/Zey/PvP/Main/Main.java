@@ -92,11 +92,7 @@ public final class Main extends JavaPlugin {
 		motd2 = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.");
 
 		new ClassGetter(this, "Zey.PvP").registerListeners();
-		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
-		Bukkit.getConsoleSender().sendMessage("          §6§lZey§f§lNetwork        ");
-		Bukkit.getConsoleSender().sendMessage("                                       ");
-		Bukkit.getConsoleSender().sendMessage("      §6§lZey§f§lPvP §a§lHABILITADO");
-		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
+		this.logPluginStatus(true);
 
 		getConfig().options().copyDefaults(true);
 		getConfig().options().copyHeader(true);
@@ -114,12 +110,7 @@ public final class Main extends JavaPlugin {
 		kick.append("\n\nAguarde o servidor reiniciar e entre para jogar novamente =)");
 		for (Player players : Bukkit.getOnlinePlayers())
 			players.kickPlayer(kick.toString());
-
-		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
-		Bukkit.getConsoleSender().sendMessage("          §6§lZey§f§lNetwork        ");
-		Bukkit.getConsoleSender().sendMessage("                                       ");
-		Bukkit.getConsoleSender().sendMessage("      §6§lZey§f§lPvP §c§lDESABILITADO!");
-		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
+		this.logPluginStatus(false);
 	}
 
 	void Comandos() {
@@ -176,5 +167,16 @@ public final class Main extends JavaPlugin {
 		getCommand("lojakits").setExecutor(new MenuLojaKits());
 		getCommand("rdm").setExecutor(new WarpRdm(this));
 		getCommand("lojaextras").setExecutor(new MenuLojaExtras());
+	}
+
+	private void logPluginStatus(boolean enabled) {
+		StringBuilder msg = new StringBuilder();
+		msg.append("§b§l§m-------------------------------------");
+		msg.append("\n          §6§lZey§f§lNetwork        ");
+		msg.append("\n                                       ");
+		msg.append("\n      §6§lZey§f§lPvP " + (enabled ? "§a§lHABILITADO" : "§c§lDESABILITADO!"));
+		msg.append("\n§b§l§m-------------------------------------");
+		for (String s : msg.toString().split("\n"))
+			Bukkit.getConsoleSender().sendMessage(s);
 	}
 }
