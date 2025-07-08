@@ -24,7 +24,7 @@ public class Madman implements Listener {
 			if ((Habilidade.getAbility(t) == "Madman") && (t.getItemInHand().getType() == Material.STONE_SWORD)) {
 				if (new Random().nextInt(100) <= 40) {
 					p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * 20, 3));
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cVocê foi afetado, por um madman.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê foi afetado, por um madman.");
 				}
 			}
 		}

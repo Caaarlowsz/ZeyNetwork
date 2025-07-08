@@ -38,7 +38,7 @@ public class AntFlood implements Listener {
 			if (AntFlood.chat.get(p) < System.currentTimeMillis() || p.hasPermission("zey.pvp.flodar")) {
 				return;
 			}
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cAguarde para digitar novamente.");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde para digitar novamente.");
 			e.setCancelled(true);
 		}
 	}

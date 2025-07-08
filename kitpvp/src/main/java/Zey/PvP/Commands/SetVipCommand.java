@@ -19,7 +19,7 @@ public class SetVipCommand implements CommandExecutor {
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /setvip [Jogador(a)] [Vip]");
 				p.sendMessage(
 						"§cGrupos disponiveis§f: §7[NORMAL]§f, §a[VIP]§f, §9[MVP]§f, §6[PRO]§f, §e[SUPREMO]§f, §1[BETA]§f.");

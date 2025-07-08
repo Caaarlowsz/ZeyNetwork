@@ -26,17 +26,17 @@ public class ChatCommand implements CommandExecutor, Listener {
 				return true;
 			}
 			if (Args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /chat [Ligar/Desligar]");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("desligar")) {
 				ChatCommand.c = true;
-				Bukkit.broadcastMessage(String.valueOf(Main.prefix) + " §7» §7O chat do servidor foi §c§lDESLIGADO§7.");
+				Bukkit.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» §7O chat do servidor foi §c§lDESLIGADO§7.");
 			}
 			if (Args[0].equalsIgnoreCase("ligar")) {
 				ChatCommand.c = false;
-				Bukkit.broadcastMessage(String.valueOf(Main.prefix) + " §7» §7O chat do servidor foi §a§lLIGADO§7.");
+				Bukkit.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» §7O chat do servidor foi §a§lLIGADO§7.");
 			}
 		}
 		return false;
@@ -48,7 +48,7 @@ public class ChatCommand implements CommandExecutor, Listener {
 		if (!p.hasPermission("zey.pvp.falarchat") && ChatCommand.c) {
 			e.setCancelled(true);
 			p.sendMessage(
-					String.valueOf(Main.prefix) + " §7» §cVocê não tem permissão para falar com o chat desativado.");
+					String.valueOf(Main.PREFIX) + " §7» §cVocê não tem permissão para falar com o chat desativado.");
 		}
 	}
 }

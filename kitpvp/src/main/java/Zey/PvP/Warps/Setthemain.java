@@ -30,7 +30,7 @@ public class Setthemain implements CommandExecutor {
 				Setthemain.plugin.getConfig().set("themain.yaw", (Object) p.getLocation().getYaw());
 				Setthemain.plugin.getConfig().set("themain.world", (Object) p.getLocation().getWorld().getName());
 				Setthemain.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §aWarp Main foi setado com sucesso");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Main foi setado com sucesso");
 			}
 			return true;
 		}

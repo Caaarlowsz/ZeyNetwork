@@ -61,14 +61,14 @@ public class Ninja implements Listener {
 			if (Ninja.b.get(localPlayer1) == null || Ninja.b.get(localPlayer1) < System.currentTimeMillis()) {
 				if (localPlayer1.getLocation().distance(localPlayer2.getLocation()) < 100.0) {
 					localPlayer1.teleport(localPlayer2.getLocation());
-					localPlayer1.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê usou seu ninja.");
+					localPlayer1.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê usou seu ninja.");
 					Ninja.b.put(localPlayer1, System.currentTimeMillis() + 3000L);
 				} else {
-					localPlayer1.sendMessage(String.valueOf(Main.prefix)
+					localPlayer1.sendMessage(String.valueOf(Main.PREFIX)
 							+ " §7» §cO ultimo jogador(a) hitado se afastou muito de você.");
 				}
 			} else {
-				localPlayer1.sendMessage(String.valueOf(Main.prefix) + " §7» §cAguarde " + str + " segundos");
+				localPlayer1.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + str + " segundos");
 			}
 		}
 	}

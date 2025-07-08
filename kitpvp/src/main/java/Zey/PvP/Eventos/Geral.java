@@ -93,7 +93,7 @@ public class Geral implements Listener {
 				|| event.getMessage().toLowerCase().startsWith("/about")
 				|| event.getMessage().toLowerCase().startsWith("/?")) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cComando não listado");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cComando não listado");
 		}
 	}
 
@@ -105,10 +105,10 @@ public class Geral implements Listener {
 			final Player k = p.getKiller();
 			final Location l = k.getLocation();
 			final Location lp = p.getLocation();
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cVocê foi morto por " + k.getName());
-			k.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê adquiriu 50 ZeyCoins!");
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cVocê perdeu 50 ZeyCoins!");
-			k.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê matou o jogador(a): §e" + p.getName());
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê foi morto por " + k.getName());
+			k.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê adquiriu 50 ZeyCoins!");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê perdeu 50 ZeyCoins!");
+			k.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê matou o jogador(a): §e" + p.getName());
 			k.playSound(l, Sound.ARROW_HIT, 10.0f, 1.0f);
 			p.playSound(lp, Sound.ANVIL_USE, 10.0f, 1.0f);
 		}
@@ -194,9 +194,9 @@ public class Geral implements Listener {
 
 	@EventHandler
 	public void aoPing(final ServerListPingEvent e) {
-		e.setMotd(Main.motd);
+		e.setMotd(Main.MOTD);
 		if (Bukkit.hasWhitelist()) {
-			e.setMotd(Main.motd2);
+			e.setMotd(Main.WHITELIST_MOTD);
 		}
 	}
 
@@ -333,13 +333,13 @@ public class Geral implements Listener {
 					}
 					parar = true;
 					e.getPlayer().setCompassTarget(entidades.getLocation());
-					e.getPlayer().sendMessage(String.valueOf(Main.prefix)
+					e.getPlayer().sendMessage(String.valueOf(Main.PREFIX)
 							+ " §7» Bússola apontando para o jogador(a): §e" + ((Player) entidades).getName());
 					return;
 				}
 			}
 			if (!parar) {
-				e.getPlayer().sendMessage(String.valueOf(Main.prefix) + " §7» Nenhum jogador(a) foi encontrado!");
+				e.getPlayer().sendMessage(String.valueOf(Main.PREFIX) + " §7» Nenhum jogador(a) foi encontrado!");
 				e.getPlayer().setCompassTarget(new Location(e.getPlayer().getWorld(), 0.0, 100.0, 0.0));
 			}
 		}
@@ -443,7 +443,7 @@ public class Geral implements Listener {
 		final HelpTopic topic = Bukkit.getServer().getHelpMap().getHelpTopic(msg);
 		if (topic == null) {
 			event.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cComando não listado");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cComando não listado");
 		}
 	}
 

@@ -30,7 +30,7 @@ public class SetFps implements CommandExecutor {
 				SetFps.plugin.getConfig().set("fps.yaw", (Object) p.getLocation().getYaw());
 				SetFps.plugin.getConfig().set("fps.world", (Object) p.getLocation().getWorld().getName());
 				SetFps.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §aWarp Fps foi setada com sucesso");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Fps foi setada com sucesso");
 			}
 			return true;
 		}

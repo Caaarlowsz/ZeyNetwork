@@ -14,7 +14,7 @@ public class InfoCommand implements CommandExecutor {
 		Player player = (Player) Sender;
 
 		if (Cmd.getName().equalsIgnoreCase("ajuda")) {
-			player.sendMessage(String.valueOf(Main.prefix) + " §7» §fAqui está algumas informações, sobre nossa rede.");
+			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §fAqui está algumas informações, sobre nossa rede.");
 			player.sendMessage("§f ");
 			player.sendMessage("§fSite: §ewww.zeynetwork.tk");
 			player.sendMessage("§fTwitter: §bwww.twitter.com/ZeyNetwork_");

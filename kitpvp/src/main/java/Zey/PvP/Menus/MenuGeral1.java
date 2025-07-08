@@ -77,8 +77,8 @@ public class MenuGeral1 implements Listener, CommandExecutor {
 		 * inv.setItem(14, magma); } else if (p.hasPermission("cmd.admin")) { final
 		 * ItemStack magma = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short)5);
 		 * final ItemMeta magmam = magma.getItemMeta();
-		 * magmam.setDisplayName("§a§lADMINISTRAÇÃO"); final ArrayList<String>
-		 * desc = new ArrayList<String>(); magmam.setLore((List<String>)desc);
+		 * magmam.setDisplayName("§a§lADMINISTRAÇÃO"); final ArrayList<String> desc =
+		 * new ArrayList<String>(); magmam.setLore((List<String>)desc);
 		 * magma.setItemMeta(magmam); inv.setItem(14, magma); }
 		 */
 

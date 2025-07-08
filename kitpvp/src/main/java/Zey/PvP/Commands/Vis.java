@@ -40,7 +40,7 @@ public class Vis implements CommandExecutor {
 			if (p.hasPermission("zey.pvp.vis")) {
 				if (!emInvisivel(p)) {
 					addInvisivel(p);
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Modo §8§lINVISIVEL§7 ativado");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Modo §8§lINVISIVEL§7 ativado");
 					p.setGameMode(GameMode.CREATIVE);
 					Player[] onlinePlayers;
 					for (int length = (onlinePlayers = Bukkit.getOnlinePlayers()).length, i = 0; i < length; ++i) {
@@ -55,7 +55,7 @@ public class Vis implements CommandExecutor {
 						todos.showPlayer(p);
 					}
 					p.setGameMode(GameMode.SURVIVAL);
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Modo §8§lINVISIVEL§7 desativado");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Modo §8§lINVISIVEL§7 desativado");
 				}
 			} else {
 				p.sendMessage("§cVocê não tem permiss§o para isso.");

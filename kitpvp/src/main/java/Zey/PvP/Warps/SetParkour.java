@@ -30,7 +30,7 @@ public class SetParkour implements CommandExecutor {
 				SetParkour.plugin.getConfig().set("parkour.yaw", (Object) p.getLocation().getYaw());
 				SetParkour.plugin.getConfig().set("parkour.world", (Object) p.getLocation().getWorld().getName());
 				SetParkour.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §aWarp Parkour foi setada com sucesso");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Parkour foi setada com sucesso");
 			}
 			return true;
 		}

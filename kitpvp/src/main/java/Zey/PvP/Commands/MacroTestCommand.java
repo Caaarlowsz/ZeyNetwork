@@ -25,7 +25,7 @@ public class MacroTestCommand implements Listener, CommandExecutor {
 	}
 
 	public static void testeMAcro(final Player p, final Player t) {
-		p.sendMessage(String.valueOf(Main.prefix) + " §7» §e§lMACROTEST: §7Testando no jogador(a): §e" + t.getName());
+		p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §e§lMACROTEST: §7Testando no jogador(a): §e" + t.getName());
 		MacroTestCommand.macro.add(t.getName());
 		MacroTestCommand.Clicks.put(t.getName(), 0);
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
@@ -61,7 +61,7 @@ public class MacroTestCommand implements Listener, CommandExecutor {
 		final Player p = (Player) Sender;
 		if (p.hasPermission("zey.pvp.testmacro")) {
 			if (Args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /testmacro [Jogador(a)]");
 				return true;
 			}

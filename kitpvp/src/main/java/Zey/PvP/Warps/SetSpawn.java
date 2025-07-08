@@ -30,7 +30,7 @@ public class SetSpawn implements CommandExecutor {
 				SetSpawn.plugin.getConfig().set("spawn.yaw", (Object) p1.getLocation().getYaw());
 				SetSpawn.plugin.getConfig().set("spawn.world", (Object) p1.getLocation().getWorld().getName());
 				SetSpawn.plugin.saveConfig();
-				p1.sendMessage(String.valueOf(Main.prefix) + " §7» §aWarp Spawn foi setado com sucesso");
+				p1.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Spawn foi setado com sucesso");
 				p1.getWorld().setSpawnLocation(p1.getLocation().getBlockX(), p1.getLocation().getBlockY(),
 						p1.getLocation().getBlockZ());
 			}

@@ -57,7 +57,7 @@ public class Turtle implements Listener {
 		}
 		if (Habilidade.getAbility(p).equalsIgnoreCase("Turtle")) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cVocê não pode `hitar' em quanto estiver de SHIFT.");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê não pode `hitar' em quanto estiver de SHIFT.");
 		}
 	}
 }

@@ -53,7 +53,7 @@ public class DeshFire implements Listener {
 				event.setCancelled(true);
 			}
 			if (DeshFire.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §cAguarde o cooldown terminar.");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
 				return;
 			}
 			DeshFire.cooldownm.add(p);

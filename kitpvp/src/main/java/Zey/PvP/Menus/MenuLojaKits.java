@@ -55,12 +55,12 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.quickdropper");
 					p.sendMessage(
-							String.valueOf(Main.prefix) + " §7§ §7Kit §a§lQUICKDROPPER§7 Agora Está Nos Seus Kits");
+							String.valueOf(Main.PREFIX) + " §7§ §7Kit §a§lQUICKDROPPER§7 Agora Está Nos Seus Kits");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 14000) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
@@ -71,12 +71,12 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 					ZeyCoins.removeMoney(p, 25000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.Stomper");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Kit §a§lSTOMPER§7 Agora Está Nos Seus Kits");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Kit §a§lSTOMPER§7 Agora Está Nos Seus Kits");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 25000) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
@@ -87,12 +87,12 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 					ZeyCoins.removeMoney(p, 5000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.thor");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Kit §a§lTHOR§7 Agora Está Nos Seus Kits");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Kit §a§lTHOR§7 Agora Está Nos Seus Kits");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 5000) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
@@ -103,12 +103,12 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 					ZeyCoins.removeMoney(p, 15000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.anchor");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Kit §a§lANCHOR§7 Agora Está Nos Seus Kits");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Kit §a§lANCHOR§7 Agora Está Nos Seus Kits");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 15000) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
@@ -119,12 +119,12 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 					ZeyCoins.removeMoney(p, 7000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kit.c4");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Kit §a§lC4§7 Agora Está Nos Seus Kits");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Kit §a§lC4§7 Agora Está Nos Seus Kits");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 7000) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);

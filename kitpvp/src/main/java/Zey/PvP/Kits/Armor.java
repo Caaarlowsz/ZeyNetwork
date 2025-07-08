@@ -45,7 +45,7 @@ public class Armor implements Listener {
 			}
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
 			KitUtil.tirarArmadura(p);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você recebeu sua armadura temporaria.");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você recebeu sua armadura temporaria.");
 			p.getInventory()
 					.setArmorContents(new ItemStack[] { darArmaduraI(Material.GOLD_HELMET),
 							darArmaduraI(Material.GOLD_CHESTPLATE), darArmaduraI(Material.GOLD_LEGGINGS),

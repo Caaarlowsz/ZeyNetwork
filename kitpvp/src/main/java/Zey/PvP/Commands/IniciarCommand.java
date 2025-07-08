@@ -23,17 +23,17 @@ public class IniciarCommand implements CommandExecutor {
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /iniciar [Evento] [FullKit]");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("evento")) {
 				if (evento) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cO Evento [Evento] já foi iniciado.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO Evento [Evento] já foi iniciado.");
 					return true;
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê iniciou o Evento [Evento].");
-					Bukkit.broadcastMessage(String.valueOf(Main.prefix)
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê iniciou o Evento [Evento].");
+					Bukkit.broadcastMessage(String.valueOf(Main.PREFIX)
 							+ " §7» §aUm Evento foi iniciado, para entrar use o comando /evento§a.");
 					evento = true;
 					return true;
@@ -41,18 +41,18 @@ public class IniciarCommand implements CommandExecutor {
 			}
 			if (args[0].equalsIgnoreCase("fullkit")) {
 				if (fullkit) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cO beneficio FullKit já está liberado.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO beneficio FullKit já está liberado.");
 					return true;
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê liberou o beneficio FullKit para todos.");
-					Bukkit.broadcastMessage(String.valueOf(Main.prefix)
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê liberou o beneficio FullKit para todos.");
+					Bukkit.broadcastMessage(String.valueOf(Main.PREFIX)
 							+ " §7» §aO beneficio FullKit está liberado para todos, aproveitem.");
 					fullkit = true;
 					return true;
 				}
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /iniciar [Evento] [FullKit]");
 				return true;
 			}

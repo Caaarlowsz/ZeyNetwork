@@ -44,8 +44,8 @@ public class ParkourJump implements Listener {
 			p.teleport(lobby);
 			p.setHealthScale(20.0);
 			ZeyCoins.addMoney(p, 200);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7§ §aVocê terminou o Parkour");
-			p.sendMessage(String.valueOf(Main.prefix) + " §7§ §aVocê ganhou 200 ZeyCoins!");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7§ §aVocê terminou o Parkour");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7§ §aVocê ganhou 200 ZeyCoins!");
 		}
 	}
 

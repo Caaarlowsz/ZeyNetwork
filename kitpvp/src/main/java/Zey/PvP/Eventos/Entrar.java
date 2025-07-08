@@ -25,7 +25,7 @@ public class Entrar implements Listener {
 	public void Join(final PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
 
-		TheTitle.sendTitle(p, Main.prefix);
+		TheTitle.sendTitle(p, Main.PREFIX);
 		TheTitle.sendSubTitle(p, "§fTreine para se tornar o melhor!");
 
 		KitAPI.remove(p);
@@ -40,7 +40,7 @@ public class Entrar implements Listener {
 		p.sendMessage("§a  ");
 		p.sendMessage("§a  ");
 		p.sendMessage("§a  ");
-		p.sendMessage("§c" + Main.prefix + " §7» §fTreine para se tornar o melhor!");
+		p.sendMessage("§c" + Main.PREFIX + " §7» §fTreine para se tornar o melhor!");
 		p.sendMessage("§a  ");
 
 		p.teleport(p.getWorld().getSpawnLocation());
@@ -103,7 +103,7 @@ public class Entrar implements Listener {
 		p.getInventory().setItem(7, vidrohot);
 		p.getInventory().setItem(8, vidrohot);
 
-		TheTitle.sendTitle(p, Main.prefix);
+		TheTitle.sendTitle(p, Main.PREFIX);
 		TheTitle.sendSubTitle(p, "§7Você morreu.");
 	}
 

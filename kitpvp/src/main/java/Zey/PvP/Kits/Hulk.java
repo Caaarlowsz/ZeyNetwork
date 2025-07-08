@@ -31,7 +31,7 @@ public class Hulk implements Listener {
 				}
 				if (p.getPassenger() != null) {
 					p.sendMessage(
-							String.valueOf(Main.prefix) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
+							String.valueOf(Main.PREFIX) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
 					return;
 				}
 				if (r.getPassenger() != null) {
@@ -40,7 +40,7 @@ public class Hulk implements Listener {
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
 				r.sendMessage(
-						String.valueOf(Main.prefix) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
+						String.valueOf(Main.PREFIX) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
 			}
 		}
 	}

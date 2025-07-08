@@ -19,18 +19,18 @@ public class TpHereCommand implements CommandExecutor {
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /tphere ou /here para puxar um jogador até você.");
 				return true;
 			}
 			Player k = Bukkit.getPlayer(args[0]);
 			if (k == null) {
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §cEste jogador(a) está offline ou não existe.");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
 				return true;
 			}
 			k.teleport(p);
 			p.sendMessage(
-					String.valueOf(Main.prefix) + " §7» §7Você puxou o jogador: §e" + k.getName() + " §7até você.");
+					String.valueOf(Main.PREFIX) + " §7» §7Você puxou o jogador: §e" + k.getName() + " §7até você.");
 			return true;
 		}
 		return false;

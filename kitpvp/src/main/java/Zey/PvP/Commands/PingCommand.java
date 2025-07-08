@@ -16,15 +16,15 @@ public class PingCommand implements CommandExecutor {
 			final int ping = ((CraftPlayer) p).getHandle().ping;
 			if (c.equalsIgnoreCase("ping")) {
 				if (args.length == 0) {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Seu ping atual é de §a§l" + ping + " §7ms");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Seu ping atual é de §a§l" + ping + " §7ms");
 				} else if (p.getServer().getPlayer(args[0]) != null) {
 					final String player2 = args[0];
 					final Player target = Bukkit.getServer().getPlayer(args[0]);
 					final int ping2 = ((CraftPlayer) target).getHandle().ping;
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7O jogador(a): §e" + player2
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7O jogador(a): §e" + player2
 							+ " §7está com o ping atual de: §a§l" + ping2 + " §7ms");
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cEste jogador(a) está offline ou não existe.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
 				}
 			}
 		}

@@ -32,8 +32,8 @@ public class Monk implements Listener {
 				final ItemStack ItemMudado = jogadorClicado.getItemInHand();
 				jogadorClicado.setItemInHand(ItemSelecionado);
 				jogadorClicado.getInventory().setItem(random, ItemMudado);
-				jogadorClicado.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você foi §c§lMONKADO§7.");
-				p.sendMessage(String.valueOf(String.valueOf(Main.prefix) + " §7» §7Você §c§lMONKOU§7 o jogador(a): §e"
+				jogadorClicado.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você foi §c§lMONKADO§7.");
+				p.sendMessage(String.valueOf(String.valueOf(Main.PREFIX) + " §7» §7Você §c§lMONKOU§7 o jogador(a): §e"
 						+ jogadorClicado.getName()));
 				Cooldown.add(p, 20);
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {

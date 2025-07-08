@@ -29,7 +29,7 @@ public class ReportCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		final Player p = (Player) sender;
 		if (!(sender instanceof Player)) {
-			sender.sendMessage(String.valueOf(Main.prefix) + " §7» §cApenas jogadores podem usar isso.");
+			sender.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cApenas jogadores podem usar isso.");
 			return false;
 		}
 		if (commandLabel.equalsIgnoreCase("report")) {
@@ -37,12 +37,12 @@ public class ReportCommand implements CommandExecutor {
 				Player target = p.getServer().getPlayer(args[0]);
 				if (target != null) {
 					if (this.reported.contains(p.getName())) {
-						p.sendMessage(String.valueOf(Main.prefix) + " §7» §cAguarde, para reportar novamente.");
+						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde, para reportar novamente.");
 						return true;
 					}
 					String reportMsg = StringUtils.join(Arrays.copyOfRange(args, 1, args.length), " ");
 					this.reported.add(p.getName());
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7O Report do jogador §e" + target.getName()
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7O Report do jogador §e" + target.getName()
 							+ " §7pelo motivo §c" + reportMsg + "§7 foi enviado a nossa equipe!");
 					Player[] arrayOfPlayer;
 					int j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length;
@@ -69,10 +69,10 @@ public class ReportCommand implements CommandExecutor {
 						}
 					}
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cEste jogador(a) está offline ou não existe.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
 				}
 			} else {
-				p.sendMessage(String.valueOf(Main.prefix)
+				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cErrado, utilize a sintaxe correta: /report [Jogador(a)] (motivo)");
 			}
 		}

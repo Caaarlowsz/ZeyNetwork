@@ -13,14 +13,14 @@ public class BroadcastCommand implements CommandExecutor {
 			if (sender.hasPermission("zey.pvp.bc")) {
 				if (args.length == 0) {
 					sender.sendMessage(
-							String.valueOf(Main.prefix) + " §7§ §cErrado, utilize a sintaxe Correta: /bc [Mensagem]");
+							String.valueOf(Main.PREFIX) + " §7§ §cErrado, utilize a sintaxe Correta: /bc [Mensagem]");
 					return true;
 				}
 				String msg = "";
 				for (final String msg2 : args) {
 					msg = String.valueOf(String.valueOf(String.valueOf(msg))) + msg2 + " ";
 				}
-				Bukkit.broadcastMessage(String.valueOf(Main.prefix) + " §6» §f" + msg.replace("&", "§"));
+				Bukkit.broadcastMessage(String.valueOf(Main.PREFIX) + " §6» §f" + msg.replace("&", "§"));
 				return true;
 			} else {
 				sender.sendMessage("§cVocê não tem permissão para isso.");

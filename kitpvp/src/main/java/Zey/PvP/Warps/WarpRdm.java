@@ -20,7 +20,7 @@ public class WarpRdm implements CommandExecutor {
 			final String[] args) {
 		if (cmd.getName().equalsIgnoreCase("rdm")) {
 			final Player p = (Player) sender;
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §cEstá Warp foi desativada, temporariamente.");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEstá Warp foi desativada, temporariamente.");
 			return true;
 		}
 		return false;

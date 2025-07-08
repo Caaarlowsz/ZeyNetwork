@@ -46,7 +46,7 @@ public class Parkour implements CommandExecutor {
 
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você está sendo teleportando para Warp §a§lPARKOUR");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você está sendo teleportando para Warp §a§lPARKOUR");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Parkour.plugin, (Runnable) new Runnable() {
@@ -65,13 +65,13 @@ public class Parkour implements CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aTeleportado com sucesso");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
 
 					TheTitle.sendTitle(p, "§e§lPARKOUR");
 
 					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
 						Main.admins.remove(p.getName());
-						p.sendMessage(String.valueOf(Main.prefix) + " §7» Você saiu do modo §c§lADMIN");
+						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
 						for (Player players : Bukkit.getOnlinePlayers()) {
 							players.showPlayer(p);

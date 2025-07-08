@@ -30,7 +30,7 @@ public class SetarRdm implements CommandExecutor {
 				SetarRdm.plugin.getConfig().set("rdm.yaw", (Object) p.getLocation().getYaw());
 				SetarRdm.plugin.getConfig().set("rdm.world", (Object) p.getLocation().getWorld().getName());
 				SetarRdm.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §aWar Rdm foi setada com sucesso");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWar Rdm foi setada com sucesso");
 			}
 			return true;
 		}

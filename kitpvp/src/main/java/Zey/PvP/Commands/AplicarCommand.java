@@ -18,13 +18,13 @@ public class AplicarCommand implements CommandExecutor {
 			player.sendMessage("§7 ");
 			player.sendMessage("§7 ");
 			player.sendMessage("§7 ");
-			player.sendMessage(String.valueOf(Main.prefix) + " §7» §aAqui está os links dos cargos, disponiveis.");
+			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aAqui está os links dos cargos, disponiveis.");
 			player.sendMessage("§7 ");
-			player.sendMessage(String.valueOf(Main.prefix) + " §7» §7Link §d[HELPER]§7: http://lxdv.gq/formhelper ");
+			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Link §d[HELPER]§7: http://lxdv.gq/formhelper ");
 			player.sendMessage("§7 ");
-			player.sendMessage(String.valueOf(Main.prefix) + " §7» §7Link §d[TRIAL]§7: http://lxdv.gq/formtrial ");
+			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Link §d[TRIAL]§7: http://lxdv.gq/formtrial ");
 			player.sendMessage("§7 ");
-			player.sendMessage(String.valueOf(Main.prefix) + " §7» §7Link §2[BUILDER]§7: http://lxdv.gq/formbuilder ");
+			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Link §2[BUILDER]§7: http://lxdv.gq/formbuilder ");
 			player.sendMessage("§7 ");
 		}
 		return false;

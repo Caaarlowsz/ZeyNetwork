@@ -69,12 +69,9 @@ import tk.zeynetwork.utils.ConfigUtils;
 
 public final class Main extends JavaPlugin {
 
-	public static String prefix;
-	public static String loja;
-	public static String ts;
-	public static String discord;
-	public static String motd;
-	public static String motd2;
+	public static final String PREFIX = "§6§lZey§f§lPvP",
+			MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.",
+			WHITELIST_MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.";
 	public static MyConfigManager manager;
 
 	public static List<String> admins = Lists.newArrayList();
@@ -85,9 +82,6 @@ public final class Main extends JavaPlugin {
 
 	public void onEnable() {
 		SManager.onEnable();
-		prefix = ("§6§lZey§f§lPvP");
-		motd = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.");
-		motd2 = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.");
 
 		ConfigUtils.setupDefaultConfig(this);
 		ClassGetter.registerListeners(this, "Zey.PvP");

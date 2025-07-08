@@ -49,7 +49,7 @@ public class Lava implements CommandExecutor {
 
 			p.getInventory().clear();
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
-			p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você está sendo teleportando para Warp §a§lCHALLENGE");
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você está sendo teleportando para Warp §a§lCHALLENGE");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(), (Runnable) new Runnable() {
 
 				@SuppressWarnings("deprecation")
@@ -57,13 +57,13 @@ public class Lava implements CommandExecutor {
 				public void run() {
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aTeleportado com sucesso");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
 
 					TheTitle.sendTitle(p, "§e§lCHALLENGE");
 
 					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
 						Main.admins.remove(p.getName());
-						p.sendMessage(String.valueOf(Main.prefix) + " §7» Você saiu do modo §c§lADMIN");
+						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
 						for (Player players : Bukkit.getOnlinePlayers()) {
 							players.showPlayer(p);

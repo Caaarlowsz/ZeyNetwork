@@ -55,7 +55,7 @@ public class Sonic implements Listener {
 				event.setCancelled(true);
 			}
 			if (Zey.PvP.Kits.Sonic.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §cAguarde o cooldown terminar.");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
 				return;
 			}
 			Zey.PvP.Kits.Sonic.cooldownm.add(p);

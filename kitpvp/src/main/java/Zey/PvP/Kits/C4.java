@@ -54,7 +54,7 @@ public class C4 implements Listener {
 					itemb.setItemMeta(itembm);
 					p.getInventory().setItemInHand(itemb);
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §cSua C4 foi implantada");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cSua C4 foi implantada");
 				}
 
 				else if (p.getItemInHand().getType() == Material.STONE_BUTTON) {
@@ -69,7 +69,7 @@ public class C4 implements Listener {
 					C4.bomba.remove(p.getName());
 					item2.remove();
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aSua C4 foi ativada");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSua C4 foi ativada");
 					Cooldown.add(p, 20);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
@@ -93,7 +93,7 @@ public class C4 implements Listener {
 				C4.bomba.remove(p.getName());
 				item2.remove();
 				p.updateInventory();
-				p.sendMessage(String.valueOf(Main.prefix) + " §7» §aC4 Desarmada");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aC4 Desarmada");
 			}
 		}
 	}

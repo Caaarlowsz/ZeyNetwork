@@ -57,7 +57,7 @@ public class Ajnin implements Listener {
 				}
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
-					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê teleportou o jogador(a) para você.");
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê teleportou o jogador(a) para você.");
 					Cooldown.add(p, 3);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
@@ -66,7 +66,7 @@ public class Ajnin implements Listener {
 						}
 					}, 140L);
 				} else {
-					p.sendMessage(String.valueOf(Main.prefix)
+					p.sendMessage(String.valueOf(Main.PREFIX)
 							+ " §7» §cO ultimo jogador(a) hitado se afastou muito de voc§.");
 				}
 			}
