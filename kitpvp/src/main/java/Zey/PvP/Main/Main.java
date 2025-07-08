@@ -66,7 +66,8 @@ import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
 import tk.zeynetwork.utils.ClassGetter;
 
-public class Main extends JavaPlugin {
+public final class Main extends JavaPlugin {
+
 	public static String prefix;
 	public static String loja;
 	public static String ts;
@@ -106,6 +107,7 @@ public class Main extends JavaPlugin {
 		motd = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.");
 		motd2 = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.");
 
+		new ClassGetter(this, "Zey.PvP").registerListeners();
 		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
 		Bukkit.getConsoleSender().sendMessage("          §6§lZey§f§lNetwork        ");
 		Bukkit.getConsoleSender().sendMessage("                                       ");
@@ -121,7 +123,6 @@ public class Main extends JavaPlugin {
 		instance = this;
 		plugin = this;
 		Comandos();
-		new ClassGetter(this, "Zey.PvP").registerListeners();
 	}
 
 	public void onDisable() {
@@ -170,7 +171,6 @@ public class Main extends JavaPlugin {
 		getCommand("aplicar").setExecutor(new AplicarCommand());
 		getCommand("ajuda").setExecutor(new InfoCommand());
 		getCommand("report").setExecutor(new ReportCommand(this));
-
 		getCommand("fps").setExecutor(new Fps(this));
 		getCommand("challenge").setExecutor(new Lava(this));
 		getCommand("evento").setExecutor(new Evento(this));
