@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import Zey.PvP.Commands.AdminCommand;
@@ -110,6 +111,8 @@ public final class Main extends JavaPlugin {
 		kick.append("\n\nAguarde o servidor reiniciar e entre para jogar novamente =)");
 		for (Player players : Bukkit.getOnlinePlayers())
 			players.kickPlayer(kick.toString());
+		Bukkit.getScheduler().cancelTasks(this);
+		HandlerList.unregisterAll(this);
 		this.logPluginStatus(false);
 	}
 
