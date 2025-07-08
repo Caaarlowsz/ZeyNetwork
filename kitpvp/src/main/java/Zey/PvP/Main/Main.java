@@ -90,7 +90,7 @@ public final class Main extends JavaPlugin {
 		motd2 = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.");
 
 		ConfigUtils.setupDefaultConfig(this);
-		new ClassGetter(this, "Zey.PvP").registerListeners();
+		ClassGetter.registerListeners(this, "Zey.PvP");
 		this.logPluginStatus(true);
 
 		manager = new MyConfigManager(this);

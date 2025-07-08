@@ -18,26 +18,21 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
 public class ClassGetter {
-
-	private final Plugin plugin;
-	private final String packageName;
-
-	public ClassGetter(Plugin plugin, String packageName) {
-		this.plugin = plugin;
-		this.packageName = packageName;
-	}
-
 	/**
-	 * Scans the plugin's JAR for classes within the specified package that
+	 * Scans the given plugin's JAR for classes within the specified package that
 	 * implement the given interface. This version is compatible with
 	 * Bukkit/PaperSpigot 1.7.10 by using CodeSource.
 	 *
+	 * @param plugin         The plugin instance (JavaPlugin).
+	 * @param packageName    The package to scan (e.g.,
+	 *                       "tk.zeynetwork.kitpvp.listeners").
 	 * @param interfaceClass The interface to check for implementation (e.g.,
 	 *                       Listener.class).
 	 * @param <T>            The type of the interface.
 	 * @return A set of Class objects that implement the specified interface.
 	 */
-	public <T> Set<Class<? extends T>> getClassesImplementing(Class<T> interfaceClass) {
+	public static <T> Set<Class<? extends T>> getClassesImplementing(Plugin plugin, String packageName,
+			Class<T> interfaceClass) {
 		Set<Class<? extends T>> classes = new HashSet<>();
 		String packagePath = packageName.replace('.', '/');
 
@@ -55,6 +50,7 @@ public class ClassGetter {
 
 		try {
 			String jarPath = URLDecoder.decode(jarUrl.getFile(), "UTF-8");
+
 			if (!jarPath.endsWith(".jar")) {
 				plugin.getLogger()
 						.warning("Plugin path does not end with .jar, skipping direct JAR scan. Path: " + jarPath);
@@ -98,12 +94,16 @@ public class ClassGetter {
 
 	/**
 	 * Instantiates and registers all classes found in the specified package that
-	 * implement the Listener interface.
+	 * implement the Listener interface, but only if they are not already
+	 * registered.
+	 *
+	 * @param plugin      The plugin instance (JavaPlugin).
+	 * @param packageName The package to scan for listeners.
 	 */
-	public void registerListeners() {
+	public static void registerListeners(Plugin plugin, String packageName) {
 		PluginManager pluginManager = Bukkit.getPluginManager();
 		int index = 0;
-		for (Class<? extends Listener> listenerClass : getClassesImplementing(Listener.class)) {
+		for (Class<? extends Listener> listenerClass : getClassesImplementing(plugin, packageName, Listener.class)) {
 			try {
 				Listener listener = listenerClass.getDeclaredConstructor().newInstance();
 				pluginManager.registerEvents(listener, plugin);
