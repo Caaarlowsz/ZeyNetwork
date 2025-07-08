@@ -37,7 +37,7 @@ public class SetArenaCommand implements CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena1.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena1.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena1.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				Main.getPlugin().saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("2")) {
 				Main.getPlugin().getConfig();
@@ -49,7 +49,7 @@ public class SetArenaCommand implements CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena2.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena2.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena2.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				Main.getPlugin().saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("3")) {
 				Main.getPlugin().getConfig();
@@ -61,7 +61,7 @@ public class SetArenaCommand implements CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena3.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena3.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena3.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				Main.getPlugin().saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("4")) {
 				Main.getPlugin().getConfig();
@@ -73,7 +73,7 @@ public class SetArenaCommand implements CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena4.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena4.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena4.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				Main.getPlugin().saveConfig();
 			}
 			if (args[0].equalsIgnoreCase("5")) {
 				Main.getPlugin().getConfig();
@@ -85,7 +85,7 @@ public class SetArenaCommand implements CommandExecutor {
 				SetArenaCommand.plugin.getConfig().set("arena5.pitch", (Object) p.getLocation().getPitch());
 				SetArenaCommand.plugin.getConfig().set("arena5.yaw", (Object) p.getLocation().getYaw());
 				SetArenaCommand.plugin.getConfig().set("arena5.world", (Object) p.getLocation().getWorld().getName());
-				Main.plugin.saveConfig();
+				Main.getPlugin().saveConfig();
 			}
 		}
 		return false;

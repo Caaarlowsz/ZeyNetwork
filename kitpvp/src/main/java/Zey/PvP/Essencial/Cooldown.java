@@ -18,7 +18,7 @@ public class Cooldown {
 		final long CoolDownLength = System.currentTimeMillis() + seconds * 1000;
 		Cooldown.run.remove(p);
 		Cooldown.run.put(p, CoolDownLength);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				Cooldown.run.remove(p);

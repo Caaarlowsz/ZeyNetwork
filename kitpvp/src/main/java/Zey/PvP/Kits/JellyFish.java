@@ -47,7 +47,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -63,7 +63,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -79,7 +79,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -95,7 +95,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -111,7 +111,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {
@@ -127,7 +127,7 @@ public class JellyFish implements Listener {
 				if (b2.getType() == Material.AIR) {
 					b2.setType(Material.STATIONARY_WATER);
 					this.naoescorrer.add(b2);
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance,
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 							(Runnable) new Runnable() {
 								@Override
 								public void run() {

@@ -71,7 +71,7 @@ public class C4 implements Listener {
 					p.updateInventory();
 					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aSua C4 foi ativada");
 					Cooldown.add(p, 20);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstace(), (Runnable) new Runnable() {
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							KitUtil.ccooldown(p);

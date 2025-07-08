@@ -89,14 +89,14 @@ public class DeshFire implements Listener {
 			p.getInventory().setLeggings(Calss);
 			p.getInventory().setBoots(Bota);
 			p.updateInventory();
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.getInventory().setArmorContents((ItemStack[]) null);
 					p.updateInventory();
 				}
 			}, 50L);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@SuppressWarnings("unlikely-arg-type")
 				@Override
 				public void run() {

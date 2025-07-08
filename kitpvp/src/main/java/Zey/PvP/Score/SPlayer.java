@@ -197,9 +197,9 @@ public class SPlayer {
 		final Player p = Bukkit.getPlayer(player);
 		this.sb.updateLine(14, "  §fGrupo: " + Grupos.getGrupos(p));
 		this.sb.updateLine(13,
-				"  §fKills: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+				"  §fKills: §7" + Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 		this.sb.updateLine(12,
-				"  §fDeaths: §7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+				"  §fDeaths: §7" + Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 		this.sb.updateLine(10, "  §fZeyCoins: §a" + ZeyCoins.getPlayerMoney(p));
 		this.sb.updateLine(9, "  §fKit: §e" + Habilidade.getAbility(p));
 		this.sb.updateLine(8, "  §fWarp: §e" + WarpAPI.getWarp(p));

@@ -64,7 +64,7 @@ public class HotPotato implements Listener {
 										+ " §7» §eVocê está com a tnt, ela será explodida em 4 segundos");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance1(), 0L);
+					}.runTaskLater((Plugin) Main.getPlugin(), 0L);
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
@@ -72,7 +72,7 @@ public class HotPotato implements Listener {
 										+ " §7» §eVocê está com a tnt, ela será explodida em 3 segundos");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance1(), 20L);
+					}.runTaskLater((Plugin) Main.getPlugin(), 20L);
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
@@ -80,7 +80,7 @@ public class HotPotato implements Listener {
 										+ " §7» §eVocê está com a tnt, ela será explodida em 2 segundos");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance1(), 40L);
+					}.runTaskLater((Plugin) Main.getPlugin(), 40L);
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
@@ -88,7 +88,7 @@ public class HotPotato implements Listener {
 										+ " §7» §e§lVocê está com a tnt, ela será explodida em 1 segundo");
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance1(), 60L);
+					}.runTaskLater((Plugin) Main.getPlugin(), 60L);
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
@@ -98,8 +98,8 @@ public class HotPotato implements Listener {
 								HotPotato.emhotpotato.remove(k.getName());
 							}
 						}
-					}.runTaskLater((Plugin) Main.getInstance1(), 80L);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					}.runTaskLater((Plugin) Main.getPlugin(), 80L);
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							KitUtil.ccooldown(p);

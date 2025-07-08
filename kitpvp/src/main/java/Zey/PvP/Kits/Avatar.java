@@ -120,8 +120,8 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile((Class<? extends Projectile>) Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("ar", (MetadataValue) new FixedMetadataValue(Main.getPlugin(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);
@@ -165,8 +165,8 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile((Class<? extends Projectile>) Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("água", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("água", (MetadataValue) new FixedMetadataValue(Main.getPlugin(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);
@@ -209,8 +209,8 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile((Class<? extends Projectile>) Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("terra", (MetadataValue) new FixedMetadataValue(Main.getPlugin(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);
@@ -256,8 +256,8 @@ public class Avatar implements Listener {
 			final Snowball h = (Snowball) p.launchProjectile((Class<? extends Projectile>) Snowball.class);
 			final Vector velo1 = p.getLocation().getDirection().normalize().multiply(10);
 			h.setVelocity(velo1);
-			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(Main.plugin, (Object) true));
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			h.setMetadata("fogo", (MetadataValue) new FixedMetadataValue(Main.getPlugin(), (Object) true));
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);

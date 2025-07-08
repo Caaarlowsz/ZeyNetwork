@@ -35,7 +35,7 @@ public class Confuser implements Listener {
 				((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
 				((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 2));
 			}
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);

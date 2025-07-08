@@ -34,7 +34,7 @@ public class Ninja implements Listener {
 			final Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
 			if (KitAPI.Ninja.contains(localPlayer1.getName())) {
 				Ninja.a.put(localPlayer1, localPlayer2);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						Ninja.cooldownbk.remove(localPlayer1);

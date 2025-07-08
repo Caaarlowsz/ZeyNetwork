@@ -12,15 +12,15 @@ public class Status implements Listener {
 	@EventHandler
 	void aoLogar(PlayerJoinEvent evento) {
 		/* 17 */ Player jogador = evento.getPlayer();
-		/* 18 */ if (Main.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
-			/* 20 */ Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills",
+		/* 18 */ if (Main.getPlugin().getConfig().get("status." + jogador.getName().toLowerCase() + ".kills") == null) {
+			/* 20 */ Main.getPlugin().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills",
 					Integer.valueOf(0));
-			/* 21 */ Main.plugin.saveConfig();
+			/* 21 */ Main.getPlugin().saveConfig();
 		}
-		/* 23 */ if (Main.plugin.getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
-			/* 25 */ Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes",
+		/* 23 */ if (Main.getPlugin().getConfig().get("status." + jogador.getName().toLowerCase() + ".mortes") == null) {
+			/* 25 */ Main.getPlugin().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes",
 					Integer.valueOf(0));
-			/* 26 */ Main.plugin.saveConfig();
+			/* 26 */ Main.getPlugin().saveConfig();
 		}
 	}
 
@@ -29,10 +29,10 @@ public class Status implements Listener {
 		/* 33 */ if ((evento.getEntity().getKiller() instanceof Player)) {
 			/* 35 */ Player jogador = evento.getEntity().getKiller();
 
-			/* 37 */ int kills = Main.plugin.getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
-			/* 38 */ Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".kills",
+			/* 37 */ int kills = Main.getPlugin().getConfig().getInt("status." + jogador.getName().toLowerCase() + ".kills");
+			/* 38 */ Main.getPlugin().getConfig().set("status." + jogador.getName().toLowerCase() + ".kills",
 					Integer.valueOf(kills + 1));
-			/* 39 */ Main.plugin.saveConfig();
+			/* 39 */ Main.getPlugin().saveConfig();
 		}
 	}
 
@@ -41,16 +41,16 @@ public class Status implements Listener {
 		/* 46 */ if ((evento.getEntity() instanceof Player)) {
 			/* 48 */ Player jogador = evento.getEntity();
 
-			/* 50 */ int mortes = Main.plugin.getConfig()
+			/* 50 */ int mortes = Main.getPlugin().getConfig()
 					.getInt("status." + jogador.getName().toLowerCase() + ".mortes");
-			/* 51 */ Main.plugin.getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes",
+			/* 51 */ Main.getPlugin().getConfig().set("status." + jogador.getName().toLowerCase() + ".mortes",
 					Integer.valueOf(mortes + 1));
-			/* 52 */ Main.plugin.saveConfig();
+			/* 52 */ Main.getPlugin().saveConfig();
 		}
 	}
 
 	/* 56 */ public static int getKills(Player p) {
-		return Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills");
+		return Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills");
 	}
 
 }

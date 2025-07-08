@@ -53,7 +53,7 @@ public class TimeLord implements Listener {
 						player.getWorld().playSound(player.getLocation(), Sound.WITHER_SHOOT, 10.0f, 1.0f);
 						TimeLord.freezing.add(player.getName());
 						TimeLord.cooldownt.add(player.getName());
-						Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+						Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 								(Runnable) new Runnable() {
 									@Override
 									public void run() {
@@ -75,7 +75,7 @@ public class TimeLord implements Listener {
 		if (TimeLord.freeze.contains(player.getName()) && !TimeLord.freezing.contains(player.getName())) {
 			event.setTo(player.getLocation());
 			player.sendMessage(String.valueOf(Main.prefix) + " §7» §cUm §e§lTIMELORD§c congelou o tempo.");
-			Main.getInstace().getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getInstace(),
+			Main.getPlugin().getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 					(Runnable) new Runnable() {
 						@Override
 						public void run() {

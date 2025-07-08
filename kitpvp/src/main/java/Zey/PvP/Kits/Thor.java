@@ -32,7 +32,7 @@ public class Thor implements Listener {
 			final Location loc = p.getTargetBlock((HashSet<Byte>) null, 30).getLocation();
 			p.getWorld().strikeLightning(loc);
 			e.setCancelled(true);
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitUtil.ccooldown(p);

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import Zey.PvP.Commands.AdminCommand;
@@ -74,22 +73,12 @@ public final class Main extends JavaPlugin {
 	public static String discord;
 	public static String motd;
 	public static String motd2;
-	public static Plugin plugin;
-	public static Main instance;
 	public static MyConfigManager manager;
 
 	public static List<String> admins = Lists.newArrayList();
 
-	public static Main getInstace() {
-		return instance;
-	}
-
-	public static Main getInstance1() {
-		return instance;
-	}
-
 	public static Main getPlugin() {
-		return (Main) JavaPlugin.getProvidingPlugin((Class<?>) Main.class);
+		return getPlugin(Main.class);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -120,8 +109,6 @@ public final class Main extends JavaPlugin {
 		manager = new MyConfigManager(this);
 		ZeyCoins.loadMoneyManager();
 
-		instance = this;
-		plugin = this;
 		Comandos();
 	}
 

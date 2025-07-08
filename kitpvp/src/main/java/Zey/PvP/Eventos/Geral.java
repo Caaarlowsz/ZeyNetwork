@@ -112,7 +112,7 @@ public class Geral implements Listener {
 			k.playSound(l, Sound.ARROW_HIT, 10.0f, 1.0f);
 			p.playSound(lp, Sound.ANVIL_USE, 10.0f, 1.0f);
 		}
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().setFlying(false);

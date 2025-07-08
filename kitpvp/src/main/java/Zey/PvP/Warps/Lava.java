@@ -39,18 +39,18 @@ public class Lava implements CommandExecutor {
 			p.setAllowFlight(false);
 			p.setGameMode(GameMode.SURVIVAL);
 
-			final World w = Bukkit.getServer().getWorld(Main.instance.getConfig().getString("lava.world"));
-			final double x = Main.instance.getConfig().getDouble("lava.x");
-			final double y = Main.instance.getConfig().getDouble("lava.y");
-			final double z = Main.instance.getConfig().getDouble("lava.z");
+			final World w = Bukkit.getServer().getWorld(Main.getPlugin().getConfig().getString("lava.world"));
+			final double x = Main.getPlugin().getConfig().getDouble("lava.x");
+			final double y = Main.getPlugin().getConfig().getDouble("lava.y");
+			final double z = Main.getPlugin().getConfig().getDouble("lava.z");
 			final Location lobby = new Location(w, x, y, z);
-			lobby.setPitch((float) Main.instance.getConfig().getDouble("lava.pitch"));
-			lobby.setYaw((float) Main.instance.getConfig().getDouble("lava.yaw"));
+			lobby.setPitch((float) Main.getPlugin().getConfig().getDouble("lava.pitch"));
+			lobby.setYaw((float) Main.getPlugin().getConfig().getDouble("lava.yaw"));
 
 			p.getInventory().clear();
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você está sendo teleportando para Warp §a§lCHALLENGE");
-			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.instance, (Runnable) new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(), (Runnable) new Runnable() {
 
 				@SuppressWarnings("deprecation")
 				@Override

@@ -36,7 +36,7 @@ public class Monk implements Listener {
 				p.sendMessage(String.valueOf(String.valueOf(Main.prefix) + " §7» §7Você §c§lMONKOU§7 o jogador(a): §e"
 						+ jogadorClicado.getName()));
 				Cooldown.add(p, 20);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstace(), (Runnable) new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 						KitUtil.ccooldown(p);

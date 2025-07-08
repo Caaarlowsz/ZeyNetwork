@@ -81,13 +81,13 @@ public class Gladiator implements Listener {
 				r.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 110, 5));
 				Gladiator.lutando.put(p, r);
 				Gladiator.lutando.put(r, p);
-				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance1(),
+				this.glad1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(),
 						(Runnable) new Runnable() {
 							@Override
 							public void run() {
 							}
 						}, 4800L);
-				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance1(),
+				this.glad2 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(),
 						(Runnable) new Runnable() {
 							@SuppressWarnings("unlikely-arg-type")
 							@Override

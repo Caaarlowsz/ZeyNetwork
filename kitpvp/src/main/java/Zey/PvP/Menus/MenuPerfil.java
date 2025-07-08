@@ -73,7 +73,7 @@ public class MenuPerfil implements Listener, CommandExecutor {
 		descpyro1 = new ArrayList();
 		descpyro1.add("§f  ");
 		descpyro1.add("§f» §e§lDEATHS");
-		descpyro1.add("§7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
+		descpyro1.add("§7" + Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 		metapyro.setLore((List) descpyro1);
 		pyro.setItemMeta(metapyro);
 		inv.setItem(11, pyro);
@@ -84,7 +84,7 @@ public class MenuPerfil implements Listener, CommandExecutor {
 		descpyro1 = new ArrayList();
 		descpyro1.add("§f  ");
 		descpyro1.add("§f» §e§lKILLS");
-		descpyro1.add("§7" + Main.plugin.getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
+		descpyro1.add("§7" + Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".kills"));
 		metapyro.setLore((List) descpyro1);
 		pyro.setItemMeta(metapyro);
 		inv.setItem(12, pyro);

@@ -81,9 +81,9 @@ public class Admin implements Listener {
 				player.sendMessage("§cInformacoes do Player §e" + t.getName() + "§c.");
 				player.sendMessage("§cVida: §7" + (int) hp.getHealth());
 				player.sendMessage("§cKills: §7"
-						+ Main.plugin.getConfig().getInt("status." + t.getName().toLowerCase() + ".kills"));
+						+ Main.getPlugin().getConfig().getInt("status." + t.getName().toLowerCase() + ".kills"));
 				player.sendMessage("§cDeaths: §7"
-						+ Main.plugin.getConfig().getInt("status." + t.getName().toLowerCase() + ".mortes"));
+						+ Main.getPlugin().getConfig().getInt("status." + t.getName().toLowerCase() + ".mortes"));
 				player.sendMessage("§cMoney: §7" + ZeyCoins.getPlayerMoney(t) + " ZeyCoins§c.");
 				player.sendMessage("§clP: §7" + t.getAddress().getHostString());
 				player.sendMessage("§clP (Reverso): §7" + t.getAddress().getHostName());

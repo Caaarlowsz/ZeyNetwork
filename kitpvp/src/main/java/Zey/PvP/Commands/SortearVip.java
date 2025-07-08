@@ -63,7 +63,7 @@ public class SortearVip implements CommandExecutor {
 
 				}
 
-			}.runTaskLater(Main.instance, 20 * 10);
+			}.runTaskLater(Main.getPlugin(), 20 * 10);
 
 		}
 		return false;

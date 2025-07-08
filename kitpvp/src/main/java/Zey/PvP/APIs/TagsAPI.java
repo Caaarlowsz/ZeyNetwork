@@ -17,7 +17,7 @@ public class TagsAPI implements Listener {
 				p.setDisplayName(tag + p.getName());
 				NametagAPI.setPrefix(p.getName(), tag);
 			}
-		}.runTaskAsynchronously(Main.getInstace());
+		}.runTaskAsynchronously(Main.getPlugin());
 	}
 
 	@EventHandler
@@ -136,6 +136,6 @@ public class TagsAPI implements Listener {
 				return;
 
 			}
-		}.runTaskAsynchronously(Main.getInstace());
+		}.runTaskAsynchronously(Main.getPlugin());
 	}
 }

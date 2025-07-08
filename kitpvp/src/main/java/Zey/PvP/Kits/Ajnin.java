@@ -33,7 +33,7 @@ public class Ajnin implements Listener {
 			final Player t = (Player) e.getEntity();
 			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
 				this.ajinhash.put(p, t);
-				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstace(), (Runnable) new Runnable() {
+				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
 					}
@@ -59,7 +59,7 @@ public class Ajnin implements Listener {
 					t.teleport(p.getLocation());
 					p.sendMessage(String.valueOf(Main.prefix) + " §7» §aVocê teleportou o jogador(a) para você.");
 					Cooldown.add(p, 3);
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstace(), (Runnable) new Runnable() {
+					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 							KitUtil.ccooldown(p);

@@ -43,20 +43,20 @@ public class TheForceField implements Listener {
 			final Location loc = p.getLocation();
 			p.getWorld().playSound(loc, Sound.MAGMACUBE_WALK2, 0.5f, 0.5f);
 			TheForceField.cooldownm.add(p);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.add(p.getName());
 					p.sendMessage(String.valueOf(Main.prefix) + " §7» §7Você usou sua habilidade de ForceField.");
 				}
 			}, 0L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.remove(p.getName());
 				}
 			}, 50L);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					TheForceField.cooldownm.remove(p);
@@ -77,7 +77,7 @@ public class TheForceField implements Listener {
 						((Player) pertos).damage(3.0);
 					}
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));
-					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+					Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
 						}
