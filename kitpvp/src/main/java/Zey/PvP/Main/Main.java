@@ -65,6 +65,7 @@ import Zey.PvP.Warps.TheMain;
 import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
 import tk.zeynetwork.utils.ClassGetter;
+import tk.zeynetwork.utils.ConfigUtils;
 
 public final class Main extends JavaPlugin {
 
@@ -84,20 +85,14 @@ public final class Main extends JavaPlugin {
 
 	public void onEnable() {
 		SManager.onEnable();
-		try {
-			saveDefaultConfig();
-		} catch (Exception localException) {
-		}
 		prefix = ("§6§lZey§f§lPvP");
 		motd = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.");
 		motd2 = ("§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.");
 
+		ConfigUtils.setupDefaultConfig(this);
 		new ClassGetter(this, "Zey.PvP").registerListeners();
 		this.logPluginStatus(true);
 
-		getConfig().options().copyDefaults(true);
-		getConfig().options().copyHeader(true);
-		saveConfig();
 		manager = new MyConfigManager(this);
 		ZeyCoins.loadMoneyManager();
 
