@@ -15,14 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Main.Main;
-
 public class DiamondJump implements Listener {
-	public static Main plugin;
-
-	public DiamondJump(Main main) {
-		plugin = main;
-	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static ArrayList<String> Diamante = new ArrayList();

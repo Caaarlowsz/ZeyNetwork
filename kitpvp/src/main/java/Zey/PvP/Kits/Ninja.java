@@ -26,9 +26,6 @@ public class Ninja implements Listener {
 		Ninja.cooldownbk = new ArrayList<Player>();
 	}
 
-	public Ninja(final Main main) {
-	}
-
 	@EventHandler
 	public void a(final EntityDamageByEntityEvent paramEntityDamageByEntityEvent) {
 		if (paramEntityDamageByEntityEvent.getDamager() instanceof Player

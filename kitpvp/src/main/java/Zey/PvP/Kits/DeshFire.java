@@ -25,7 +25,7 @@ import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 
 public class DeshFire implements Listener {
-	public int boost;
+	public int boost = 6;
 	public static ArrayList<String> Deshfire;
 	public static HashMap<String, ItemStack[]> Armadura;
 	public static HashMap<String, ItemStack[]> saveinv;
@@ -40,10 +40,6 @@ public class DeshFire implements Listener {
 		DeshFire.armadura = new HashMap<String, ItemStack[]>();
 		DeshFire.Armadura2 = new HashMap<String, ItemStack[]>();
 		DeshFire.cooldownm = new ArrayList<Player>();
-	}
-
-	public DeshFire(final Main main) {
-		this.boost = Integer.valueOf(6);
 	}
 
 	@EventHandler

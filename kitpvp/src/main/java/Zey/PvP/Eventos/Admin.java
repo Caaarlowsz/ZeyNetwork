@@ -19,12 +19,6 @@ import Zey.PvP.Main.Main;
 @SuppressWarnings({ "deprecation" })
 public class Admin implements Listener {
 
-	public Main main;
-
-	public Admin(Main main) {
-		this.main = main;
-	}
-
 	@EventHandler
 	private void onPlayerInteractPlayerAdmin(PlayerInteractEntityEvent e) {
 		if (!(e.getRightClicked() instanceof Player))
@@ -69,7 +63,7 @@ public class Admin implements Listener {
 					public void run() {
 						player.performCommand("admin");
 					}
-				}.runTaskLater(main, 7);
+				}.runTaskLater(Main.getPlugin(), 7);
 				e.setCancelled(true);
 			}
 		}

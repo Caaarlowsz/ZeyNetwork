@@ -20,16 +20,11 @@ import Zey.PvP.Warps.Parkour;
 
 public class ParkourJump implements Listener {
 	public static ArrayList<String> jump;
-	ArrayList<String> nofalldamage;
-	ArrayList<String> nofalldamagewait;
+	ArrayList<String> nofalldamage = new ArrayList<>();
+	ArrayList<String> nofalldamagewait = new ArrayList<>();
 
 	static {
 		ParkourJump.jump = new ArrayList<String>();
-	}
-
-	public ParkourJump(final Main main) {
-		this.nofalldamage = new ArrayList<String>();
-		this.nofalldamagewait = new ArrayList<String>();
 	}
 
 	@EventHandler

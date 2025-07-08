@@ -17,7 +17,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -25,21 +24,12 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
 
 public class Gladiator implements Listener {
-	public Plugin plugin;
-	private List<Block> gladiatorbloco;
-	private HashMap<Block, Player> gladblock;
-	static HashMap<Player, Player> lutando;
-	private HashMap<Player, Location> lugar;
+	private List<Block> gladiatorbloco = new ArrayList<>();
+	private HashMap<Block, Player> gladblock = new HashMap<>();
+	static HashMap<Player, Player> lutando = new HashMap<>();
+	private HashMap<Player, Location> lugar = new HashMap<>();
 	private int glad1;
 	private int glad2;
-
-	public Gladiator(final Main plugin) {
-		this.gladiatorbloco = new ArrayList<Block>();
-		this.gladblock = new HashMap<Block, Player>();
-		Gladiator.lutando = new HashMap<Player, Player>();
-		this.lugar = new HashMap<Player, Location>();
-		this.plugin = (Plugin) plugin;
-	}
 
 	@EventHandler
 	void KitGladiator(final PlayerInteractEntityEvent e) {

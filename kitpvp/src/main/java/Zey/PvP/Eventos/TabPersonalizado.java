@@ -21,9 +21,6 @@ public class TabPersonalizado implements Listener {
 		TabPersonalizado.VERSION = 47;
 	}
 
-	public TabPersonalizado(final Main main) {
-	}
-
 	@SuppressWarnings("unused")
 	@EventHandler
 	void TabDoServidor(final PlayerJoinEvent e) {

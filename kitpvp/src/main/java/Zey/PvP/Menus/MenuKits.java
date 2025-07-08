@@ -19,11 +19,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Zey.PvP.Commands.IniciarCommand;
-import Zey.PvP.Main.Main;
 
 public class MenuKits implements Listener, CommandExecutor {
-	public MenuKits(final Main main) {
-	}
 
 	public static void GuiKit(final Player p) {
 		final Inventory inv = Bukkit.getServer().createInventory((InventoryHolder) p, 54, "§7» §e§lKITS");

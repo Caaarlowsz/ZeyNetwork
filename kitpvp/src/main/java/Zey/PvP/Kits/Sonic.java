@@ -27,7 +27,7 @@ import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 
 public class Sonic implements Listener {
-	public int boost;
+	public int boost = 6;
 	public static ArrayList<String> Sonic;
 	public static HashMap<String, ItemStack[]> Armadura;
 	public static Main plugin;
@@ -43,10 +43,6 @@ public class Sonic implements Listener {
 		Zey.PvP.Kits.Sonic.armadura = new HashMap<String, ItemStack[]>();
 		Zey.PvP.Kits.Sonic.Armadura2 = new HashMap<String, ItemStack[]>();
 		Zey.PvP.Kits.Sonic.cooldownm = new ArrayList<Player>();
-	}
-
-	public Sonic(final Main main) {
-		this.boost = Integer.valueOf(6);
 	}
 
 	@EventHandler

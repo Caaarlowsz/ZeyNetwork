@@ -42,9 +42,6 @@ public class MenuLojaKits implements Listener, CommandExecutor {
 	public static ItemStack coisa;
 	public static ItemMeta coisameta;
 
-	public MenuLojaKits(final Main main) {
-	}
-
 	@EventHandler
 	public void warps(final InventoryClickEvent e) {
 		if (e.getCurrentItem() != null && e.getCurrentItem().getItemMeta() != null) {

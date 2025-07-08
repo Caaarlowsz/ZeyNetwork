@@ -24,9 +24,6 @@ public class MenuCabeças implements Listener {
 		MenuCabeças.comchapeu = new ArrayList<String>();
 	}
 
-	public MenuCabeças(final Main main) {
-	}
-
 	public static void guiKits(final Player p) {
 		final Inventory inv = Bukkit.createInventory((InventoryHolder) p, 54, "§7» §e§lCABEÇAS");
 		final ItemStack event1234 = new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 14);

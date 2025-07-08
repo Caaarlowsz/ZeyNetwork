@@ -18,9 +18,6 @@ public class ChatCommand implements CommandExecutor, Listener {
 		ChatCommand.c = false;
 	}
 
-	public ChatCommand(final Main main) {
-	}
-
 	public boolean onCommand(final CommandSender Sender, final Command Cmd, final String Label, final String[] Args) {
 		final Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("chat")) {

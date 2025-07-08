@@ -17,9 +17,6 @@ public class AntFlood implements Listener {
 		AntFlood.chat = new HashMap<Player, Long>();
 	}
 
-	public AntFlood(final Main main) {
-	}
-
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
 	public void aAntiSpam(final AsyncPlayerChatEvent e) {
 		final Player p = e.getPlayer();

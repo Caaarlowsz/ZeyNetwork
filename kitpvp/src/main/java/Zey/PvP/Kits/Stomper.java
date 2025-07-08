@@ -8,11 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import Zey.PvP.Essencial.KitAPI;
-import Zey.PvP.Main.Main;
 
 public class Stomper implements Listener {
-	public Stomper(final Main main) {
-	}
 
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerStomp(final EntityDamageEvent e) {

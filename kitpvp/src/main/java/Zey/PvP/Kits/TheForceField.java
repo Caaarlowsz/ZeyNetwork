@@ -27,9 +27,6 @@ public class TheForceField implements Listener {
 		TheForceField.cooldownm = new ArrayList<Player>();
 	}
 
-	public TheForceField(final Main main) {
-	}
-
 	@EventHandler
 	public void stomperApple(final PlayerInteractEvent event) {
 		final Player p = event.getPlayer();

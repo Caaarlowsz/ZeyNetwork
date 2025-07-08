@@ -18,15 +18,10 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.KitAPI;
-import Zey.PvP.Main.Main;
 import net.minecraft.server.v1_7_R4.EntityHuman;
 
 public class Grappler implements Listener {
-	Map<Player, Cordinha> hooks;
-
-	public Grappler(final Main main) {
-		this.hooks = new HashMap<Player, Cordinha>();
-	}
+	Map<Player, Cordinha> hooks = new HashMap<>();
 
 	@EventHandler
 	public void onSlot(final PlayerItemHeldEvent e) {

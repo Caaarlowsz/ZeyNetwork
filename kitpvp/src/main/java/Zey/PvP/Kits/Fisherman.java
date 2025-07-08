@@ -7,11 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 
 import Zey.PvP.Essencial.KitAPI;
-import Zey.PvP.Main.Main;
 
 public class Fisherman implements Listener {
-	public Fisherman(final Main main) {
-	}
 
 	@EventHandler
 	public void onPlayerFish(final PlayerFishEvent event) {

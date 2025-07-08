@@ -31,9 +31,6 @@ public class Thresh implements Listener {
 		Thresh.tiros = new HashMap<String, Snowball>();
 	}
 
-	public Thresh(final Main main) {
-	}
-
 	@EventHandler
 	public void disparar(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
