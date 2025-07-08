@@ -23,11 +23,13 @@
   		<groupId>tk.zeynetwork</groupId>
   		<artifactId>kitpvp-api</artifactId>
   		<version>0.0.0</version>
+  		<scope>compile</scope>
   	</dependency>
   	<dependency>
   		<groupId>tk.zeynetwork</groupId>
   		<artifactId>utils</artifactId>
   		<version>0.0.0</version>
+  		<scope>compile</scope>
   	</dependency>
   </dependencies>
   
