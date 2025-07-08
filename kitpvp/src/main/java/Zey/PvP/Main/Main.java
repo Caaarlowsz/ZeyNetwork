@@ -4,13 +4,9 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Zey.PvP.APIs.TheTitle;
-import Zey.PvP.Cassino.ApostasListener;
 import Zey.PvP.Commands.AdminCommand;
 import Zey.PvP.Commands.AplicarCommand;
 import Zey.PvP.Commands.AutoSoupCommand;
@@ -49,75 +45,10 @@ import Zey.PvP.Commands.TpHereCommand;
 import Zey.PvP.Commands.Vis;
 import Zey.PvP.Commands.sKit;
 import Zey.PvP.Config.MyConfigManager;
-import Zey.PvP.Config.Status;
 import Zey.PvP.Config.ZeyCoins;
-import Zey.PvP.Eventos.Admin;
-import Zey.PvP.Eventos.AntFlood;
-import Zey.PvP.Eventos.ChatForm;
-import Zey.PvP.Eventos.Direito;
-import Zey.PvP.Eventos.Entrar;
-import Zey.PvP.Eventos.GanharXP;
-import Zey.PvP.Eventos.Geral;
-import Zey.PvP.Eventos.Nerfs;
-import Zey.PvP.Eventos.ParkourJump;
-import Zey.PvP.Eventos.PlacaDaLava;
-import Zey.PvP.Eventos.PlacaDeRecraft;
-import Zey.PvP.Eventos.PlacaDeSopa;
-import Zey.PvP.Eventos.TabPersonalizado;
-import Zey.PvP.JumpBlocks.DiamondJump;
-import Zey.PvP.JumpBlocks.EmeraldJump;
-import Zey.PvP.JumpBlocks.IronJump;
-import Zey.PvP.Kits.Ajnin;
-import Zey.PvP.Kits.Anchor;
-import Zey.PvP.Kits.AntiTower;
-import Zey.PvP.Kits.Armor;
-import Zey.PvP.Kits.Avatar;
-import Zey.PvP.Kits.C4;
-import Zey.PvP.Kits.Camel;
-import Zey.PvP.Kits.Confuser;
-import Zey.PvP.Kits.DeshFire;
-import Zey.PvP.Kits.Fisherman;
-import Zey.PvP.Kits.Gladiator;
-import Zey.PvP.Kits.Grappler;
-import Zey.PvP.Kits.HotPotato;
-import Zey.PvP.Kits.Hulk;
-import Zey.PvP.Kits.JellyFish;
-import Zey.PvP.Kits.Kangaroo;
-import Zey.PvP.Kits.Madman;
-import Zey.PvP.Kits.Magma;
-import Zey.PvP.Kits.Monk;
-import Zey.PvP.Kits.Ninja;
-import Zey.PvP.Kits.Poseidon;
-import Zey.PvP.Kits.Rain;
-import Zey.PvP.Kits.Resouper;
-import Zey.PvP.Kits.Snail;
-import Zey.PvP.Kits.Sonic;
-import Zey.PvP.Kits.Specialist;
-import Zey.PvP.Kits.Stomper;
-import Zey.PvP.Kits.Switcher;
-import Zey.PvP.Kits.Swords;
-import Zey.PvP.Kits.TheForceField;
-import Zey.PvP.Kits.Thor;
-import Zey.PvP.Kits.Thresh;
-import Zey.PvP.Kits.TimeLord;
-import Zey.PvP.Kits.Turtle;
-import Zey.PvP.Kits.Viking;
-import Zey.PvP.Kits.Viper;
-import Zey.PvP.Menus.MenuAdm;
-import Zey.PvP.Menus.MenuCabeças;
-import Zey.PvP.Menus.MenuEventos;
-import Zey.PvP.Menus.MenuGeral;
-import Zey.PvP.Menus.MenuKits;
-import Zey.PvP.Menus.MenuKits2;
 import Zey.PvP.Menus.MenuLojaExtras;
 import Zey.PvP.Menus.MenuLojaKits;
-import Zey.PvP.Menus.MenuLojaVips;
-import Zey.PvP.Menus.MenuOutros;
-import Zey.PvP.Menus.MenuPerfil;
-import Zey.PvP.Menus.MenuWarps;
-import Zey.PvP.Score.PlayerListener;
 import Zey.PvP.Score.SManager;
-import Zey.PvP.Utils.Proteção;
 import Zey.PvP.Warps.Evento;
 import Zey.PvP.Warps.Fps;
 import Zey.PvP.Warps.Lava;
@@ -133,6 +64,7 @@ import Zey.PvP.Warps.Spawn;
 import Zey.PvP.Warps.TheMain;
 import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
+import tk.zeynetwork.utils.ClassGetter;
 
 public class Main extends JavaPlugin {
 	public static String prefix;
@@ -166,7 +98,6 @@ public class Main extends JavaPlugin {
 					"§6§lZey§f§lNetwork \n \n §cServidor Reiniciando \n Para sua segurança e a de outros jogadores(a), você foi kickado. \n\nAguarde o servidor reiniciar e entre para jogar novamente =)");
 		}
 		SManager.onEnable();
-		this.getServer().getPluginManager().registerEvents((Listener) new PlayerListener(), (Plugin) this);
 		try {
 			saveDefaultConfig();
 		} catch (Exception localException) {
@@ -189,9 +120,8 @@ public class Main extends JavaPlugin {
 
 		instance = this;
 		plugin = this;
-		Eventos();
 		Comandos();
-		Kits();
+		new ClassGetter(this, "Zey.PvP").registerListeners();
 	}
 
 	public void onDisable() {
@@ -200,43 +130,6 @@ public class Main extends JavaPlugin {
 		Bukkit.getConsoleSender().sendMessage("                                       ");
 		Bukkit.getConsoleSender().sendMessage("      §6§lZey§f§lPvP §c§lDESABILITADO!");
 		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
-	}
-
-	public void Eventos() {
-		PluginManager Eventos = Bukkit.getPluginManager();
-		Eventos.registerEvents(new PlacaDaLava(), this);
-		Eventos.registerEvents(new PlacaDeRecraft(), this);
-		Eventos.registerEvents(new Proteção(), this);
-		Eventos.registerEvents(new Admin(), this);
-		Eventos.registerEvents(new DiamondJump(), this);
-		Eventos.registerEvents(new EmeraldJump(), this);
-		Eventos.registerEvents(new IronJump(), this);
-		Eventos.registerEvents(new TheTitle(), this);
-		Eventos.registerEvents(new AntFlood(), this);
-		Eventos.registerEvents(new Entrar(), this);
-		Eventos.registerEvents(new MenuGeral(), this);
-		Eventos.registerEvents(new Direito(), this);
-		Eventos.registerEvents(new Geral(), this);
-		Eventos.registerEvents(new MenuPerfil(), this);
-		Eventos.registerEvents(new MenuOutros(), this);
-		Eventos.registerEvents(new TabPersonalizado(), this);
-		Eventos.registerEvents(new GanharXP(), this);
-		Eventos.registerEvents(new ChatForm(), this);
-		Eventos.registerEvents(new Status(), this);
-		Eventos.registerEvents(new BuildCommand(), this);
-		Eventos.registerEvents(new MenuKits2(), this);
-		Eventos.registerEvents(new MenuKits(), this);
-		Eventos.registerEvents(new PlacaDeSopa(this), this);
-		Eventos.registerEvents(new MenuWarps(), this);
-		Eventos.registerEvents(new MenuLojaKits(), this);
-		Eventos.registerEvents(new MenuLojaVips(), this);
-		Eventos.registerEvents(new MenuEventos(), this);
-		Eventos.registerEvents(new MenuLojaExtras(), this);
-		Eventos.registerEvents(new MacroTestCommand(), this);
-		Eventos.registerEvents(new ParkourJump(), this);
-		Eventos.registerEvents(new MenuCabeças(), this);
-		Eventos.registerEvents(new ApostasListener(), this);
-		Eventos.registerEvents(new ChatCommand(), this);
 	}
 
 	void Comandos() {
@@ -294,47 +187,5 @@ public class Main extends JavaPlugin {
 		getCommand("lojakits").setExecutor(new MenuLojaKits());
 		getCommand("rdm").setExecutor(new WarpRdm(this));
 		getCommand("lojaextras").setExecutor(new MenuLojaExtras());
-	}
-
-	public void Kits() {
-		PluginManager Eventos = Bukkit.getPluginManager();
-		Eventos.registerEvents(new Ajnin(), this);
-		Eventos.registerEvents(new Anchor(), this);
-		Eventos.registerEvents(new Armor(), this);
-		Eventos.registerEvents(new Avatar(), this);
-		Eventos.registerEvents(new C4(), this);
-		Eventos.registerEvents(new Nerfs(), this);
-		Eventos.registerEvents(new DeshFire(), this);
-		Eventos.registerEvents(new Fisherman(), this);
-		Eventos.registerEvents(new Gladiator(), this);
-		Eventos.registerEvents(new Hulk(), this);
-		Eventos.registerEvents(new JellyFish(), this);
-		Eventos.registerEvents(new Kangaroo(), this);
-		Eventos.registerEvents(new Magma(), this);
-		Eventos.registerEvents(new Monk(), this);
-		Eventos.registerEvents(new MenuAdm(), this);
-		Eventos.registerEvents(new Ninja(), this);
-		Eventos.registerEvents(new Poseidon(), this);
-		Eventos.registerEvents(new Resouper(), this);
-		Eventos.registerEvents(new Snail(), this);
-		Eventos.registerEvents(new Sonic(), this);
-		Eventos.registerEvents(new Stomper(), this);
-		Eventos.registerEvents(new Switcher(), this);
-		Eventos.registerEvents(new Swords(), this);
-		Eventos.registerEvents(new Grappler(), this);
-		Eventos.registerEvents(new TheForceField(), this);
-		Eventos.registerEvents(new Thor(), this);
-		Eventos.registerEvents(new Thresh(), this);
-		Eventos.registerEvents(new Turtle(), this);
-		Eventos.registerEvents(new Camel(), this);
-		Eventos.registerEvents(new Rain(), this);
-		Eventos.registerEvents(new TimeLord(), this);
-		Eventos.registerEvents(new Confuser(), this);
-		Eventos.registerEvents(new Viking(), this);
-		Eventos.registerEvents(new Viper(), this);
-		Eventos.registerEvents(new AntiTower(), this);
-		Eventos.registerEvents(new Madman(), this);
-		Eventos.registerEvents(new Specialist(), this);
-		Eventos.registerEvents(new HotPotato(), this);
 	}
 }
