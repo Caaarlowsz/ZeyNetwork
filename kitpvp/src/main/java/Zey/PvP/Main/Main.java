@@ -81,12 +81,7 @@ public final class Main extends JavaPlugin {
 		return getPlugin(Main.class);
 	}
 
-	@SuppressWarnings("deprecation")
 	public void onEnable() {
-		for (Player todos : Bukkit.getOnlinePlayers()) {
-			todos.kickPlayer(
-					"§6§lZey§f§lNetwork \n \n §cServidor Reiniciando \n Para sua segurança e a de outros jogadores(a), você foi kickado. \n\nAguarde o servidor reiniciar e entre para jogar novamente =)");
-		}
 		SManager.onEnable();
 		try {
 			saveDefaultConfig();
@@ -113,6 +108,13 @@ public final class Main extends JavaPlugin {
 	}
 
 	public void onDisable() {
+		StringBuilder kick = new StringBuilder("§6§lZey§f§lNetwork ");
+		kick.append("\n \n §cServidor Reiniciando ");
+		kick.append("\n Para sua segurança e a de outros jogadores(a), você foi kickado. ");
+		kick.append("\n\nAguarde o servidor reiniciar e entre para jogar novamente =)");
+		for (Player players : Bukkit.getOnlinePlayers())
+			players.kickPlayer(kick.toString());
+
 		Bukkit.getConsoleSender().sendMessage("§b§l§m-------------------------------------");
 		Bukkit.getConsoleSender().sendMessage("          §6§lZey§f§lNetwork        ");
 		Bukkit.getConsoleSender().sendMessage("                                       ");
