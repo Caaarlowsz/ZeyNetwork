@@ -16,19 +16,21 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.APIs.TheTitle;
-import Zey.PvP.APIs.WarpAPI;
 import Zey.PvP.Commands.BuildCommand;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.api.Warp;
 
 @SuppressWarnings("unused")
-public class Parkour implements CommandExecutor {
-	public static Main plugin;
+public class Parkour extends Warp implements CommandExecutor {
+	public static Main plugin = Main.getPlugin();
 
-	public Parkour(final Main main) {
-		Parkour.plugin = main;
+	public Parkour() {
+		super("Parkour");
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
@@ -69,7 +71,8 @@ public class Parkour implements CommandExecutor {
 
 					TheTitle.sendTitle(p, "§e§lPARKOUR");
 
-					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+					KitPvPAPI api = Main.getAPI();
+					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
@@ -86,7 +89,7 @@ public class Parkour implements CommandExecutor {
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 
-					WarpAPI.setWarp(p, "Parkour");
+					api.setWarp(p, Warps.PARKOUR);
 
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate((ItemStack) null);

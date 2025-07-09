@@ -10,7 +10,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
@@ -23,13 +22,16 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.api.Warp;
 
 @SuppressWarnings("unused")
-public class Spawn implements CommandExecutor {
-	public static Main plugin;
+public class Spawn extends Warp implements CommandExecutor {
+	public static Main plugin = Main.getPlugin();
 
-	public Spawn(final Main main) {
-		Spawn.plugin = main;
+	public Spawn() {
+		super("Spawn");
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
@@ -73,7 +75,8 @@ public class Spawn implements CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
 
-					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+					KitPvPAPI api = Main.getAPI();
+					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
@@ -90,7 +93,7 @@ public class Spawn implements CommandExecutor {
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 
-					Zey.PvP.APIs.WarpAPI.setWarp(p, "Spawn");
+					api.setWarp(p, Warps.SPAWN);
 
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate((ItemStack) null);

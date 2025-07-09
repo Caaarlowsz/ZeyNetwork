@@ -64,6 +64,7 @@ import Zey.PvP.Warps.Spawn;
 import Zey.PvP.Warps.TheMain;
 import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
+import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ClassGetter;
 import tk.zeynetwork.utils.ConfigUtils;
@@ -78,11 +79,11 @@ public final class Main extends JavaPlugin {
 	public static List<String> admins = Lists.newArrayList();
 
 	private static KitPvPAPI api;
-	
+
 	public static KitPvPAPI getAPI() {
 		return api;
 	}
-	
+
 	public static Main getPlugin() {
 		return getPlugin(Main.class);
 	}
@@ -91,6 +92,15 @@ public final class Main extends JavaPlugin {
 		SManager.onEnable();
 
 		api = new KitPvPAPI(this);
+		getAPI().addWarp(Warps.ARENA);
+		getAPI().addWarp(Warps.CHALLENGE);
+		getAPI().addWarp(Warps.EVENTO);
+		getAPI().addWarp(Warps.FPS);
+		getAPI().addWarp(Warps.MAIN);
+		getAPI().addWarp(Warps.NENHUMA);
+		getAPI().addWarp(Warps.PARKOUR);
+		getAPI().addWarp(Warps.SPAWN);
+
 		ConfigUtils.setupDefaultConfig(this);
 		ClassGetter.registerListeners(this, "Zey.PvP");
 		this.logPluginStatus(true);
@@ -151,10 +161,10 @@ public final class Main extends JavaPlugin {
 		getCommand("aplicar").setExecutor(new AplicarCommand());
 		getCommand("ajuda").setExecutor(new InfoCommand());
 		getCommand("report").setExecutor(new ReportCommand(this));
-		getCommand("fps").setExecutor(new Fps(this));
-		getCommand("challenge").setExecutor(new Lava(this));
-		getCommand("evento").setExecutor(new Evento(this));
-		getCommand("parkour").setExecutor(new Parkour(this));
+		getCommand("fps").setExecutor(new Fps());
+		getCommand("challenge").setExecutor(new Lava());
+		getCommand("evento").setExecutor(new Evento());
+		getCommand("parkour").setExecutor(new Parkour());
 		getCommand("rdmset").setExecutor(new SetarRdm(this));
 		getCommand("fpsset").setExecutor(new SetFps(this));
 		getCommand("challengeset").setExecutor(new SetLava(this));
@@ -162,8 +172,8 @@ public final class Main extends JavaPlugin {
 		getCommand("parkourset").setExecutor(new SetParkour(this));
 		getCommand("mainset").setExecutor(new Setthemain(this));
 		getCommand("spawnset").setExecutor(new SetSpawn(this));
-		getCommand("main").setExecutor(new TheMain(this));
-		getCommand("spawn").setExecutor(new Spawn(this));
+		getCommand("main").setExecutor(new TheMain());
+		getCommand("spawn").setExecutor(new Spawn());
 		getCommand("lojakits").setExecutor(new MenuLojaKits());
 		getCommand("rdm").setExecutor(new WarpRdm(this));
 		getCommand("lojaextras").setExecutor(new MenuLojaExtras());

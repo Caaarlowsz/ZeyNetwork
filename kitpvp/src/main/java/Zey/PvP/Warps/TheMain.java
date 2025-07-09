@@ -10,7 +10,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
@@ -23,13 +22,16 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.api.Warp;
 
 @SuppressWarnings("unused")
-public class TheMain implements CommandExecutor {
-	public static Main plugin;
+public class TheMain extends Warp implements CommandExecutor {
+	public static Main plugin = Main.getPlugin();
 
-	public TheMain(final Main main) {
-		TheMain.plugin = main;
+	public TheMain() {
+		super("Main");
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
@@ -71,7 +73,9 @@ public class TheMain implements CommandExecutor {
 
 					TheTitle.sendTitle(p, "§e§lMAIN");
 
-					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+					KitPvPAPI api = Main.getAPI();
+					
+					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
@@ -85,7 +89,7 @@ public class TheMain implements CommandExecutor {
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 
-					Zey.PvP.APIs.WarpAPI.setWarp(p, "Main");
+					api.setWarp(p, Warps.MAIN);
 
 					Proteção.setImortal(p, false);
 					Proteção.isImortal(p);

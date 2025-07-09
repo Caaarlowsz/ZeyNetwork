@@ -22,13 +22,16 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.api.Warp;
 
 @SuppressWarnings("unused")
-public class Fps implements CommandExecutor {
-	public static Main plugin;
+public class Fps extends Warp implements CommandExecutor {
+	public static Main plugin = Main.getPlugin();
 
-	public Fps(final Main main) {
-		Fps.plugin = main;
+	public Fps() {
+		super("Fps");
 	}
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
@@ -67,7 +70,8 @@ public class Fps implements CommandExecutor {
 
 					TheTitle.sendTitle(p, "§e§lFPS");
 
-					if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+					KitPvPAPI api = Main.getAPI();
+					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
@@ -84,7 +88,7 @@ public class Fps implements CommandExecutor {
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 
-					Zey.PvP.APIs.WarpAPI.setWarp(p, "Fps");
+					api.setWarp(p, Warps.FPS);
 
 					Proteção.setImortal(p, false);
 					Proteção.isImortal(p);
