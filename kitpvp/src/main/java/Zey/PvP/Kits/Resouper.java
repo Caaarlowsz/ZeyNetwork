@@ -8,8 +8,14 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Resouper implements Listener {
+public class Resouper extends Kit implements Listener {
+	
+	public Resouper() {
+		super("Resouper");
+	}
+
 	@EventHandler
 	public void aomatar(final PlayerDeathEvent e) {
 		if (e.getEntity().getKiller() instanceof Player) {

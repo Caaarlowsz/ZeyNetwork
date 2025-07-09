@@ -20,12 +20,13 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class HotPotato implements Listener {
-	public static ArrayList<String> emhotpotato;
+public class HotPotato extends Kit implements Listener {
+	public static ArrayList<String> emhotpotato = new ArrayList<>();
 
-	static {
-		HotPotato.emhotpotato = new ArrayList<String>();
+	public HotPotato() {
+		super("HotPotato");
 	}
 
 	@SuppressWarnings("unlikely-arg-type")

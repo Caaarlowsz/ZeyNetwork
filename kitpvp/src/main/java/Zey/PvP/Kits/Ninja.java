@@ -14,16 +14,16 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Ninja implements Listener {
-	public static HashMap<Player, Player> a;
-	public static HashMap<Player, Long> b;
-	public static List<Player> cooldownbk;
+public class Ninja extends Kit implements Listener {
+	
+	public static HashMap<Player, Player> a = new HashMap<>();
+	public static HashMap<Player, Long> b = new HashMap<>();
+	public static List<Player> cooldownbk = new ArrayList<>();
 
-	static {
-		Ninja.a = new HashMap<Player, Player>();
-		Ninja.b = new HashMap<Player, Long>();
-		Ninja.cooldownbk = new ArrayList<Player>();
+	public Ninja() {
+		super("Ninja");
 	}
 
 	@EventHandler

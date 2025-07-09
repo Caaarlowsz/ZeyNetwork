@@ -19,9 +19,11 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class JellyFish implements Listener {
-	ArrayList<Block> naoescorrer;
+public class JellyFish extends Kit implements Listener {
+
+	ArrayList<Block> naoescorrer = new ArrayList<>();
 	public static String naocolocaragua;
 
 	static {
@@ -29,7 +31,7 @@ public class JellyFish implements Listener {
 	}
 
 	public JellyFish() {
-		this.naoescorrer = new ArrayList<Block>();
+		super("JellyFish");
 	}
 
 	@EventHandler

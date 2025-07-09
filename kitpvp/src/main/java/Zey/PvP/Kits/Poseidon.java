@@ -10,8 +10,14 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Poseidon implements Listener {
+public class Poseidon extends Kit implements Listener {
+
+	public Poseidon() {
+		super("Poseidon");
+	}
+
 	@EventHandler
 	public void aoPoseidon(final PlayerMoveEvent e) {
 		final Player p = e.getPlayer();

@@ -31,18 +31,16 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Avatar implements Listener {
-	public static List<String> arAvatar;
-	public static List<String> águaAvatar;
-	public static List<String> terraAvatar;
-	public static List<String> fogoAvatar;
-
-	static {
-		Avatar.arAvatar = new ArrayList<String>();
-		Avatar.águaAvatar = new ArrayList<String>();
-		Avatar.terraAvatar = new ArrayList<String>();
-		Avatar.fogoAvatar = new ArrayList<String>();
+public class Avatar extends Kit implements Listener {
+	public static List<String> arAvatar = new ArrayList<>();
+	public static List<String> águaAvatar = new ArrayList<>();
+	public static List<String> terraAvatar = new ArrayList<>();
+	public static List<String> fogoAvatar = new ArrayList<>();
+	
+	public Avatar() {
+		super("Avatar");
 	}
 
 	@EventHandler

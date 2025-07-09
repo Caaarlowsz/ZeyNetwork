@@ -8,8 +8,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Snail implements Listener {
+public class Snail extends Kit implements Listener {
+
+	public Snail() {
+		super("Snail");
+	}
 
 	@EventHandler
 	public void onSnail(final EntityDamageByEntityEvent e) {

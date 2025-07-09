@@ -9,8 +9,13 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Specialist implements Listener {
+public class Specialist extends Kit implements Listener {
+
+	public Specialist() {
+		super("Specialist");
+	}
 
 	@EventHandler
 	public void onIasnteract(PlayerInteractEvent event) {

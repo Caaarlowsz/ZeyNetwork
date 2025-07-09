@@ -11,8 +11,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Hulk implements Listener {
+public class Hulk extends Kit implements Listener {
+
+	public Hulk() {
+		super("Hulk");
+	}
+
 	@EventHandler
 	public void PickUpPlayer(final PlayerInteractEntityEvent e) {
 		if (!(e.getRightClicked() instanceof Player)) {

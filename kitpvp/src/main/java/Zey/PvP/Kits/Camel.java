@@ -10,8 +10,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Camel implements Listener {
+public class Camel extends Kit implements Listener {
+
+	public Camel() {
+		super("Camel");
+	}
+
 	@EventHandler
 	public void Andar(final PlayerMoveEvent e) {
 		final Player p = e.getPlayer();

@@ -23,23 +23,19 @@ import org.bukkit.util.Vector;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class DeshFire implements Listener {
+public class DeshFire extends Kit implements Listener {
 	public int boost = 6;
-	public static ArrayList<String> Deshfire;
-	public static HashMap<String, ItemStack[]> Armadura;
-	public static HashMap<String, ItemStack[]> saveinv;
-	public static HashMap<String, ItemStack[]> armadura;
-	public static HashMap<String, ItemStack[]> Armadura2;
-	public static List<Player> cooldownm;
-
-	static {
-		DeshFire.Deshfire = new ArrayList<String>();
-		DeshFire.Armadura = new HashMap<String, ItemStack[]>();
-		DeshFire.saveinv = new HashMap<String, ItemStack[]>();
-		DeshFire.armadura = new HashMap<String, ItemStack[]>();
-		DeshFire.Armadura2 = new HashMap<String, ItemStack[]>();
-		DeshFire.cooldownm = new ArrayList<Player>();
+	public static ArrayList<String> Deshfire = new ArrayList<>();
+	public static HashMap<String, ItemStack[]> Armadura = new HashMap<>();
+	public static HashMap<String, ItemStack[]> saveinv = new HashMap<>();
+	public static HashMap<String, ItemStack[]> armadura = new HashMap<>();
+	public static HashMap<String, ItemStack[]> Armadura2 = new HashMap<>();
+	public static List<Player> cooldownm = new ArrayList<>();
+	
+	public DeshFire() {
+		super("DeshFire");
 	}
 
 	@EventHandler

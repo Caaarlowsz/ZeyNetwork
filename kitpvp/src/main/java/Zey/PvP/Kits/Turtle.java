@@ -9,8 +9,14 @@ import org.bukkit.event.entity.EntityDamageEvent;
 
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Turtle implements Listener {
+public class Turtle extends Kit implements Listener {
+
+	public Turtle() {
+		super("Turtle");
+	}
+
 	@EventHandler
 	public void onEntityDamage(final EntityDamageEvent e) {
 		if (!(e.getEntity() instanceof Player)) {

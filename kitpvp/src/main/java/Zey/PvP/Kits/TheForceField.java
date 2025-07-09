@@ -19,12 +19,13 @@ import org.bukkit.util.Vector;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class TheForceField implements Listener {
-	public static List<Player> cooldownm;
+public class TheForceField extends Kit implements Listener {
+	public static List<Player> cooldownm = new ArrayList<>();
 
-	static {
-		TheForceField.cooldownm = new ArrayList<Player>();
+	public TheForceField() {
+		super("ForceField");
 	}
 
 	@EventHandler

@@ -14,8 +14,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Switcher implements Listener {
+public class Switcher extends Kit implements Listener {
+
+	public Switcher() {
+		super("Switcher");
+	}
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void snowball(final EntityDamageByEntityEvent e) {

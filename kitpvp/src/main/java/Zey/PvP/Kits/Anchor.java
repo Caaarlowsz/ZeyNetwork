@@ -12,8 +12,14 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Anchor implements Listener {
+public class Anchor extends Kit implements Listener {
+
+	public Anchor() {
+		super("Anchor");
+	}
+
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void onPlayerHitAnchor(final EntityDamageByEntityEvent e) {
 		if (!(e.getEntity() instanceof Player)) {

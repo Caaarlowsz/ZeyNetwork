@@ -7,8 +7,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Viking implements Listener {
+public class Viking extends Kit implements Listener {
+
+	public Viking() {
+		super("Viking");
+	}
+
 	@EventHandler
 	public void aoviking(final EntityDamageByEntityEvent e) {
 		if (e.getDamager() instanceof Player && e.getDamager() instanceof Player) {

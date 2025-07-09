@@ -9,8 +9,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Swords implements Listener {
+public class Swords extends Kit implements Listener {
+
+	public Swords() {
+		super("Swords");
+	}
+
 	@EventHandler
 	public void SwordKit(final PlayerInteractEvent e) {
 		final Player player = e.getPlayer();

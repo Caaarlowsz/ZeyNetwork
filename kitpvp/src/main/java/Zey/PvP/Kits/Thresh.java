@@ -21,14 +21,14 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Thresh implements Listener {
-	public static HashMap<String, Long> cooldown;
-	public static HashMap<String, Snowball> tiros;
+public class Thresh extends Kit implements Listener {
+	public static HashMap<String, Long> cooldown = new HashMap<>();
+	public static HashMap<String, Snowball> tiros = new HashMap<>();
 
-	static {
-		Thresh.cooldown = new HashMap<String, Long>();
-		Thresh.tiros = new HashMap<String, Snowball>();
+	public Thresh() {
+		super("Thresh");
 	}
 
 	@EventHandler

@@ -13,8 +13,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Magma implements Listener {
+public class Magma extends Kit implements Listener {
+
+	public Magma() {
+		super("Magma");
+	}
+
 	@EventHandler
 	public void damage(final EntityDamageEvent e) {
 		if (!(e.getEntity() instanceof Player)) {

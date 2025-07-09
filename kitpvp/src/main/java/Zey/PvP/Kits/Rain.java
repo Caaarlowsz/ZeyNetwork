@@ -14,8 +14,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Rain implements Listener {
+public class Rain extends Kit implements Listener {
+
+	public Rain() {
+		super("Rain");
+	}
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onCage(final PlayerInteractEntityEvent e) {

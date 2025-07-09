@@ -14,8 +14,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Monk implements Listener {
+public class Monk extends Kit implements Listener {
+
+	public Monk() {
+		super("Monk");
+	}
+
 	@EventHandler
 	public void aoMonk(final PlayerInteractEntityEvent e) {
 		final Player p = e.getPlayer();

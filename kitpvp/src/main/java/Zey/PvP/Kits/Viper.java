@@ -8,8 +8,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Viper implements Listener {
+public class Viper extends Kit implements Listener {
+
+	public Viper() {
+		super("Viper");
+	}
 
 	@EventHandler
 	public void onSnail(final EntityDamageByEntityEvent e) {

@@ -15,8 +15,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Thor implements Listener {
+public class Thor extends Kit implements Listener {
+
+	public Thor() {
+		super("Thor");
+	}
+
 	@EventHandler
 	public void ThorKit(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();

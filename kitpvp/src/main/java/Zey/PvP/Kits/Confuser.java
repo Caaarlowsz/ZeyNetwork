@@ -16,8 +16,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Confuser implements Listener {
+public class Confuser extends Kit implements Listener {
+
+	public Confuser() {
+		super("Confuser");
+	}
+
 	@EventHandler
 	public void onConfusao(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();

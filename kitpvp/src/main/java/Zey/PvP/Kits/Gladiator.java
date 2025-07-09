@@ -22,8 +22,14 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Gladiator implements Listener {
+public class Gladiator extends Kit implements Listener {
+
+	public Gladiator() {
+		super("Gladiator");
+	}
+
 	private List<Block> gladiatorbloco = new ArrayList<>();
 	private HashMap<Block, Player> gladblock = new HashMap<>();
 	static HashMap<Player, Player> lutando = new HashMap<>();

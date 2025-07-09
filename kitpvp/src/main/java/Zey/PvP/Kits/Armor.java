@@ -18,12 +18,13 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Armor implements Listener {
-	public static HashMap<String, ItemStack[]> salvararmor;
-
-	static {
-		Armor.salvararmor = new HashMap<String, ItemStack[]>();
+public class Armor extends Kit implements Listener {
+	public static HashMap<String, ItemStack[]> salvararmor = new HashMap<>();
+	
+	public Armor() {
+		super("Armor");
 	}
 
 	public static ItemStack darArmaduraI(final Material material) {

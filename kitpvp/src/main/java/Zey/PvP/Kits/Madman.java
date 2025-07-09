@@ -12,8 +12,13 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Madman implements Listener {
+public class Madman extends Kit implements Listener {
+
+	public Madman() {
+		super("Madman");
+	}
 
 	@EventHandler
 	public void bater(EntityDamageByEntityEvent e) {

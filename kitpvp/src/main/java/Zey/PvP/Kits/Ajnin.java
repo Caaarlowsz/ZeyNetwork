@@ -16,14 +16,14 @@ import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Ajnin implements Listener {
-	public HashMap<Player, Player> ajinhash;
-	public HashMap<Player, Long> ajincooldown;
+public class Ajnin extends Kit implements Listener {
+	public HashMap<Player, Player> ajinhash = new HashMap<>();
+	public HashMap<Player, Long> ajincooldown = new HashMap<>();
 
 	public Ajnin() {
-		this.ajinhash = new HashMap<Player, Player>();
-		this.ajincooldown = new HashMap<Player, Long>();
+		super("Ajnin");
 	}
 
 	@EventHandler

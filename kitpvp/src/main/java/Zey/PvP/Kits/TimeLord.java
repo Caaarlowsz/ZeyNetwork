@@ -17,21 +17,16 @@ import org.bukkit.plugin.Plugin;
 
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class TimeLord implements Listener {
-	public static ArrayList<String> freeze;
-	public static ArrayList<String> freezing;
-	public ArrayList<String> frozenPlayers;
-	public static ArrayList<String> cooldownt;
-
-	static {
-		TimeLord.freeze = new ArrayList<String>();
-		TimeLord.freezing = new ArrayList<String>();
-		TimeLord.cooldownt = new ArrayList<String>();
-	}
+public class TimeLord extends Kit implements Listener {
+	public static ArrayList<String> freeze = new ArrayList<>();
+	public static ArrayList<String> freezing = new ArrayList<>();
+	public ArrayList<String> frozenPlayers = new ArrayList<>();
+	public static ArrayList<String> cooldownt = new ArrayList<>();
 
 	public TimeLord() {
-		this.frozenPlayers = new ArrayList<String>();
+		super("TimeLord");
 	}
 
 	@EventHandler

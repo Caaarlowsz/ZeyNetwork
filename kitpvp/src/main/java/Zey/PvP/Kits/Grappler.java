@@ -19,9 +19,14 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.KitAPI;
 import net.minecraft.server.v1_7_R4.EntityHuman;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Grappler implements Listener {
+public class Grappler extends Kit implements Listener {
 	Map<Player, Cordinha> hooks = new HashMap<>();
+
+	public Grappler() {
+		super("Grappler");
+	}
 
 	@EventHandler
 	public void onSlot(final PlayerItemHeldEvent e) {

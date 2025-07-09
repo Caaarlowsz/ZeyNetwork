@@ -25,8 +25,14 @@ import org.bukkit.util.Vector;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Sonic implements Listener {
+public class Sonic extends Kit implements Listener {
+	
+	public Sonic() {
+		super("Sonic");
+	}
+
 	public int boost = 6;
 	public static ArrayList<String> Sonic;
 	public static HashMap<String, ItemStack[]> Armadura;

@@ -6,8 +6,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class AntiTower implements Listener {
+public class AntiTower extends Kit implements Listener {
+
+	public AntiTower() {
+		super("AntiTower");
+	}
+
 	@EventHandler
 	public void aogalinha(final EntityDamageEvent e) {
 		if (!(e.getEntity() instanceof Player)) {

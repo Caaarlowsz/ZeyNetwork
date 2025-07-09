@@ -18,17 +18,17 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Kangaroo implements Listener {
+public class Kangaroo extends Kit implements Listener {
+
 	public static Main plugin;
-	public static ArrayList<Player> kanga;
-	public static ArrayList<Player> fujao;
-	public static List<Player> kangacd;
+	public static ArrayList<Player> kanga = new ArrayList<>();
+	public static ArrayList<Player> fujao = new ArrayList<>();
+	public static List<Player> kangacd = new ArrayList<>();
 
-	static {
-		Kangaroo.kanga = new ArrayList<Player>();
-		Kangaroo.fujao = new ArrayList<Player>();
-		Kangaroo.kangacd = new ArrayList<Player>();
+	public Kangaroo() {
+		super("Kangaroo");
 	}
 
 	@EventHandler

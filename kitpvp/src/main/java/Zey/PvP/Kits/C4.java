@@ -25,12 +25,13 @@ import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class C4 implements Listener {
-	public static HashMap<String, Item> bomba;
-
-	static {
-		C4.bomba = new HashMap<String, Item>();
+public class C4 extends Kit implements Listener {
+	public static HashMap<String, Item> bomba = new HashMap<>();
+	
+	public C4() {
+		super("C4");
 	}
 
 	@EventHandler

@@ -1,4 +1,10 @@
 package Zey.PvP.Kits;
 
-public class QuickDropper {
+import tk.zeynetwork.kitpvp.api.Kit;
+
+public class QuickDropper extends Kit {
+
+	public QuickDropper() {
+		super("QuickDropper");
+	}
 }

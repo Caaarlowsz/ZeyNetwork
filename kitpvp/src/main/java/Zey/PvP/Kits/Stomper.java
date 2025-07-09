@@ -8,8 +8,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.api.Kit;
 
-public class Stomper implements Listener {
+public class Stomper extends Kit implements Listener {
+
+	public Stomper() {
+		super("Stomper");
+	}
 
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerStomp(final EntityDamageEvent e) {
