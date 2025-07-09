@@ -64,6 +64,7 @@ import Zey.PvP.Warps.Spawn;
 import Zey.PvP.Warps.TheMain;
 import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ClassGetter;
 import tk.zeynetwork.utils.ConfigUtils;
 
@@ -76,6 +77,12 @@ public final class Main extends JavaPlugin {
 
 	public static List<String> admins = Lists.newArrayList();
 
+	private static KitPvPAPI api;
+	
+	public static KitPvPAPI getAPI() {
+		return api;
+	}
+	
 	public static Main getPlugin() {
 		return getPlugin(Main.class);
 	}
@@ -83,6 +90,7 @@ public final class Main extends JavaPlugin {
 	public void onEnable() {
 		SManager.onEnable();
 
+		api = new KitPvPAPI(this);
 		ConfigUtils.setupDefaultConfig(this);
 		ClassGetter.registerListeners(this, "Zey.PvP");
 		this.logPluginStatus(true);
