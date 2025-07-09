@@ -9,64 +9,64 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
 import Zey.PvP.APIs.TheTitle;
-import Zey.PvP.APIs.WarpAPI;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
 
 public class KitCommand implements CommandExecutor {
 	public KitCommand(final Main main) {
 	}
 
-	@SuppressWarnings("deprecation")
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
+		String warp = Main.getAPI().getWarp(p).getName();
 		if (label.equalsIgnoreCase("kit")) {
 			if (args.length == 0) {
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cErrado, utilize a sintaxe correta: /kit (kit)");
 				return true;
 			}
 
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+			if (warp == "Nenhuma") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cNo momento, você está no /admin. Para pegar um kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Arena") {
+			if (warp == "Arena") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê já está utilizando um Kit. Para pegar outro, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Evento") {
+			if (warp == "Evento") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê está em uma Warp. Para utilizar um Kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Fps") {
+			if (warp == "Fps") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê está em uma Warp. Para utilizar um Kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+			if (warp == "Challenge") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê está em uma Warp. Para utilizar um Kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Parkour") {
+			if (warp == "Parkour") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê está em uma Warp. Para utilizar um Kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Main") {
+			if (warp == "Main") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê está em uma Warp. Para utilizar um Kit, volte ao spawn usando o comando: /spawn");
 				return true;
 			}
 		}
 
-		if (p.hasPermission("zey.pvp.admin") && Zey.PvP.APIs.WarpAPI.getWarp(p) == "Nenhuma") {
+		if (p.hasPermission("zey.pvp.admin") && warp == "Nenhuma") {
 			Main.admins.remove(p.getName());
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 
@@ -529,7 +529,7 @@ public class KitCommand implements CommandExecutor {
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIKING");
 				TheTitle.sendTitle(p, "§e§lVIKING");
 				SetArenaCommand.TeleportArenaRandom(p);
-				WarpAPI.setWarp(p, "Arena");
+				Main.getAPI().setWarp(p, Warps.ARENA);
 			}
 		}
 		if (args[0].equalsIgnoreCase("madman")) {

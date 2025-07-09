@@ -23,27 +23,28 @@ public class RecraftCommand implements CommandExecutor {
 
 		if (Cmd.getName().equalsIgnoreCase("recraft")) {
 
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+			String warp = Main.getAPI().getWarp(p).getName();
+			if (warp == "Challenge") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Main") {
+			if (warp == "Main") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Fps") {
+			if (warp == "Fps") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Parkour") {
+			if (warp == "Parkour") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
-			if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Spawn") {
+			if (warp == "Spawn") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, pegue um Kit, usando o comando: /kit (kit)");
 				return true;

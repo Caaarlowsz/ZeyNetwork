@@ -31,7 +31,7 @@ public class ParkourJump implements Listener {
 	public void onPlayerJumpBaixo(final PlayerMoveEvent e) {
 		final Player p = e.getPlayer();
 		if (e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.REDSTONE_BLOCK
-				&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Parkour") {
+				&& Main.getAPI().getWarp(p).getName() == "Parkour") {
 
 			p.playSound(p.getLocation(), Sound.DOOR_OPEN, 5.0f, 5.0f);
 			final World w = Bukkit.getServer().getWorld(Parkour.plugin.getConfig().getString("parkour.world"));

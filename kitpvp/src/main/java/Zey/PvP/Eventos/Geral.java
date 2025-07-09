@@ -49,7 +49,6 @@ import org.bukkit.help.HelpTopic;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Zey.PvP.APIs.WarpAPI;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Warps.Parkour;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
@@ -146,7 +145,7 @@ public class Geral implements Listener {
 		final Location lobby = new Location(w, x, y, z);
 		lobby.setPitch((float) Parkour.plugin.getConfig().getDouble("parkour.pitch"));
 		lobby.setYaw((float) Parkour.plugin.getConfig().getDouble("parkour.yaw"));
-		if (l.getBlockY() <= 0 && WarpAPI.getWarp(p) == "Parkour") {
+		if (l.getBlockY() <= 0 && Main.getAPI().getWarp(p).getName() == "Parkour") {
 			p.setHealth(20.0);
 			p.teleport(lobby);
 		}

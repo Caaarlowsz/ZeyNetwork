@@ -24,6 +24,7 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Warps;
 
 public class C4 implements Listener {
 	public static HashMap<String, Item> bomba;
@@ -112,7 +113,7 @@ public class C4 implements Listener {
 			Habilidade.removeAbility(p);
 			p.setGameMode(GameMode.SURVIVAL);
 
-			Zey.PvP.APIs.WarpAPI.setWarp(p, "Spawn");
+			Main.getAPI().setWarp(p, Warps.SPAWN);
 		}
 	}
 }

@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import Zey.PvP.Main.Main;
 import Zey.PvP.Menus.MenuGeral1;
 import Zey.PvP.Menus.MenuKits;
 import Zey.PvP.Menus.MenuWarps;
@@ -23,7 +24,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.BOOK)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lMENU GERAL")
-				&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Spawn") {
+				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -40,7 +41,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.ENDER_CHEST)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lKITS")
-				&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Spawn") {
+				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -57,7 +58,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.PAPER)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lWARPS")
-				&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Spawn") {
+				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -74,7 +75,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.REDSTONE)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§c§lVOLTAR")
-				&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Parkour") {
+				&& Main.getAPI().getWarp(p).getName() == "Parkour") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {

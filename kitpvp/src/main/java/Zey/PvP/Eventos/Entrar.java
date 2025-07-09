@@ -14,11 +14,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import Zey.PvP.APIs.TheTitle;
-import Zey.PvP.APIs.WarpAPI;
 import Zey.PvP.Commands.BuildCommand;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Warps;
 
 public class Entrar implements Listener {
 	@EventHandler
@@ -32,7 +32,7 @@ public class Entrar implements Listener {
 		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
-		WarpAPI.setWarp(p, "Spawn");
+		Main.getAPI().setWarp(p, Warps.SPAWN);
 
 		Proteção.setImortal(p, true);
 		Proteção.isImortal(p);
@@ -83,7 +83,7 @@ public class Entrar implements Listener {
 		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
-		WarpAPI.setWarp(p, "Spawn");
+		Main.getAPI().setWarp(p, Warps.SPAWN);
 
 		Proteção.setImortal(p, true);
 		Proteção.isImortal(p);

@@ -59,10 +59,11 @@ public class PlacaDaLava implements Listener {
 						|| (e.getClickedBlock().getType() == Material.SIGN_POST)) {
 					Sign s = (Sign) e.getClickedBlock().getState();
 					String[] lines = s.getLines();
+					String warp = Main.getAPI().getWarp(p).getName();
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
 							&& (lines[1].equals("§c§lCHALLENGE")) && (lines.length > 2) && (lines[2].equals(""))
 							&& (lines.length > 3) && (lines[3].equals("§7(Fácil)"))
-							&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+							&& warp == "Challenge") {
 
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §efácil§7.");
 
@@ -97,7 +98,7 @@ public class PlacaDaLava implements Listener {
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
 							&& (lines[1].equals("§c§lCHALLENGE")) && (lines.length > 2) && (lines[2].equals(""))
 							&& (lines.length > 3) && (lines[3].equals("§7(Médio)"))
-							&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+							&& warp == "Challenge") {
 
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §emedio§7.");
 
@@ -132,7 +133,7 @@ public class PlacaDaLava implements Listener {
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
 							&& (lines[1].equals("§c§lCHALLENGE")) && (lines.length > 2) && (lines[2].equals(""))
 							&& (lines.length > 3) && (lines[3].equals("§7(Difícil)"))
-							&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+							&& warp == "Challenge") {
 
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §edifício§7.");
 
@@ -168,7 +169,7 @@ public class PlacaDaLava implements Listener {
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
 							&& (lines[1].equals("§c§lCHALLENGE")) && (lines.length > 2) && (lines[2].equals(""))
 							&& (lines.length > 3) && (lines[3].equals("§7(Extremo)"))
-							&& Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+							&& warp == "Challenge") {
 
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §eextremo§7.");
 

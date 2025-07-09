@@ -20,27 +20,28 @@ public class FlyCommand implements CommandExecutor {
 			return true;
 		}
 
-		if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Arena") {
+		String warp = Main.getAPI().getWarp(p).getName();
+		if (warp == "Arena") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
-		if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Fps") {
+		if (warp == "Fps") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
-		if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Challenge") {
+		if (warp == "Challenge") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
-		if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Parkour") {
+		if (warp == "Parkour") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
-		if (Zey.PvP.APIs.WarpAPI.getWarp(p) == "Main") {
+		if (warp == "Main") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;

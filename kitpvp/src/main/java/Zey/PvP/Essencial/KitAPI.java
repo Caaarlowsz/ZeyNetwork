@@ -10,7 +10,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-import Zey.PvP.APIs.WarpAPI;
+import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Warps;
 
 public class KitAPI {
 
@@ -96,7 +97,7 @@ public class KitAPI {
 		p.setAllowFlight(false);
 		p.setFlying(false);
 
-		WarpAPI.setWarp(p, "Arena");
+		Main.getAPI().setWarp(p, Warps.ARENA);
 	}
 
 	public static void sword(final Player p) {
@@ -118,7 +119,7 @@ public class KitAPI {
 		p.setAllowFlight(false);
 		p.setFlying(false);
 
-		WarpAPI.setWarp(p, "Arena");
+		Main.getAPI().setWarp(p, Warps.ARENA);
 	}
 
 	public static void setitem(final Player p, final Material mat, final String nome, final int lugar,

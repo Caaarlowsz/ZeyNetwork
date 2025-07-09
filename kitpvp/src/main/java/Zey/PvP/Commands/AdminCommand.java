@@ -19,7 +19,6 @@ import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import net.minecraft.util.com.google.common.collect.Maps;
 
-@SuppressWarnings({ "deprecation" })
 public class AdminCommand implements CommandExecutor {
 
 	public Main main;
@@ -52,7 +51,7 @@ public class AdminCommand implements CommandExecutor {
 					KitAPI.remove(p);
 					Habilidade.removeAbility(p);
 
-					Zey.PvP.APIs.WarpAPI.setWarp(p, "Nenhuma");
+					Main.getAPI().removeWarp(p);
 
 					p.getInventory().setBoots((ItemStack) null);
 					p.getInventory().setChestplate((ItemStack) null);
@@ -126,7 +125,7 @@ public class AdminCommand implements CommandExecutor {
 					Proteção.isImortal(p);
 
 					p.setGameMode(GameMode.SURVIVAL);
-					Zey.PvP.APIs.WarpAPI.setWarp(p, "Nenhuma");
+					Main.getAPI().removeWarp(p);
 
 					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
 					BuildCommand.embuild.remove(p);
