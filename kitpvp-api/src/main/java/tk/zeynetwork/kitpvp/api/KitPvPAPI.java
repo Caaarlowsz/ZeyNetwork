@@ -15,6 +15,8 @@ public final class KitPvPAPI implements KitPvP {
 
 	private HashSet<Warp> warps = new HashSet<>();
 	private HashMap<Player, Warp> warpMap = new HashMap<>();
+	private HashSet<Kit> kits = new HashSet<>();
+	private HashMap<Player, Kit> kitMap = new HashMap<>();
 
 	public KitPvPAPI(Plugin plugin) {
 		if (instance != null)
@@ -82,5 +84,45 @@ public final class KitPvPAPI implements KitPvP {
 	@Override
 	public void removeWarp(Player player) {
 		warpMap.remove(player);
+	}
+
+	@Override
+	public Set<Kit> getKits() {
+		return Collections.unmodifiableSet(this.kits);
+	}
+
+	@Override
+	public Kit getKit(String name) {
+		return this.getKits().stream().filter(k -> k.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	}
+
+	@Override
+	public void addKit(Kit kit) {
+		this.kits.add(kit);
+	}
+
+	@Override
+	public void removeKit(Kit kit) {
+		this.kits.remove(kit);
+	}
+
+	@Override
+	public boolean hasKit(Player player) {
+		return this.kitMap.containsKey(player);
+	}
+
+	@Override
+	public Kit getKit(Player player) {
+		return this.kitMap.getOrDefault(player, null);
+	}
+
+	@Override
+	public void setKit(Player player, Kit kit) {
+		this.kitMap.put(player, kit);
+	}
+
+	@Override
+	public void removeKit(Player player) {
+		this.kitMap.remove(player);
 	}
 }
