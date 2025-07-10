@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
@@ -39,6 +40,34 @@ public class ItemUtils {
 		return item;
 	}
 
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level) {
+		return enchantedItem(type, enchantment, level, 1);
+	}
+
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level, int amount) {
+		return enchantedItem(type, enchantment, level, amount, 0);
+	}
+
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level, int amount,
+			int durability) {
+		return enchantItem(item(type, amount, durability), enchantment, level);
+	}
+
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level, String display,
+			String... lore) {
+		return enchantedItem(type, enchantment, level, 1, display, lore);
+	}
+
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level, int amount, String display,
+			String... lore) {
+		return enchantedItem(type, enchantment, level, amount, 0, display, lore);
+	}
+
+	public static ItemStack enchantedItem(Material type, Enchantment enchantment, int level, int amount, int durability,
+			String display, String... lore) {
+		return enchantItem(item(type, amount, durability, display, lore), enchantment, level);
+	}
+
 	public static ItemStack leatherArmor(Material type, Color color) {
 		return leatherArmor(type, color, 1);
 	}
@@ -62,6 +91,11 @@ public class ItemUtils {
 	public static ItemStack leatherArmor(Material type, Color color, int amount, int durability, String display,
 			String... lore) {
 		return colorArmor(item(type, amount, durability, display, lore), color);
+	}
+
+	private static ItemStack enchantItem(ItemStack item, Enchantment enchantment, int level) {
+		item.addUnsafeEnchantment(enchantment, level);
+		return item;
 	}
 
 	private static ItemStack colorArmor(ItemStack item, Color color) {
