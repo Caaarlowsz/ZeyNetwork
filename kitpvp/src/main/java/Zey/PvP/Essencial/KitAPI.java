@@ -17,27 +17,6 @@ public class KitAPI {
 
 	public static ArrayList<String> ForceField1 = new ArrayList<>();
 
-	public static void recraft(final Player p) {
-		final ItemStack sopas = new ItemStack(Material.BOWL, 64);
-		final ItemMeta ksopas = sopas.getItemMeta();
-		sopas.setItemMeta(ksopas);
-		final ItemStack cogur = new ItemStack(Material.RED_MUSHROOM, 64);
-		final ItemMeta kcogur = cogur.getItemMeta();
-		cogur.setItemMeta(kcogur);
-		final ItemStack cogum = new ItemStack(Material.BROWN_MUSHROOM, 64);
-		final ItemMeta kcogum = cogum.getItemMeta();
-		cogum.setItemMeta(kcogum);
-
-		p.getInventory().setItem(13, sopas);
-		p.getInventory().setItem(14, cogur);
-		p.getInventory().setItem(15, cogum);
-		final ItemStack espada1 = new ItemStack(Material.COMPASS);
-		final ItemMeta kespada1 = espada1.getItemMeta();
-		kespada1.setDisplayName("§e§lB§SSOLA");
-		espada1.setItemMeta(kespada1);
-		p.getInventory().setItem(8, espada1);
-	}
-
 	public static void swordkitpvp(final Player p) {
 		final ItemStack item = new ItemStack(Material.STONE_SWORD);
 		final ItemMeta itemmeta = item.getItemMeta();
