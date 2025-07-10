@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Kits;
@@ -248,7 +247,7 @@ public class KitCommand implements CommandExecutor {
 				p.getInventory().clear();
 				api.setKit(p, Kits.KANGAROO);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lKANGAROO");
-				KitUtil.darItem(p, Material.FIREWORK, 1, "§e§lKANGAROO", 1);
+				p.getInventory().setItem(1, ItemUtils.item(Material.FIREWORK, "§e§lKANGAROO"));
 				TitleAPI.sendTitle(p, "§e§lKANGAROO");
 				SetArenaCommand.TeleportArenaRandom(p);
 			}
@@ -343,7 +342,7 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.switcher") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				api.setKit(p, Kits.SWITCHER);
-				KitUtil.darItem(p, Material.SNOW_BALL, 64, "§e§lSWITCHER", 1);
+				p.getInventory().setItem(1, ItemUtils.item(Material.SNOW_BALL, 64, "§e§lSWITCHER"));
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSWITCHER");
 				TitleAPI.sendTitle(p, "§e§lSWITCHER");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -409,7 +408,7 @@ public class KitCommand implements CommandExecutor {
 		if (args[0].equalsIgnoreCase("viking")) {
 			if (p.hasPermission("kit.Viking") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
-				KitUtil.darItem(p, Material.STONE_AXE, 1, "§e§lVIKING", 0);
+				p.getInventory().setItem(0, ItemUtils.item(Material.STONE_AXE, "§e§lVIKING"));
 				api.setKit(p, Kits.VIKING);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIKING");
 				TitleAPI.sendTitle(p, "§e§lVIKING");
@@ -430,7 +429,7 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.specialist") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				api.setKit(p, Kits.SPECIALIST);
-				KitUtil.darItem(p, Material.ENCHANTED_BOOK, 1, "§e§lSPECIALIST", 1);
+				p.getInventory().setItem(1, ItemUtils.item(Material.ENCHANTED_BOOK, "§e§lSPECIALIST"));
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSPECIALIST");
 				TitleAPI.sendTitle(p, "§e§lSPECIALIST");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -440,7 +439,7 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.hotpotato") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				api.setKit(p, Kits.HOTPOTATO);
-				KitUtil.darItem(p, Material.POTATO, 1, "§e§lHOTPOTATO", 1);
+				p.getInventory().setItem(1, ItemUtils.item(Material.POTATO, "§e§lHOTPOTATO"));
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lHOTPOTATO");
 				TitleAPI.sendTitle(p, "§e§lHOTPOTATO");
 				SetArenaCommand.TeleportArenaRandom(p);
