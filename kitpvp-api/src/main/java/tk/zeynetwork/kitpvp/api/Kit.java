@@ -1,5 +1,7 @@
 package tk.zeynetwork.kitpvp.api;
 
+import org.bukkit.entity.Player;
+
 public class Kit {
 
 	private final String name;
@@ -10,5 +12,8 @@ public class Kit {
 
 	public String getName() {
 		return this.name;
+	}
+
+	public void giveItems(Player player) {
 	}
 }
