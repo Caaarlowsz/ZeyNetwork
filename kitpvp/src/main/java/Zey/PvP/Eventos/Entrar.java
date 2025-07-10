@@ -32,7 +32,6 @@ public class Entrar implements Listener {
 
 		KitPvP api = KitPvPAPI.getInstance();
 		api.removeKit(p);
-		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
 		api.setWarp(p, Warps.SPAWN);
@@ -84,7 +83,6 @@ public class Entrar implements Listener {
 
 		KitPvP api = KitPvPAPI.getInstance();
 		api.removeKit(p);
-		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
 		api.setWarp(p, Warps.SPAWN);

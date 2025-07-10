@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
@@ -86,7 +87,7 @@ public class PlacaDaLava implements Listener {
 						lobby.setYaw((float) Main.getPlugin().getConfig().getDouble("lava.yaw"));
 						p.teleport(lobby);
 
-						Habilidade.setAbility(p, "Challenge");
+						api.setWarp(p, Warps.CHALLENGE);
 
 						ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 						for (int i = 0; i < 36; i++) {
@@ -121,7 +122,7 @@ public class PlacaDaLava implements Listener {
 						lobby.setYaw((float) Main.getPlugin().getConfig().getDouble("lava.yaw"));
 						p.teleport(lobby);
 
-						Habilidade.setAbility(p, "Challenge");
+						api.setWarp(p, Warps.CHALLENGE);
 
 						ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 						for (int i = 0; i < 36; i++) {
@@ -156,7 +157,7 @@ public class PlacaDaLava implements Listener {
 						lobby.setYaw((float) Main.getPlugin().getConfig().getDouble("lava.yaw"));
 						p.teleport(lobby);
 
-						Habilidade.setAbility(p, "Challenge");
+						api.setWarp(p, Warps.CHALLENGE);
 
 						ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 						for (int i = 0; i < 36; i++) {
@@ -197,7 +198,7 @@ public class PlacaDaLava implements Listener {
 						lobby.setYaw((float) Main.getPlugin().getConfig().getDouble("lava.yaw"));
 						p.teleport(lobby);
 
-						Habilidade.setAbility(p, "Challenge");
+						api.setWarp(p, Warps.CHALLENGE);
 
 						ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
 						for (int i = 0; i < 36; i++) {

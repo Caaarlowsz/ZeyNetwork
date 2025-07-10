@@ -8,7 +8,6 @@ import org.bukkit.scoreboard.DisplaySlot;
 import Zey.PvP.Account.Grupos;
 import Zey.PvP.Config.Status;
 import Zey.PvP.Config.ZeyCoins;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
@@ -201,7 +200,7 @@ public class SPlayer {
 		this.sb.updateLine(12, "  §fDeaths: §7"
 				+ Main.getPlugin().getConfig().getInt("status." + p.getName().toLowerCase() + ".mortes"));
 		this.sb.updateLine(10, "  §fZeyCoins: §a" + ZeyCoins.getPlayerMoney(p));
-		this.sb.updateLine(9, "  §fKit: §e" + Habilidade.getAbility(p));
+		this.sb.updateLine(9, "  §fKit: §e" + KitPvPAPI.getKit(p).getName());
 
 		this.sb.updateLine(8, "  §fWarp: §e" + KitPvPAPI.getWarp(p).getName());
 

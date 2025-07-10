@@ -18,7 +18,6 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Commands.BuildCommand;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
@@ -84,7 +83,6 @@ public class Fps extends Warp implements CommandExecutor {
 					p.setFlying(false);
 
 					api.removeKit(p);
-					Habilidade.removeAbility(p);
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);
 

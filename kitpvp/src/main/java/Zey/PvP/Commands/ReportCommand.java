@@ -12,8 +12,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Zey.PvP.APIs.TheTitle;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class ReportCommand implements CommandExecutor {
 
@@ -55,7 +55,7 @@ public class ReportCommand implements CommandExecutor {
 							s.sendMessage("§c             §c§lNOVO REPORT!§c               ");
 							s.sendMessage("§c");
 							s.sendMessage("   §7Jogador Reportado: §c" + target.getName());
-							s.sendMessage("   §7Kit do Suspeito: §c" + Habilidade.getAbility(p));
+							s.sendMessage("   §7Kit do Suspeito: §c" + KitPvPAPI.getKit(p));
 							s.sendMessage("   §7Servidor: §c" + Bukkit.getServerName());
 							s.sendMessage("§c");
 							s.sendMessage("   §7Jogador que Reportou: §a" + p.getName());

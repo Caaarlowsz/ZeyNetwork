@@ -13,7 +13,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import net.minecraft.util.com.google.common.collect.Maps;
@@ -51,8 +50,6 @@ public class AdminCommand implements CommandExecutor {
 
 					KitPvP api = KitPvPAPI.getInstance();
 					api.removeKit(p);
-					Habilidade.removeAbility(p);
-
 					api.removeWarp(p);
 
 					p.getInventory().setBoots((ItemStack) null);
