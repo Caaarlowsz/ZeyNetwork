@@ -46,7 +46,7 @@ public class Armor extends Kit implements Listener {
 				return;
 			}
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
-			KitUtil.tirarArmadura(p);
+			p.getInventory().setArmorContents(null);
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você recebeu sua armadura temporaria.");
 			p.getInventory()
 					.setArmorContents(new ItemStack[] { darArmaduraI(Material.GOLD_HELMET),
@@ -57,7 +57,7 @@ public class Armor extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					KitUtil.tirarArmadura(p);
+					p.getInventory().setArmorContents(null);
 					p.getInventory().setArmorContents((ItemStack[]) Armor.salvararmor.get(p.getName()));
 					Armor.salvararmor.remove(p.getName());
 					p.updateInventory();
