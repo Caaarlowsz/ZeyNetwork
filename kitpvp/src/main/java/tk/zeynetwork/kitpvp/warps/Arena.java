@@ -1,5 +1,6 @@
 package tk.zeynetwork.kitpvp.warps;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.PlayerInventory;
@@ -18,6 +19,8 @@ public final class Arena extends Warp {
 		super.giveItems(player);
 
 		PlayerInventory inv = player.getInventory();
+		inv.setChestplate(ItemUtils.leatherArmor(Material.LEATHER_CHESTPLATE, Color.RED));
+		inv.setItem(0, ItemUtils.item(Material.STONE_SWORD, "§e§lESPADA"));
 		inv.setItem(8, ItemUtils.item(Material.COMPASS, "§e§lBÚSSOLA"));
 		inv.setItem(13, ItemUtils.item(Material.BOWL, 64));
 		inv.setItem(14, ItemUtils.item(Material.RED_MUSHROOM, 64));
