@@ -8,7 +8,6 @@ import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -17,13 +16,13 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Commands.BuildCommand;
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.api.Warp;
+import tk.zeynetwork.utils.ItemUtils;
 import tk.zeynetwork.utils.TitleAPI;
 
 public class Spawn extends Warp implements CommandExecutor {
@@ -118,11 +117,11 @@ public class Spawn extends Warp implements CommandExecutor {
 
 					p.getInventory().setItem(0, vidrohot);
 					p.getInventory().setItem(1, vidrohot);
-					KitAPI.setitem(p, Material.PAPER, "§e§lWARPS", 2, Enchantment.DAMAGE_ALL, 0, false);
+					p.getInventory().setItem(2, ItemUtils.item(Material.PAPER, "§e§lWARPS"));
 					p.getInventory().setItem(3, vidrohot);
-					KitAPI.setitem(p, Material.ENDER_CHEST, "§e§lKITS", 4, Enchantment.DAMAGE_ALL, 0, false);
+					p.getInventory().setItem(4, ItemUtils.item(Material.ENDER_CHEST, "§e§lKITS"));
 					p.getInventory().setItem(5, vidrohot);
-					KitAPI.setitem(p, Material.BOOK, "§e§lMENU GERAL", 6, Enchantment.DAMAGE_ALL, 0, false);
+					p.getInventory().setItem(6, ItemUtils.item(Material.BOOK, "§e§lMENU GERAL"));
 					p.getInventory().setItem(7, vidrohot);
 					p.getInventory().setItem(8, vidrohot);
 
