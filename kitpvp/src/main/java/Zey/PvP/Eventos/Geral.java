@@ -460,7 +460,7 @@ public class Geral implements Listener {
 			if ((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 					&& p.getItemInHand().getTypeId() == 282) {
 				p.setHealth((hp.getHealth() + 7.0 > hp.getMaxHealth()) ? hp.getMaxHealth() : (hp.getHealth() + 7.0));
-				if (KitPvPAPI.getKit(p).equals(Kits.QUICKDROPPER)) {
+				if (!KitPvPAPI.getKit(p).equals(Kits.QUICKDROPPER)) {
 					p.getItemInHand().setItemMeta(kpote);
 					p.getItemInHand().setType(Material.BOWL);
 				} else {
