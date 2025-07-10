@@ -11,9 +11,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.TitleAPI;
 
 public class ReportCommand implements CommandExecutor {
 
@@ -25,7 +25,6 @@ public class ReportCommand implements CommandExecutor {
 		this.plugin = plugin;
 	}
 
-	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		final Player p = (Player) sender;
 		if (!(sender instanceof Player)) {
@@ -50,7 +49,7 @@ public class ReportCommand implements CommandExecutor {
 						Player s = arrayOfPlayer[i];
 						if (s.hasPermission("zey.pvp.receberreport")) {
 							s.playSound(s.getLocation(), Sound.LEVEL_UP, 15.0F, 1.0F);
-							TheTitle.sendTitle(s, "§e§lREPORT");
+							TitleAPI.sendTitle(s, "§e§lREPORT");
 							s.sendMessage("§c");
 							s.sendMessage("§c             §c§lNOVO REPORT!§c               ");
 							s.sendMessage("§c");

@@ -13,7 +13,6 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Commands.BuildCommand;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
@@ -21,14 +20,14 @@ import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.TitleAPI;
 
 public class Entrar implements Listener {
 	@EventHandler
 	public void Join(final PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
 
-		TheTitle.sendTitle(p, Main.PREFIX);
-		TheTitle.sendSubTitle(p, "§fTreine para se tornar o melhor!");
+		TitleAPI.sendTitle(p, Main.PREFIX, "§fTreine para se tornar o melhor!");
 
 		KitPvP api = KitPvPAPI.getInstance();
 		api.removeKit(p);
@@ -105,8 +104,7 @@ public class Entrar implements Listener {
 		p.getInventory().setItem(7, vidrohot);
 		p.getInventory().setItem(8, vidrohot);
 
-		TheTitle.sendTitle(p, Main.PREFIX);
-		TheTitle.sendSubTitle(p, "§7Você morreu.");
+		TitleAPI.sendTitle(p, Main.PREFIX, "§7Você morreu.");
 	}
 
 	public static void setitem(final Player p, final Material mat, final String nome, final int lugar,

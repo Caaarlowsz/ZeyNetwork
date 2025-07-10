@@ -16,7 +16,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Commands.BuildCommand;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
@@ -25,8 +24,8 @@ import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.api.Warp;
+import tk.zeynetwork.utils.TitleAPI;
 
-@SuppressWarnings("unused")
 public class Spawn extends Warp implements CommandExecutor {
 	public static Main plugin = Main.getPlugin();
 
@@ -51,7 +50,6 @@ public class Spawn extends Warp implements CommandExecutor {
 
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Spawn.plugin, (Runnable) new Runnable() {
 
-				@SuppressWarnings("deprecation")
 				@Override
 				public void run() {
 
@@ -108,7 +106,7 @@ public class Spawn extends Warp implements CommandExecutor {
 					p.setFoodLevel(20000);
 					p.setHealth(20.0);
 
-					TheTitle.sendTitle(p, "§e§lSPAWN");
+					TitleAPI.sendTitle(p, "§e§lSPAWN");
 
 					Proteção.setImortal(p, true);
 					Proteção.isImortal(p);

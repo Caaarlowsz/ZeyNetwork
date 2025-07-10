@@ -16,7 +16,6 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Commands.BuildCommand;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
@@ -24,8 +23,8 @@ import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.api.Warp;
+import tk.zeynetwork.utils.TitleAPI;
 
-@SuppressWarnings("unused")
 public class TheMain extends Warp implements CommandExecutor {
 	public static Main plugin = Main.getPlugin();
 
@@ -50,7 +49,6 @@ public class TheMain extends Warp implements CommandExecutor {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) TheMain.plugin, (Runnable) new Runnable() {
-				@SuppressWarnings("deprecation")
 				@Override
 				public void run() {
 					p.teleport(lobby);
@@ -70,7 +68,7 @@ public class TheMain extends Warp implements CommandExecutor {
 					p.setAllowFlight(false);
 					p.setFlying(false);
 
-					TheTitle.sendTitle(p, "§e§lMAIN");
+					TitleAPI.sendTitle(p, "§e§lMAIN");
 
 					KitPvP api = KitPvPAPI.getInstance();
 

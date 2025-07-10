@@ -5,14 +5,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Zey.PvP.APIs.TheTitle;
+import tk.zeynetwork.utils.TitleAPI;
 
 public class LimparTelaCommand implements CommandExecutor {
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("limpartela")) {
-			TheTitle.reset(p);
+			TitleAPI.reset(p);
 		}
 		return false;
 	}
