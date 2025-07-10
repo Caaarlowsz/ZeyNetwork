@@ -29,16 +29,17 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Avatar extends Kit implements Listener {
 	public static List<String> arAvatar = new ArrayList<>();
 	public static List<String> águaAvatar = new ArrayList<>();
 	public static List<String> terraAvatar = new ArrayList<>();
 	public static List<String> fogoAvatar = new ArrayList<>();
-	
+
 	public Avatar() {
 		super("Avatar");
 	}
@@ -46,7 +47,7 @@ public class Avatar extends Kit implements Listener {
 	@EventHandler
 	public void aoAvatar(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")) {
+		if (KitPvPAPI.getKit(p).equals(Kits.AVATAR)) {
 			final ItemStack ar = new ItemStack(Material.WOOL);
 			final ItemMeta arm = ar.getItemMeta();
 			arm.setDisplayName("§eAvatar§7 (§f§lAR§7)");
@@ -98,7 +99,7 @@ public class Avatar extends Kit implements Listener {
 	@EventHandler
 	public void ar(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")
+		if (KitPvPAPI.getKit(p).equals(Kits.AVATAR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.WOOL) {
 			e.setCancelled(true);
@@ -143,7 +144,7 @@ public class Avatar extends Kit implements Listener {
 	@EventHandler
 	public void água(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")
+		if (KitPvPAPI.getKit(p).equals(Kits.AVATAR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.LAPIS_BLOCK) {
 			e.setCancelled(true);
@@ -187,7 +188,7 @@ public class Avatar extends Kit implements Listener {
 	@EventHandler
 	public void terra(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")
+		if (KitPvPAPI.getKit(p).equals(Kits.AVATAR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GRASS) {
 			e.setCancelled(true);
@@ -234,7 +235,7 @@ public class Avatar extends Kit implements Listener {
 	@EventHandler
 	public void fogo(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Avatar")
+		if (KitPvPAPI.getKit(p).equals(Kits.AVATAR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.REDSTONE_BLOCK) {
 			e.setCancelled(true);

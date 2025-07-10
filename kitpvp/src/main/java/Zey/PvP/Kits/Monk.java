@@ -12,9 +12,10 @@ import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Monk extends Kit implements Listener {
 
@@ -27,8 +28,7 @@ public class Monk extends Kit implements Listener {
 		final Player p = e.getPlayer();
 		if (e.getRightClicked() instanceof Player) {
 			final Player jogadorClicado = (Player) e.getRightClicked();
-			if (Habilidade.getAbility(p).equalsIgnoreCase("Monk")
-					&& p.getItemInHand().getType() == Material.BLAZE_ROD) {
+			if (KitPvPAPI.getKit(p).equals(Kits.MONK) && p.getItemInHand().getType() == Material.BLAZE_ROD) {
 				if (Cooldown.add(p)) {
 					KitUtil.MensagemCooldown(p);
 					return;

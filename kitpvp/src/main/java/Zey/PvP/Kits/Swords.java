@@ -8,8 +8,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Swords extends Kit implements Listener {
 
@@ -20,7 +21,7 @@ public class Swords extends Kit implements Listener {
 	@EventHandler
 	public void SwordKit(final PlayerInteractEvent e) {
 		final Player player = e.getPlayer();
-		if (Habilidade.getAbility(player) == "Swords" && (player.getItemInHand().getType() == Material.WOOD_SWORD
+		if (KitPvPAPI.getKit(player).equals(Kits.SWORDS) && (player.getItemInHand().getType() == Material.WOOD_SWORD
 				|| player.getItemInHand().getType() == Material.GOLD_SWORD
 				|| player.getItemInHand().getType() == Material.STONE_SWORD
 				|| player.getItemInHand().getType() == Material.IRON_SWORD)) {

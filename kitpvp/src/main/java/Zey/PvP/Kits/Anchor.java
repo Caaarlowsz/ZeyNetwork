@@ -10,9 +10,10 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Anchor extends Kit implements Listener {
 
@@ -30,7 +31,7 @@ public class Anchor extends Kit implements Listener {
 		}
 		final Player p = (Player) e.getEntity();
 		final Player a = (Player) e.getDamager();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Anchor")) {
+		if (KitPvPAPI.getKit(p).equals(Kits.ANCHOR)) {
 			p.setVelocity(new Vector());
 			p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
@@ -41,7 +42,7 @@ public class Anchor extends Kit implements Listener {
 						}
 					}, 1L);
 		}
-		if (Habilidade.getAbility(a).equalsIgnoreCase("Anchor")) {
+		if (KitPvPAPI.getKit(a).equals(Kits.ANCHOR)) {
 			a.playSound(a.getLocation(), Sound.ANVIL_BREAK, 4.0f, 4.0f);
 			p.setVelocity(new Vector());
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),

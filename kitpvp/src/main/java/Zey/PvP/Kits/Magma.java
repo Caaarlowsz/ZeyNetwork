@@ -12,8 +12,9 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Magma extends Kit implements Listener {
 
@@ -27,7 +28,7 @@ public class Magma extends Kit implements Listener {
 			return;
 		}
 		final Player p = (Player) e.getEntity();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Magma") && (e.getCause() == EntityDamageEvent.DamageCause.LAVA
+		if (KitPvPAPI.getKit(p).equals(Kits.MAGMA) && (e.getCause() == EntityDamageEvent.DamageCause.LAVA
 				|| e.getCause() == EntityDamageEvent.DamageCause.FIRE
 				|| e.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK)) {
 			e.setCancelled(true);
@@ -38,8 +39,7 @@ public class Magma extends Kit implements Listener {
 	public void aoPassar(final PlayerMoveEvent e) {
 		final Player p = e.getPlayer();
 		final Material block = p.getLocation().getBlock().getType();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Magma")
-				&& (block == Material.STATIONARY_WATER || block == Material.WATER)) {
+		if (KitPvPAPI.getKit(p).equals(Kits.MAGMA) && (block == Material.STATIONARY_WATER || block == Material.WATER)) {
 			p.damage(1.0);
 		}
 	}
@@ -54,7 +54,7 @@ public class Magma extends Kit implements Listener {
 		}
 		final Player p = (Player) e.getEntity();
 		final Player s = (Player) e.getDamager();
-		if (Habilidade.getAbility(s).equalsIgnoreCase("Magma") && s.getInventory().getItemInHand() != null) {
+		if (KitPvPAPI.getKit(s).equals(Kits.MAGMA) && s.getInventory().getItemInHand() != null) {
 			final Random rand = new Random();
 			final int percent = rand.nextInt(100);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 1));

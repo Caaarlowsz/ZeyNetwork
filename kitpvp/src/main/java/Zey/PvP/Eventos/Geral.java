@@ -54,6 +54,7 @@ import Zey.PvP.Warps.Parkour;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.EnumClientCommand;
 import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 @SuppressWarnings("deprecation")
@@ -459,7 +460,7 @@ public class Geral implements Listener {
 			if ((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 					&& p.getItemInHand().getTypeId() == 282) {
 				p.setHealth((hp.getHealth() + 7.0 > hp.getMaxHealth()) ? hp.getMaxHealth() : (hp.getHealth() + 7.0));
-				if (!Habilidade.getAbility(p).equalsIgnoreCase("QuickDropper")) {
+				if (KitPvPAPI.getKit(p).equals(Kits.QUICKDROPPER)) {
 					p.getItemInHand().setItemMeta(kpote);
 					p.getItemInHand().setType(Material.BOWL);
 				} else {

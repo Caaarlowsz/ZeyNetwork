@@ -14,9 +14,10 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Ajnin extends Kit implements Listener {
 	public HashMap<Player, Player> ajinhash = new HashMap<>();
@@ -31,7 +32,7 @@ public class Ajnin extends Kit implements Listener {
 		if (e.getDamager() instanceof Player && e.getEntity() instanceof Player) {
 			final Player p = (Player) e.getDamager();
 			final Player t = (Player) e.getEntity();
-			if (Habilidade.getAbility(p).equalsIgnoreCase("Ajnin")) {
+			if (KitPvPAPI.getKit(p).equals(Kits.AJNIN)) {
 				this.ajinhash.put(p, t);
 				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
@@ -49,7 +50,7 @@ public class Ajnin extends Kit implements Listener {
 			KitUtil.MensagemCooldown(p);
 			return;
 		}
-		if (e.isSneaking() && Habilidade.getAbility(p).equalsIgnoreCase("Ajnin") && this.ajinhash.containsKey(p)) {
+		if (e.isSneaking() && KitPvPAPI.getKit(p).equals(Kits.AJNIN) && this.ajinhash.containsKey(p)) {
 			final Player t = this.ajinhash.get(p);
 			if (t != null && !t.isDead()) {
 				if (this.ajincooldown.get(p) != null) {

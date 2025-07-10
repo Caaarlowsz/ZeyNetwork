@@ -21,15 +21,15 @@ import org.bukkit.util.Vector;
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class C4 extends Kit implements Listener {
 	public static HashMap<String, Item> bomba = new HashMap<>();
-	
+
 	public C4() {
 		super("C4");
 	}
@@ -37,7 +37,7 @@ public class C4 extends Kit implements Listener {
 	@EventHandler
 	public void aoBotar(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("C4")) {
+		if (KitPvPAPI.getKit(p).equals(Kits.C4)) {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().getType() == Material.SLIME_BALL) {
 					if (Cooldown.add(p)) {
@@ -111,7 +111,6 @@ public class C4 extends Kit implements Listener {
 			ZeyCoins.removeMoney(p, 50);
 
 			KitPvPAPI.removeKit(p);
-			Habilidade.removeAbility(p);
 			p.setGameMode(GameMode.SURVIVAL);
 
 			KitPvPAPI.setWarp(p, Warps.SPAWN);

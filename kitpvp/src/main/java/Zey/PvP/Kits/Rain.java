@@ -12,9 +12,10 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Rain extends Kit implements Listener {
 
@@ -22,7 +23,6 @@ public class Rain extends Kit implements Listener {
 		super("Rain");
 	}
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onCage(final PlayerInteractEntityEvent e) {
 		if (!(e.getRightClicked() instanceof Player)) {
@@ -30,7 +30,7 @@ public class Rain extends Kit implements Listener {
 		}
 		final Player p = e.getPlayer();
 		final Player t = (Player) e.getRightClicked();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Rain") && p.getItemInHand().getType() == Material.ARROW) {
+		if (KitPvPAPI.getKit(p).equals(Kits.RAIN) && p.getItemInHand().getType() == Material.ARROW) {
 			if (Cooldown.add(p)) {
 				KitUtil.MensagemCooldown(p);
 				return;

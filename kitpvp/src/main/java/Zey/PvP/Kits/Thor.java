@@ -13,9 +13,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Thor extends Kit implements Listener {
 
@@ -26,7 +27,7 @@ public class Thor extends Kit implements Listener {
 	@EventHandler
 	public void ThorKit(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Thor")
+		if (KitPvPAPI.getKit(p).equals(Kits.THOR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_AXE) {
 			if (Cooldown.add(p)) {
@@ -34,7 +35,6 @@ public class Thor extends Kit implements Listener {
 				return;
 			}
 			Cooldown.add(p, 5);
-			@SuppressWarnings("deprecation")
 			final Location loc = p.getTargetBlock((HashSet<Byte>) null, 30).getLocation();
 			p.getWorld().strikeLightning(loc);
 			e.setCancelled(true);

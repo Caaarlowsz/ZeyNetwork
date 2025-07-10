@@ -16,13 +16,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Armor extends Kit implements Listener {
 	public static HashMap<String, ItemStack[]> salvararmor = new HashMap<>();
-	
+
 	public Armor() {
 		super("Armor");
 	}
@@ -37,7 +38,7 @@ public class Armor extends Kit implements Listener {
 	@EventHandler
 	public void aoArmor(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Armor")
+		if (KitPvPAPI.getKit(p).equals(Kits.ARMOR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_INGOT) {
 			if (Cooldown.add(p)) {

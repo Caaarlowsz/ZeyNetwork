@@ -7,9 +7,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Turtle extends Kit implements Listener {
 
@@ -23,7 +24,7 @@ public class Turtle extends Kit implements Listener {
 			return;
 		}
 		final Player p = (Player) e.getEntity();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Turtle") && p.isSneaking()
+		if (KitPvPAPI.getKit(p).equals(Kits.TURTLE) && p.isSneaking()
 				&& (e.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION
 						|| e.getCause() == EntityDamageEvent.DamageCause.CONTACT
 						|| e.getCause() == EntityDamageEvent.DamageCause.CUSTOM
@@ -61,7 +62,7 @@ public class Turtle extends Kit implements Listener {
 		if (!p.isSneaking()) {
 			return;
 		}
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Turtle")) {
+		if (KitPvPAPI.getKit(p).equals(Kits.TURTLE)) {
 			e.setCancelled(true);
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê não pode `hitar' em quanto estiver de SHIFT.");
 		}

@@ -10,9 +10,10 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Madman extends Kit implements Listener {
 
@@ -25,8 +26,7 @@ public class Madman extends Kit implements Listener {
 		if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
 			Player p = (Player) e.getEntity();
 			Player t = (Player) e.getDamager();
-
-			if ((Habilidade.getAbility(t) == "Madman") && (t.getItemInHand().getType() == Material.STONE_SWORD)) {
+			if (KitPvPAPI.getKit(t).equals(Kits.MADMAN) && (t.getItemInHand().getType() == Material.STONE_SWORD)) {
 				if (new Random().nextInt(100) <= 40) {
 					p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * 20, 3));
 					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê foi afetado, por um madman.");
@@ -34,5 +34,4 @@ public class Madman extends Kit implements Listener {
 			}
 		}
 	}
-
 }

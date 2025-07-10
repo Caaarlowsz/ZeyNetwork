@@ -13,8 +13,9 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Switcher extends Kit implements Listener {
 
@@ -22,14 +23,13 @@ public class Switcher extends Kit implements Listener {
 		super("Switcher");
 	}
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void snowball(final EntityDamageByEntityEvent e) {
 		if (e.getDamager() instanceof Snowball && e.getEntity() instanceof Player) {
 			final Snowball s = (Snowball) e.getDamager();
 			if (s.getShooter() instanceof Player) {
 				final Player shooter = (Player) s.getShooter();
-				if (Habilidade.getAbility(shooter).equalsIgnoreCase("Switcher")) {
+				if (KitPvPAPI.getKit(shooter).equals(Kits.SWITCHER)) {
 					final Location shooterLoc = shooter.getLocation();
 					shooter.teleport(e.getEntity().getLocation());
 					e.getEntity().teleport(shooterLoc);
@@ -44,7 +44,7 @@ public class Switcher extends Kit implements Listener {
 	@EventHandler
 	public void aomatar(final PlayerDeathEvent e) {
 		final Player matou = e.getEntity().getKiller();
-		if (e.getEntity().getKiller() instanceof Player && Habilidade.getAbility(matou).equalsIgnoreCase("Switcher")) {
+		if (e.getEntity().getKiller() instanceof Player && KitPvPAPI.getKit(matou).equals(Kits.SWITCHER)) {
 			final ItemStack item = new ItemStack(Material.SNOW_BALL);
 			final ItemMeta itemm = item.getItemMeta();
 			itemm.setDisplayName("§e§lSWITCHER");

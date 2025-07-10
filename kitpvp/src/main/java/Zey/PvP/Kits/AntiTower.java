@@ -5,8 +5,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import Zey.PvP.Eventos.Habilidade;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class AntiTower extends Kit implements Listener {
 
@@ -21,7 +22,7 @@ public class AntiTower extends Kit implements Listener {
 		}
 		if (e.getCause() == EntityDamageEvent.DamageCause.FALL) {
 			final Player p = (Player) e.getEntity();
-			if (Habilidade.getAbility(p) == "AntiTower") {
+			if (KitPvPAPI.getKit(p).equals(Kits.ANTITOWER)) {
 				e.setDamage(6.0D);
 			}
 		}

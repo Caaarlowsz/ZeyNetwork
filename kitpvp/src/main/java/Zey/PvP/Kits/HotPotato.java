@@ -18,9 +18,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class HotPotato extends Kit implements Listener {
 	public static ArrayList<String> emhotpotato = new ArrayList<>();
@@ -36,7 +37,7 @@ public class HotPotato extends Kit implements Listener {
 		if (e.getRightClicked() instanceof Player) {
 			final Player k = (Player) e.getRightClicked();
 			if (p.getItemInHand().getType().equals((Object) Material.POTATO)
-					&& Habilidade.getAbility(p).equalsIgnoreCase("HotPotato")) {
+					&& KitPvPAPI.getKit(p).equals(Kits.HOTPOTATO)) {
 				if (Gladiator.lutando.containsKey(p.getName())) {
 				} else {
 					if (Cooldown.add(p)) {
@@ -114,7 +115,7 @@ public class HotPotato extends Kit implements Listener {
 	@EventHandler
 	public void onRemoverTNT(final InventoryClickEvent e) {
 		final Player p = (Player) e.getWhoClicked();
-		if (Habilidade.getAbility(p) != "Nenhum" && e.getSlot() == 39
+		if (!KitPvPAPI.getKit(p).equals(Kits.NENHUM) && e.getSlot() == 39
 				&& e.getCurrentItem().getType().equals((Object) Material.TNT)
 				&& HotPotato.emhotpotato.contains(p.getName())) {
 			HotPotato.emhotpotato.remove(p.getName());

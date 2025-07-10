@@ -14,9 +14,10 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Essencial.KitUtil;
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Confuser extends Kit implements Listener {
 
@@ -27,7 +28,7 @@ public class Confuser extends Kit implements Listener {
 	@EventHandler
 	public void onConfusao(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("Confuser")
+		if (KitPvPAPI.getKit(p).equals(Kits.CONFUSER)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.COAL) {
 			e.setCancelled(true);

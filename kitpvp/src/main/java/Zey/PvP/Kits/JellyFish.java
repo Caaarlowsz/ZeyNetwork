@@ -17,9 +17,10 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class JellyFish extends Kit implements Listener {
 
@@ -37,7 +38,7 @@ public class JellyFish extends Kit implements Listener {
 	@EventHandler
 	public void colocaragua(final PlayerInteractEvent event) {
 		final Player p = event.getPlayer();
-		if (Habilidade.getAbility(p).equalsIgnoreCase("JellyFish") && p.getItemInHand().getType() == Material.CLAY_BALL
+		if (KitPvPAPI.getKit(p).equals(Kits.JELLYFISH) && p.getItemInHand().getType() == Material.CLAY_BALL
 				&& event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 			final Block b = event.getClickedBlock();
 			final BlockFace lado = event.getBlockFace();
