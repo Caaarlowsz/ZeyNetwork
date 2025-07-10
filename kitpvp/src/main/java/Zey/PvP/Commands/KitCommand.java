@@ -84,7 +84,6 @@ public class KitCommand implements CommandExecutor {
 		if (args[0].equalsIgnoreCase("pvp")) {
 			p.getInventory().clear();
 			api.setKit(p, Kits.PVP);
-			KitAPI.swordkitpvp(p);
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lPVP");
 			TitleAPI.sendTitle(p, "§e§lPVP");
 			SetArenaCommand.TeleportArenaRandom(p);

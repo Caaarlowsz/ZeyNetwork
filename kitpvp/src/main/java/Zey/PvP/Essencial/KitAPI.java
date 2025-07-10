@@ -12,10 +12,6 @@ public class KitAPI {
 
 	public static ArrayList<String> ForceField1 = new ArrayList<>();
 
-	public static void swordkitpvp(final Player p) {
-		p.getInventory().getItem(0).addEnchantment(Enchantment.DAMAGE_ALL, 1);
-	}
-
 	public static void setitem(final Player p, final Material mat, final String nome, final int lugar,
 			final Enchantment enchant, final int level, final boolean trueorfalse) {
 		final ItemStack item = new ItemStack(mat);
