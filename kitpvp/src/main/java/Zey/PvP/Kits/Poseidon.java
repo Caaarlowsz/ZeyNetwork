@@ -6,9 +6,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Essencial.KitUtil;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
@@ -25,9 +25,9 @@ public class Poseidon extends Kit implements Listener {
 		final Block b = p.getLocation().getBlock();
 		if (KitPvPAPI.getKit(p).equals(Kits.POSEIDON)
 				&& (b.getType() == Material.WATER || b.getType() == Material.STATIONARY_WATER)) {
-			KitUtil.darEfeito(p, PotionEffectType.INCREASE_DAMAGE, 10, 1);
-			KitUtil.darEfeito(p, PotionEffectType.DAMAGE_RESISTANCE, 10, 1);
-			KitUtil.darEfeito(p, PotionEffectType.SPEED, 8, 0);
+			p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 200, 1));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 200, 1));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 160, 1));
 		}
 	}
 }

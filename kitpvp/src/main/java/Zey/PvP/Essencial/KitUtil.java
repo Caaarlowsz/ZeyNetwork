@@ -3,8 +3,6 @@ package Zey.PvP.Essencial;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Main.Main;
 
@@ -22,9 +20,5 @@ public class KitUtil {
 		p.getInventory().setChestplate(new ItemStack(Material.AIR));
 		p.getInventory().setLeggings(new ItemStack(Material.AIR));
 		p.getInventory().setBoots(new ItemStack(Material.AIR));
-	}
-
-	public static void darEfeito(final Player p, final PotionEffectType tipo, final int duracao, final int level) {
-		p.addPotionEffect(new PotionEffect(tipo, 20 * duracao, level));
 	}
 }
