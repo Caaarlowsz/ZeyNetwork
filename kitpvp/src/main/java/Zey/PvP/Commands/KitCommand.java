@@ -84,7 +84,6 @@ public class KitCommand implements CommandExecutor {
 		if (args[0].equalsIgnoreCase("pvp")) {
 			p.getInventory().clear();
 			KitAPI.recraft(p);
-			KitAPI.sopa(p);
 			KitAPI.swordkitpvp(p);
 			api.setKit(p, Kits.PVP);
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lPVP");
@@ -95,7 +94,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.ajnin") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.AJNIN);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lAJNIN");
@@ -107,7 +105,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.camel") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.CAMEL);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lCamel");
@@ -119,7 +116,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.anchor") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.ANCHOR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lANCHOR");
@@ -131,7 +127,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.armor") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.ARMOR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lARMOR");
@@ -144,7 +139,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.rain") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.RAIN);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lRAIN");
@@ -157,7 +151,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.timelord") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.TIMELORD);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTIMELORD");
@@ -170,7 +163,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.confuser") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.CONFUSER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lCONFUSER");
@@ -183,7 +175,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.avatar") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.AVATAR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lAVATAR");
@@ -196,7 +187,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.C4") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.C4);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lC4");
@@ -209,7 +199,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.deshfire") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.DESHFIRE);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lDESHFIRE");
@@ -222,7 +211,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.fisherman") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.FISHERMAN);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lFISHERMAN");
@@ -235,7 +223,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.gladiator") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.GLADIATOR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lGLADIATOR");
@@ -248,7 +235,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.grappler") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.GRAPPLER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lGRAPPLER");
@@ -261,7 +247,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.hulk") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lHULK");
 				KitAPI.setitem(p, Material.SADDLE, "§e§lHULK", 1, Enchantment.DAMAGE_ALL, 0, false);
@@ -273,7 +258,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.jellyfish") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.JELLYFISH);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lJELLYFISH");
@@ -286,7 +270,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.quickdropper") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.QUICKDROPPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lQUICKDROPPER");
@@ -298,7 +281,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.kangaroo") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.KANGAROO);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lKANGAROO");
@@ -311,7 +293,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.magma") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.MAGMA);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lMAGMA");
@@ -323,7 +304,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.monk") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.MONK);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lMONK");
@@ -336,7 +316,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.ninja") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.NINJA);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lNINJA");
@@ -348,7 +327,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.poseidon") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.POSEIDON);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lPOSEIDON");
@@ -360,7 +338,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.resouper") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.RESOUPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lRESOUPER");
@@ -372,7 +349,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.snail") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.SNAIL);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSNAIL");
@@ -384,7 +360,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.sonic") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.SONIC);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSONIC");
@@ -397,7 +372,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.archer") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.ARCHER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lArcher");
@@ -411,7 +385,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.stomper") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.STOMPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSTOMPER");
@@ -423,7 +396,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.switcher") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.SWITCHER);
 				KitUtil.darItem(p, Material.SNOW_BALL, 64, "§e§lSWITCHER", 1);
@@ -436,7 +408,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.swords") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.SWORDS);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSWORDS");
@@ -448,7 +419,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.forcefield") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.FORCEFIELD);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lFORCEFIELD");
@@ -461,7 +431,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.thor") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.THOR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTHOR");
@@ -474,7 +443,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.thresh") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.THRESH);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTHRESH");
@@ -487,7 +455,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.turtle") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.TURTLE);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTURTLE");
@@ -499,7 +466,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.viper") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.VIPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIPER");
@@ -511,7 +477,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.Viking") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitUtil.darItem(p, Material.STONE_AXE, 1, "§e§lVIKING", 0);
 				api.setKit(p, Kits.VIKING);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIKING");
@@ -524,7 +489,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.madman") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.MADMAN);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lMADMAN");
@@ -536,7 +500,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.specialist") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.SPECIALIST);
 				KitUtil.darItem(p, Material.ENCHANTED_BOOK, 1, "§e§lSPECIALIST", 1);
@@ -549,7 +512,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.hotpotato") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.HOTPOTATO);
 				KitUtil.darItem(p, Material.POTATO, 1, "§e§lHOTPOTATO", 1);
@@ -562,7 +524,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.antitower") || IniciarCommand.fullkit) {
 				p.getInventory().clear();
 				KitAPI.recraft(p);
-				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				api.setKit(p, Kits.ANTITOWER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lAntiTower");

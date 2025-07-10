@@ -226,6 +226,7 @@ public final class Main extends JavaPlugin implements KitPvP {
 	@Override
 	public void setWarp(Player player, Warp warp) {
 		this.warpMap.put(player, warp);
+		warp.giveItems(player);
 	}
 
 	@Override

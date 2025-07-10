@@ -17,15 +17,6 @@ public class KitAPI {
 
 	public static ArrayList<String> ForceField1 = new ArrayList<>();
 
-	public static void sopa(final Player p) {
-		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
-		final ItemMeta ksopa = sopa.getItemMeta();
-		ksopa.setDisplayName("§e§lSOPA");
-		sopa.setItemMeta(ksopa);
-		for (int i = 0; i < 77; i++)
-			p.getInventory().addItem(new ItemStack[] { sopa });
-	}
-
 	public static void recraft(final Player p) {
 		final ItemStack sopas = new ItemStack(Material.BOWL, 64);
 		final ItemMeta ksopas = sopas.getItemMeta();
