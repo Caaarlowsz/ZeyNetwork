@@ -17,7 +17,7 @@ public final class KitPvPAPI {
 	}
 
 	public static void setInstance(KitPvP instance) {
-		if (instance != null)
+		if (kitpvp != null)
 			throw new IllegalStateException("KitPvPAPI já foi instanciada! Use KitPvPAPI.getInstance() para obtê-la.");
 		kitpvp = instance;
 		Bukkit.getLogger().info("KitPvPAPI instanciada com sucesso! Versão: " + getApiVersion());
