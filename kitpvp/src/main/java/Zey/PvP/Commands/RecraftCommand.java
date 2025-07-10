@@ -14,6 +14,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Main.Main;
 import Zey.PvP.Warps.Spawn;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class RecraftCommand implements CommandExecutor {
 
@@ -23,7 +24,7 @@ public class RecraftCommand implements CommandExecutor {
 
 		if (Cmd.getName().equalsIgnoreCase("recraft")) {
 
-			String warp = Main.getAPI().getWarp(p).getName();
+			String warp = KitPvPAPI.getWarp(p).getName();
 			if (warp == "Challenge") {
 				p.sendMessage(String.valueOf(Main.PREFIX)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");

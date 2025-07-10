@@ -7,8 +7,9 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Viper extends Kit implements Listener {
 
@@ -26,7 +27,7 @@ public class Viper extends Kit implements Listener {
 		}
 		final Player p = (Player) e.getEntity();
 		final Player d = (Player) e.getDamager();
-		if (!KitAPI.Viper.contains(d.getName())) {
+		if (!KitPvPAPI.getKit(d).equals(Kits.VIPER)) {
 			return;
 		}
 		if (Math.random() > 0.4 && Math.random() > 0.1) {

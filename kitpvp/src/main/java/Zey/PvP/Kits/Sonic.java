@@ -22,13 +22,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Sonic extends Kit implements Listener {
-	
+
 	public Sonic() {
 		super("Sonic");
 	}
@@ -55,7 +56,7 @@ public class Sonic extends Kit implements Listener {
 	public void SonicLick(final PlayerInteractEvent event) {
 		final Player p = event.getPlayer();
 		if (event.getPlayer().getItemInHand().getType() == Material.LAPIS_BLOCK
-				&& KitAPI.Sonic.contains(event.getPlayer().getName())) {
+				&& KitPvPAPI.getKit(p).equals(Kits.SONIC)) {
 			if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK
 					|| event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
 				event.setCancelled(true);

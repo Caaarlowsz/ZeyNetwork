@@ -11,11 +11,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Zey.PvP.Main.Main;
 import Zey.PvP.Menus.MenuGeral1;
 import Zey.PvP.Menus.MenuKits;
 import Zey.PvP.Menus.MenuWarps;
 import Zey.PvP.Warps.Parkour;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Direito implements Listener {
 	@EventHandler
@@ -24,7 +24,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.BOOK)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lMENU GERAL")
-				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
+				&& KitPvPAPI.getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -41,7 +41,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.ENDER_CHEST)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lKITS")
-				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
+				&& KitPvPAPI.getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -58,7 +58,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.PAPER)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lWARPS")
-				&& Main.getAPI().getWarp(p).getName() == "Spawn") {
+				&& KitPvPAPI.getWarp(p).getName() == "Spawn") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -75,7 +75,7 @@ public class Direito implements Listener {
 		if (p.getItemInHand().getType().equals((Object) Material.REDSTONE)
 				&& p.getItemInHand().getItemMeta().hasDisplayName()
 				&& p.getItemInHand().getItemMeta().getDisplayName().equalsIgnoreCase("§c§lVOLTAR")
-				&& Main.getAPI().getWarp(p).getName() == "Parkour") {
+				&& KitPvPAPI.getWarp(p).getName() == "Parkour") {
 
 			e.setCancelled(true);
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {

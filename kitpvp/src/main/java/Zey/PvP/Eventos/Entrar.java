@@ -19,6 +19,8 @@ import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvP;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Entrar implements Listener {
 	@EventHandler
@@ -28,11 +30,12 @@ public class Entrar implements Listener {
 		TheTitle.sendTitle(p, Main.PREFIX);
 		TheTitle.sendSubTitle(p, "§fTreine para se tornar o melhor!");
 
-		KitAPI.remove(p);
+		KitPvP api = KitPvPAPI.getInstance();
+		api.removeKit(p);
 		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
-		Main.getAPI().setWarp(p, Warps.SPAWN);
+		api.setWarp(p, Warps.SPAWN);
 
 		Proteção.setImortal(p, true);
 		Proteção.isImortal(p);
@@ -79,11 +82,12 @@ public class Entrar implements Listener {
 		p.getInventory().setBoots((ItemStack) null);
 		p.getInventory().clear();
 
-		KitAPI.remove(p);
+		KitPvP api = KitPvPAPI.getInstance();
+		api.removeKit(p);
 		Habilidade.removeAbility(p);
 		BuildCommand.embuild.remove(p);
 		p.setGameMode(GameMode.SURVIVAL);
-		Main.getAPI().setWarp(p, Warps.SPAWN);
+		api.setWarp(p, Warps.SPAWN);
 
 		Proteção.setImortal(p, true);
 		Proteção.isImortal(p);

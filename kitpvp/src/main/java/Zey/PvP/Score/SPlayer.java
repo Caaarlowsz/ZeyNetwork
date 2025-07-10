@@ -10,8 +10,7 @@ import Zey.PvP.Config.Status;
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
-import tk.zeynetwork.kitpvp.Warps;
-import tk.zeynetwork.kitpvp.api.Warp;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class SPlayer {
 	private String player;
@@ -204,10 +203,7 @@ public class SPlayer {
 		this.sb.updateLine(10, "  §fZeyCoins: §a" + ZeyCoins.getPlayerMoney(p));
 		this.sb.updateLine(9, "  §fKit: §e" + Habilidade.getAbility(p));
 
-		Warp warp = Main.getAPI().getWarp(p);
-		if (warp == null)
-			warp = Warps.NENHUMA;
-		this.sb.updateLine(8, "  §fWarp: §e" + warp.getName());
+		this.sb.updateLine(8, "  §fWarp: §e" + KitPvPAPI.getWarp(p).getName());
 
 		this.sb.updateLine(7, "  §fJogadores: §7" + Bukkit.getOnlinePlayers().length + "§f/§7150  ");
 		this.sb.updateLine(5, "  §fRank: " + Liga(p));

@@ -9,8 +9,9 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Camel extends Kit implements Listener {
 
@@ -23,7 +24,7 @@ public class Camel extends Kit implements Listener {
 		final Player p = e.getPlayer();
 		if ((e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SAND
 				|| e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.SANDSTONE)
-				&& KitAPI.Camel.contains(e.getPlayer().getName())) {
+				&& KitPvPAPI.getKit(p).equals(Kits.CAMEL)) {
 			p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 80, 0));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 80, 0));
 		}

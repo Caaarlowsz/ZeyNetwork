@@ -17,9 +17,10 @@ import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitAPI;
 import net.minecraft.server.v1_7_R4.EntityHuman;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Grappler extends Kit implements Listener {
 	Map<Player, Cordinha> hooks = new HashMap<>();
@@ -62,7 +63,7 @@ public class Grappler extends Kit implements Listener {
 	@EventHandler
 	public void onLeash(final PlayerLeashEntityEvent e) {
 		final Player p = e.getPlayer();
-		if (KitAPI.Grappler.contains(p.getName())
+		if (KitPvPAPI.getKit(p).equals(Kits.GRAPPLER)
 				&& e.getPlayer().getItemInHand().getType().equals((Object) Material.LEASH)) {
 			e.setCancelled(true);
 			e.getPlayer().updateInventory();
@@ -92,7 +93,7 @@ public class Grappler extends Kit implements Listener {
 	@EventHandler
 	public void onClick(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
-		if (KitAPI.Grappler.contains(p.getName())
+		if (KitPvPAPI.getKit(p).equals(Kits.GRAPPLER)
 				&& e.getPlayer().getItemInHand().getType().equals((Object) Material.LEASH)) {
 			e.setCancelled(true);
 			if (e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {

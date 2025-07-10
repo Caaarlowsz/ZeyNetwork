@@ -1,128 +1,93 @@
 package tk.zeynetwork.kitpvp.api;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Set;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
-public final class KitPvPAPI implements KitPvP {
+public final class KitPvPAPI {
 
-	private static KitPvPAPI instance;
-	private Plugin plugin;
+	private static KitPvP kitpvp;
 
-	private HashSet<Warp> warps = new HashSet<>();
-	private HashMap<Player, Warp> warpMap = new HashMap<>();
-	private HashSet<Kit> kits = new HashSet<>();
-	private HashMap<Player, Kit> kitMap = new HashMap<>();
-
-	public KitPvPAPI(Plugin plugin) {
-		if (instance != null)
-			throw new IllegalStateException("KitPvPAPI já foi instanciada! Use KitPvPAPI.getInstance() para obtê-la.");
-		if (plugin == null)
-			throw new IllegalArgumentException("A instância do plugin não pode ser nula ao inicializar KitPvPAPI.");
-
-		this.plugin = plugin;
-		instance = this;
-		plugin.getLogger().info("KitPvPAPI instanciada com sucesso! Versão: " + getApiVersion());
-	}
-
-	public static KitPvPAPI getInstance() {
-		if (instance == null)
+	public static KitPvP getInstance() {
+		if (kitpvp == null)
 			throw new IllegalStateException(
 					"KitPvPAPI ainda não foi instanciada! Construa a instância no plugin primeiro.");
-		return instance;
+		return kitpvp;
 	}
 
-	@Override
-	public Plugin getPlugin() {
-		return this.plugin;
+	public static void setInstance(KitPvP instance) {
+		if (instance != null)
+			throw new IllegalStateException("KitPvPAPI já foi instanciada! Use KitPvPAPI.getInstance() para obtê-la.");
+		kitpvp = instance;
+		Bukkit.getLogger().info("KitPvPAPI instanciada com sucesso! Versão: " + getApiVersion());
 	}
 
-	@Override
-	public String getApiVersion() {
-		return "0.0.0";
+	public static String getApiVersion() {
+		return kitpvp.getApiVersion();
 	}
 
-	@Override
-	public Set<Warp> getWarps() {
-		return Collections.unmodifiableSet(this.warps);
+	public static Set<Warp> getWarps() {
+		return kitpvp.getWarps();
 	}
 
-	@Override
-	public Warp getWarp(String name) {
-		return this.getWarps().stream().filter(w -> w.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	public static Warp getWarp(String name) {
+		return kitpvp.getWarp(name);
 	}
 
-	@Override
-	public void addWarp(Warp warp) {
-		this.warps.add(warp);
+	public static void addWarp(Warp warp) {
+		kitpvp.addWarp(warp);
 	}
 
-	@Override
-	public void removeWarp(Warp warp) {
-		this.warps.remove(warp);
+	public static void removeWarp(Warp warp) {
+		kitpvp.removeWarp(warp);
 	}
 
-	@Override
-	public boolean hasWarp(Player player) {
-		return warpMap.containsKey(player);
+	public static boolean hasWarp(Player player) {
+		return kitpvp.hasWarp(player);
 	}
 
-	@Override
-	public Warp getWarp(Player player) {
-		return warpMap.getOrDefault(player, null);
+	public static Warp getWarp(Player player) {
+		return kitpvp.getWarp(player);
 	}
 
-	@Override
-	public void setWarp(Player player, Warp warp) {
-		warpMap.put(player, warp);
+	public static void setWarp(Player player, Warp warp) {
+		kitpvp.setWarp(player, warp);
 	}
 
-	@Override
-	public void removeWarp(Player player) {
-		warpMap.remove(player);
+	public static void removeWarp(Player player) {
+		kitpvp.removeWarp(player);
 	}
 
-	@Override
-	public Set<Kit> getKits() {
-		return Collections.unmodifiableSet(this.kits);
+	public static Set<Kit> getKits() {
+		return kitpvp.getKits();
 	}
 
-	@Override
-	public Kit getKit(String name) {
-		return this.getKits().stream().filter(k -> k.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	public static Kit getKit(String name) {
+		return kitpvp.getKit(name);
 	}
 
-	@Override
-	public void addKit(Kit kit) {
-		this.kits.add(kit);
+	public static void addKit(Kit kit) {
+		kitpvp.addKit(kit);
 	}
 
-	@Override
-	public void removeKit(Kit kit) {
-		this.kits.remove(kit);
+	public static void removeKit(Kit kit) {
+		kitpvp.removeKit(kit);
 	}
 
-	@Override
-	public boolean hasKit(Player player) {
-		return this.kitMap.containsKey(player);
+	public static boolean hasKit(Player player) {
+		return kitpvp.hasKit(player);
 	}
 
-	@Override
-	public Kit getKit(Player player) {
-		return this.kitMap.getOrDefault(player, null);
+	public static Kit getKit(Player player) {
+		return kitpvp.getKit(player);
 	}
 
-	@Override
-	public void setKit(Player player, Kit kit) {
-		this.kitMap.put(player, kit);
+	public static void setKit(Player player, Kit kit) {
+		kitpvp.setKit(player, kit);
 	}
 
-	@Override
-	public void removeKit(Player player) {
-		this.kitMap.remove(player);
+	public static void removeKit(Player player) {
+		kitpvp.removeKit(player);
 	}
 }

@@ -19,7 +19,9 @@ import org.bukkit.util.Vector;
 import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class TheForceField extends Kit implements Listener {
 	public static List<Player> cooldownm = new ArrayList<>();
@@ -32,7 +34,7 @@ public class TheForceField extends Kit implements Listener {
 	public void stomperApple(final PlayerInteractEvent event) {
 		final Player p = event.getPlayer();
 		if (event.getPlayer().getItemInHand().getType() == Material.NETHER_FENCE
-				&& KitAPI.ForceField.contains(event.getPlayer().getName())) {
+				&& KitPvPAPI.getKit(p).equals(Kits.FORCEFIELD)) {
 			if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK
 					|| event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
 				event.setCancelled(true);
@@ -74,7 +76,7 @@ public class TheForceField extends Kit implements Listener {
 		if (KitAPI.ForceField1.contains(p.getName())) {
 			for (final Entity pertos : p.getNearbyEntities(8.0, 8.0, 8.0)) {
 				if (pertos instanceof Player) {
-					if (KitAPI.ForceField.contains(p.getName())) {
+					if (KitPvPAPI.getKit(p).equals(Kits.FORCEFIELD)) {
 						((Player) pertos).damage(3.0);
 					}
 					pertos.setVelocity(new Vector(0.1, 0.0, 0.1));

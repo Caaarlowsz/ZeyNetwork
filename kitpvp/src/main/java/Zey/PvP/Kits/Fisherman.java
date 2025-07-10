@@ -6,8 +6,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 
-import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Fisherman extends Kit implements Listener {
 
@@ -19,7 +20,7 @@ public class Fisherman extends Kit implements Listener {
 	public void onPlayerFish(final PlayerFishEvent event) {
 		final Entity caught = event.getCaught();
 		final Block block = event.getHook().getLocation().getBlock();
-		if (caught != null && caught != block && KitAPI.Fisherman.contains(event.getPlayer().getName())) {
+		if (caught != null && caught != block && KitPvPAPI.getKit(event.getPlayer()).equals(Kits.FISHERMAN)) {
 			caught.teleport(event.getPlayer().getLocation());
 		}
 	}

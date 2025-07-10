@@ -19,9 +19,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Thresh extends Kit implements Listener {
 	public static HashMap<String, Long> cooldown = new HashMap<>();
@@ -35,7 +36,7 @@ public class Thresh extends Kit implements Listener {
 	public void disparar(final PlayerInteractEvent e) {
 		final Player p = e.getPlayer();
 		if ((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
-				&& p.getItemInHand().getType() == Material.LEVER && KitAPI.Thresh.contains(p.getName())) {
+				&& p.getItemInHand().getType() == Material.LEVER && KitPvPAPI.getKit(p).equals(Kits.THRESH)) {
 			if (!Thresh.cooldown.containsKey(p.getName())
 					|| Thresh.cooldown.get(p.getName()) <= System.currentTimeMillis()) {
 				e.setCancelled(true);
@@ -64,7 +65,7 @@ public class Thresh extends Kit implements Listener {
 				final Snowball snowball = (Snowball) damager;
 				if (snowball.getShooter() instanceof Player) {
 					final Player shooter = (Player) snowball.getShooter();
-					if (!KitAPI.Thresh.contains(shooter.getName())) {
+					if (!KitPvPAPI.getKit(shooter).equals(Kits.THRESH)) {
 						return;
 					}
 					final Location ploc = shooter.getLocation();

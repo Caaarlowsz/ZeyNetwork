@@ -20,10 +20,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class DeshFire extends Kit implements Listener {
 	public int boost = 6;
@@ -33,7 +34,7 @@ public class DeshFire extends Kit implements Listener {
 	public static HashMap<String, ItemStack[]> armadura = new HashMap<>();
 	public static HashMap<String, ItemStack[]> Armadura2 = new HashMap<>();
 	public static List<Player> cooldownm = new ArrayList<>();
-	
+
 	public DeshFire() {
 		super("DeshFire");
 	}
@@ -43,7 +44,7 @@ public class DeshFire extends Kit implements Listener {
 		final int fire = Integer.valueOf(6);
 		final Player p = event.getPlayer();
 		if (event.getPlayer().getItemInHand().getType() == Material.REDSTONE_BLOCK
-				&& KitAPI.DeshFire.contains(event.getPlayer().getName())) {
+				&& KitPvPAPI.getKit(p).equals(Kits.DESHFIRE)) {
 			if (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK
 					|| event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
 				event.setCancelled(true);

@@ -20,9 +20,10 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Gladiator extends Kit implements Listener {
 
@@ -42,7 +43,7 @@ public class Gladiator extends Kit implements Listener {
 		if (e.getRightClicked() instanceof Player) {
 			final Player p = e.getPlayer();
 			final Player r = (Player) e.getRightClicked();
-			if (p.getItemInHand().getType() == Material.IRON_FENCE && KitAPI.Gladiator.contains(p.getName())) {
+			if (p.getItemInHand().getType() == Material.IRON_FENCE && KitPvPAPI.getKit(p).equals(Kits.GLADIATOR)) {
 				final Location loc = new Location(p.getWorld(), p.getLocation().getX(), p.getLocation().getY() + 80.0,
 						p.getLocation().getZ());
 				final Location loc2 = new Location(p.getWorld(), (double) (p.getLocation().getBlockX() + 8),

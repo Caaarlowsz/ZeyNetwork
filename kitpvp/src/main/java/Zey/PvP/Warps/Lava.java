@@ -17,11 +17,11 @@ import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.APIs.TheTitle;
 import Zey.PvP.Commands.BuildCommand;
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.api.Warp;
 
@@ -63,7 +63,7 @@ public class Lava extends Warp implements CommandExecutor {
 
 					TheTitle.sendTitle(p, "§e§lCHALLENGE");
 
-					KitPvPAPI api = Main.getAPI();
+					KitPvP api = KitPvPAPI.getInstance();
 					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
@@ -76,7 +76,7 @@ public class Lava extends Warp implements CommandExecutor {
 					p.setAllowFlight(false);
 					p.setFlying(false);
 
-					KitAPI.remove(p);
+					api.removeKit(p);
 					Habilidade.removeAbility(p);
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);

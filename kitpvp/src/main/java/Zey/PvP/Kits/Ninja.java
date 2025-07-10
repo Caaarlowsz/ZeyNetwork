@@ -12,12 +12,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Ninja extends Kit implements Listener {
-	
+
 	public static HashMap<Player, Player> a = new HashMap<>();
 	public static HashMap<Player, Long> b = new HashMap<>();
 	public static List<Player> cooldownbk = new ArrayList<>();
@@ -32,7 +33,7 @@ public class Ninja extends Kit implements Listener {
 				&& paramEntityDamageByEntityEvent.getEntity() instanceof Player) {
 			final Player localPlayer1 = (Player) paramEntityDamageByEntityEvent.getDamager();
 			final Player localPlayer2 = (Player) paramEntityDamageByEntityEvent.getEntity();
-			if (KitAPI.Ninja.contains(localPlayer1.getName())) {
+			if (KitPvPAPI.getKit(localPlayer1).equals(Kits.NINJA)) {
 				Ninja.a.put(localPlayer1, localPlayer2);
 				Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
@@ -48,7 +49,7 @@ public class Ninja extends Kit implements Listener {
 	public void a(final PlayerToggleSneakEvent paramPlayerToggleSneakEvent) {
 		final Player localPlayer1 = paramPlayerToggleSneakEvent.getPlayer();
 		final Player localPlayer2;
-		if (paramPlayerToggleSneakEvent.isSneaking() && KitAPI.Ninja.contains(localPlayer1.getName())
+		if (paramPlayerToggleSneakEvent.isSneaking() && KitPvPAPI.getKit(localPlayer1).equals(Kits.NINJA)
 				&& Ninja.a.containsKey(localPlayer1) && (localPlayer2 = Ninja.a.get(localPlayer1)) != null
 				&& !localPlayer2.isDead()) {
 			String str = null;

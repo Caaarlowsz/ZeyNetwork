@@ -15,9 +15,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.Plugin;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class TimeLord extends Kit implements Listener {
 	public static ArrayList<String> freeze = new ArrayList<>();
@@ -34,7 +35,7 @@ public class TimeLord extends Kit implements Listener {
 		final Player player = event.getPlayer();
 		if ((event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& player.getItemInHand().getType() == Material.WATCH
-				&& KitAPI.TimeLord.contains(event.getPlayer().getName())) {
+				&& KitPvPAPI.getKit(player).equals(Kits.TIMELORD)) {
 			if (TimeLord.cooldownt.contains(player.getName())) {
 				player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
 			} else {

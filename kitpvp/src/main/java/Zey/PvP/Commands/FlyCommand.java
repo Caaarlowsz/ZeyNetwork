@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class FlyCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender s, final Command cmd, final String label, final String[] args) {
@@ -20,7 +21,7 @@ public class FlyCommand implements CommandExecutor {
 			return true;
 		}
 
-		String warp = Main.getAPI().getWarp(p).getName();
+		String warp = KitPvPAPI.getWarp(p).getName();
 		if (warp == "Arena") {
 			p.sendMessage(String.valueOf(Main.PREFIX)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");

@@ -7,8 +7,9 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import Zey.PvP.Essencial.KitAPI;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Stomper extends Kit implements Listener {
 
@@ -25,7 +26,7 @@ public class Stomper extends Kit implements Listener {
 		if (e.getCause() != EntityDamageEvent.DamageCause.FALL) {
 			return;
 		}
-		if (KitAPI.Stomper.contains(p.getName())) {
+		if (KitPvPAPI.getKit(p).equals(Kits.STOMPER)) {
 			for (final Entity ent : p.getNearbyEntities(8.0, 5.0, 8.0)) {
 				if (ent instanceof Player) {
 					final Player plr = (Player) ent;

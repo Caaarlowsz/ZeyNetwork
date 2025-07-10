@@ -10,45 +10,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class KitAPI {
 
-	public static ArrayList<String> DeshFire = new ArrayList<>();
-	public static ArrayList<String> Fisherman = new ArrayList<>();
-	public static ArrayList<String> Gladiator = new ArrayList<>();
-	public static ArrayList<String> Kangaroo = new ArrayList<>();
-	public static ArrayList<String> Ninja = new ArrayList<>();
-	public static ArrayList<String> Snail = new ArrayList<>();
-	public static ArrayList<String> Sonic = new ArrayList<>();
-	public static ArrayList<String> Stomper = new ArrayList<>();
-	public static ArrayList<String> ForceField = new ArrayList<>();
 	public static ArrayList<String> ForceField1 = new ArrayList<>();
-	public static ArrayList<String> Thresh = new ArrayList<>();
-	public static ArrayList<String> Viper = new ArrayList<>();
-	public static ArrayList<String> Grappler = new ArrayList<>();
-	public static ArrayList<String> Camel = new ArrayList<>();
-	public static ArrayList<String> TimeLord = new ArrayList<>();
-
-	public static void remove(final Player p) {
-		TimeLord.remove(p.getName());
-		DeshFire.remove(p.getName());
-		Fisherman.remove(p.getName());
-		Gladiator.remove(p.getName());
-		Camel.remove(p.getName());
-		Kangaroo.remove(p.getName());
-		Ninja.remove(p.getName());
-		Grappler.remove(p.getName());
-		Snail.remove(p.getName());
-		Sonic.remove(p.getName());
-		Stomper.remove(p.getName());
-		Ninja.remove(p.getName());
-		ForceField.remove(p.getName());
-		ForceField1.remove(p.getName());
-		Thresh.remove(p.getName());
-		Viper.remove(p.getName());
-	}
 
 	public static void sopa(final Player p) {
 		final ItemStack sopa = new ItemStack(Material.MUSHROOM_SOUP);
@@ -97,7 +64,7 @@ public class KitAPI {
 		p.setAllowFlight(false);
 		p.setFlying(false);
 
-		Main.getAPI().setWarp(p, Warps.ARENA);
+		KitPvPAPI.setWarp(p, Warps.ARENA);
 	}
 
 	public static void sword(final Player p) {
@@ -119,7 +86,7 @@ public class KitAPI {
 		p.setAllowFlight(false);
 		p.setFlying(false);
 
-		Main.getAPI().setWarp(p, Warps.ARENA);
+		KitPvPAPI.setWarp(p, Warps.ARENA);
 	}
 
 	public static void setitem(final Player p, final Material mat, final String nome, final int lugar,

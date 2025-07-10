@@ -14,8 +14,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Config.ZeyCoins;
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.api.KitPvP;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class PlacaDaLava implements Listener {
 
@@ -59,7 +60,8 @@ public class PlacaDaLava implements Listener {
 						|| (e.getClickedBlock().getType() == Material.SIGN_POST)) {
 					Sign s = (Sign) e.getClickedBlock().getState();
 					String[] lines = s.getLines();
-					String warp = Main.getAPI().getWarp(p).getName();
+					KitPvP api = KitPvPAPI.getInstance();
+					String warp = api.getWarp(p).getName();
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
 							&& (lines[1].equals("§c§lCHALLENGE")) && (lines.length > 2) && (lines[2].equals(""))
 							&& (lines.length > 3) && (lines[3].equals("§7(Fácil)"))
@@ -72,7 +74,7 @@ public class PlacaDaLava implements Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 
-						KitAPI.remove(p);
+						api.removeKit(p);
 
 						final World w = Bukkit.getServer()
 								.getWorld(Main.getPlugin().getConfig().getString("lava.world"));
@@ -107,7 +109,7 @@ public class PlacaDaLava implements Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 
-						KitAPI.remove(p);
+						api.removeKit(p);
 
 						final World w = Bukkit.getServer()
 								.getWorld(Main.getPlugin().getConfig().getString("lava.world"));
@@ -142,7 +144,7 @@ public class PlacaDaLava implements Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 
-						KitAPI.remove(p);
+						api.removeKit(p);
 
 						final World w = Bukkit.getServer()
 								.getWorld(Main.getPlugin().getConfig().getString("lava.world"));
@@ -183,7 +185,7 @@ public class PlacaDaLava implements Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 
-						KitAPI.remove(p);
+						api.removeKit(p);
 
 						final World w = Bukkit.getServer()
 								.getWorld(Main.getPlugin().getConfig().getString("lava.world"));

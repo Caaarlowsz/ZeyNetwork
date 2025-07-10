@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Warps.Parkour;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class ParkourJump implements Listener {
 	public static ArrayList<String> jump;
@@ -31,7 +32,7 @@ public class ParkourJump implements Listener {
 	public void onPlayerJumpBaixo(final PlayerMoveEvent e) {
 		final Player p = e.getPlayer();
 		if (e.getTo().getBlock().getRelative(BlockFace.DOWN).getType() == Material.REDSTONE_BLOCK
-				&& Main.getAPI().getWarp(p).getName() == "Parkour") {
+				&& KitPvPAPI.getWarp(p).getName() == "Parkour") {
 
 			p.playSound(p.getLocation(), Sound.DOOR_OPEN, 5.0f, 5.0f);
 			final World w = Bukkit.getServer().getWorld(Parkour.plugin.getConfig().getString("parkour.world"));

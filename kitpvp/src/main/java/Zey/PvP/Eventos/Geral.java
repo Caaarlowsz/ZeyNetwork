@@ -54,6 +54,7 @@ import Zey.PvP.Warps.Parkour;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.EnumClientCommand;
 import net.minecraft.server.v1_7_R4.PacketPlayInClientCommand;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 @SuppressWarnings("deprecation")
 public class Geral implements Listener {
@@ -145,7 +146,7 @@ public class Geral implements Listener {
 		final Location lobby = new Location(w, x, y, z);
 		lobby.setPitch((float) Parkour.plugin.getConfig().getDouble("parkour.pitch"));
 		lobby.setYaw((float) Parkour.plugin.getConfig().getDouble("parkour.yaw"));
-		if (l.getBlockY() <= 0 && Main.getAPI().getWarp(p).getName() == "Parkour") {
+		if (l.getBlockY() <= 0 && KitPvPAPI.getWarp(p).getName() == "Parkour") {
 			p.setHealth(20.0);
 			p.teleport(lobby);
 		}

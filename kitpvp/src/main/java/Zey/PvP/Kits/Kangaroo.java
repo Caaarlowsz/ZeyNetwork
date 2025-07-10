@@ -16,9 +16,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitAPI;
 import Zey.PvP.Main.Main;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class Kangaroo extends Kit implements Listener {
 
@@ -34,7 +35,7 @@ public class Kangaroo extends Kit implements Listener {
 	@EventHandler
 	public void onInteract(final PlayerInteractEvent event) {
 		final Player p = event.getPlayer();
-		if (KitAPI.Kangaroo.contains(event.getPlayer().getName()) && p.getItemInHand().getType() == Material.FIREWORK
+		if (KitPvPAPI.getKit(p).equals(Kits.KANGAROO) && p.getItemInHand().getType() == Material.FIREWORK
 				&& (event.getAction() == Action.LEFT_CLICK_AIR || event.getAction() == Action.LEFT_CLICK_BLOCK
 						|| event.getAction() == Action.RIGHT_CLICK_BLOCK
 						|| event.getAction() == Action.RIGHT_CLICK_AIR)) {

@@ -37,51 +37,95 @@ import Zey.PvP.Kits.Turtle;
 import Zey.PvP.Kits.Viking;
 import Zey.PvP.Kits.Viper;
 import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.kits.Archer;
 import tk.zeynetwork.kitpvp.kits.Nenhum;
 import tk.zeynetwork.kitpvp.kits.PvP;
 
 public final class Kits {
-	
-	public static final Kit
+
+	public static final Kit 
 	NENHUM = new Nenhum(),
-	PVP = new PvP(),
-	AJNIN = new Ajnin(),
-	ARCHER = new Archer(),
+	PVP = new PvP(), 
+	AJNIN = new Ajnin(), 
+	ARCHER = new Archer(), 
 	ANCHOR = new Anchor(),
-	ANTITOWER = new AntiTower(),
-	ARMOR = new Armor(),
-	AVATAR = new Avatar(),
+	ANTITOWER = new AntiTower(), 
+	ARMOR = new Armor(), 
+	AVATAR = new Avatar(), 
 	C4 = new Zey.PvP.Kits.C4(),
-	CAMEL = new Camel(),
-	CONFUSER = new Confuser(),
-	DESHFIRE = new DeshFire(),
+	CAMEL = new Camel(), 
+	CONFUSER = new Confuser(), 
+	DESHFIRE = new DeshFire(), 
 	FISHERMAN = new Fisherman(),
-	GLADIATOR = new Gladiator(),
-	GRAPPLER = new Grappler(),
-	HOTPOTATO = new HotPotato(),
+	GLADIATOR = new Gladiator(), 
+	GRAPPLER = new Grappler(), 
+	HOTPOTATO = new HotPotato(), 
 	HULK = new Hulk(),
-	JELLYFISH = new JellyFish(),
-	KANGAROO = new Kangaroo(),
-	MADMAN = new Madman(),
+	JELLYFISH = new JellyFish(), 
+	KANGAROO = new Kangaroo(), 
+	MADMAN = new Madman(), 
 	MAGMA = new Magma(),
-	MONK = new Monk(),
-	NINJA = new Ninja(),
-	POSEIDON = new Poseidon(),
+	MONK = new Monk(), 
+	NINJA = new Ninja(), 
+	POSEIDON = new Poseidon(), 
 	QUICKDROPPER = new QuickDropper(),
-	RAIN = new Rain(),
-	RESOUPER = new Resouper(),
-	SNAIL = new Snail(),
+	RAIN = new Rain(), 
+	RESOUPER = new Resouper(), 
+	SNAIL = new Snail(), 
 	SONIC = new Sonic(),
-	SPECIALIST = new Specialist(),
-	STOMPER = new Stomper(),
-	SWITCHER = new Switcher(),
+	SPECIALIST = new Specialist(), 
+	STOMPER = new Stomper(), 
+	SWITCHER = new Switcher(), 
 	SWORDS = new Swords(),
-	FORCEFIELD = new TheForceField(),
-	THOR = new Thor(),
-	THRESH = new Thresh(),
+	FORCEFIELD = new TheForceField(), 
+	THOR = new Thor(), 
+	THRESH = new Thresh(), 
 	TIMELORD = new TimeLord(),
-	TURTLE = new Turtle(),
-	VIKING = new Viking(),
+	TURTLE = new Turtle(), 
+	VIKING = new Viking(), 
 	VIPER = new Viper();
+
+	public static void loadKits() {
+		KitPvPAPI.addKit(Kits.NENHUM);
+		KitPvPAPI.addKit(Kits.PVP);
+		KitPvPAPI.addKit(Kits.AJNIN);
+		KitPvPAPI.addKit(Kits.ARCHER);
+		KitPvPAPI.addKit(Kits.ANCHOR);
+		KitPvPAPI.addKit(Kits.ANTITOWER);
+		KitPvPAPI.addKit(Kits.ARMOR);
+		KitPvPAPI.addKit(Kits.AVATAR);
+		KitPvPAPI.addKit(Kits.C4);
+		KitPvPAPI.addKit(Kits.CAMEL);
+		KitPvPAPI.addKit(Kits.CONFUSER);
+		KitPvPAPI.addKit(Kits.DESHFIRE);
+		KitPvPAPI.addKit(Kits.FISHERMAN);
+		KitPvPAPI.addKit(Kits.GLADIATOR);
+		KitPvPAPI.addKit(Kits.GRAPPLER);
+		KitPvPAPI.addKit(Kits.HOTPOTATO);
+		KitPvPAPI.addKit(Kits.HULK);
+		KitPvPAPI.addKit(Kits.JELLYFISH);
+		KitPvPAPI.addKit(Kits.KANGAROO);
+		KitPvPAPI.addKit(Kits.MADMAN);
+		KitPvPAPI.addKit(Kits.MAGMA);
+		KitPvPAPI.addKit(Kits.MONK);
+		KitPvPAPI.addKit(Kits.NINJA);
+		KitPvPAPI.addKit(Kits.POSEIDON);
+		KitPvPAPI.addKit(Kits.QUICKDROPPER);
+		KitPvPAPI.addKit(Kits.RAIN);
+		KitPvPAPI.addKit(Kits.RESOUPER);
+		KitPvPAPI.addKit(Kits.SNAIL);
+		KitPvPAPI.addKit(Kits.SONIC);
+		KitPvPAPI.addKit(Kits.SPECIALIST);
+		KitPvPAPI.addKit(Kits.STOMPER);
+		KitPvPAPI.addKit(Kits.SWITCHER);
+		KitPvPAPI.addKit(Kits.SWORDS);
+		KitPvPAPI.addKit(Kits.FORCEFIELD);
+		KitPvPAPI.addKit(Kits.THOR);
+		KitPvPAPI.addKit(Kits.THRESH);
+		KitPvPAPI.addKit(Kits.TIMELORD);
+		KitPvPAPI.addKit(Kits.TURTLE);
+		KitPvPAPI.addKit(Kits.VIKING);
+		KitPvPAPI.addKit(Kits.VIPER);
+	}
 }

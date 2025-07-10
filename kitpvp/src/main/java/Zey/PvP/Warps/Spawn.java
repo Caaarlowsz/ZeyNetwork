@@ -23,6 +23,7 @@ import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.kitpvp.api.Warp;
 
@@ -75,7 +76,7 @@ public class Spawn extends Warp implements CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
 
-					KitPvPAPI api = Main.getAPI();
+					KitPvP api = KitPvPAPI.getInstance();
 					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
 						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
@@ -88,7 +89,7 @@ public class Spawn extends Warp implements CommandExecutor {
 					p.setAllowFlight(false);
 					p.setFlying(false);
 
-					KitAPI.remove(p);
+					api.removeKit(p);
 					Habilidade.removeAbility(p);
 					BuildCommand.embuild.remove(p);
 					p.setGameMode(GameMode.SURVIVAL);

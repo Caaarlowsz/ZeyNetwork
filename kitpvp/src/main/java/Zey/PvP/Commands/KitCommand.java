@@ -14,7 +14,10 @@ import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Eventos.Habilidade;
 import Zey.PvP.Main.Main;
 import Zey.PvP.Utils.Proteção;
+import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.KitPvP;
+import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
 public class KitCommand implements CommandExecutor {
 	public KitCommand(final Main main) {
@@ -22,7 +25,8 @@ public class KitCommand implements CommandExecutor {
 
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 		final Player p = (Player) sender;
-		String warp = Main.getAPI().getWarp(p).getName();
+		KitPvP api = KitPvPAPI.getInstance();
+		String warp = api.getWarp(p).getName();
 		if (label.equalsIgnoreCase("kit")) {
 			if (args.length == 0) {
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cErrado, utilize a sintaxe correta: /kit (kit)");
@@ -107,7 +111,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Camel");
-				KitAPI.Camel.add(p.getName());
+				api.setKit(p, Kits.CAMEL);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lCamel");
 				TheTitle.sendTitle(p, "§e§lCAMEL");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -158,7 +162,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "TimeLord");
-				KitAPI.TimeLord.add(p.getName());
+				api.setKit(p, Kits.TIMELORD);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTIMELORD");
 				KitAPI.setitem(p, Material.WATCH, "§e§lTIMELORD", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lTIMELORD");
@@ -211,7 +215,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "DeshFire");
-				KitAPI.DeshFire.add(p.getName());
+				api.setKit(p, Kits.DESHFIRE);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lDESHFIRE");
 				KitAPI.setitem(p, Material.REDSTONE_BLOCK, "§e§lDESHFIRE", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lDESHFIRE");
@@ -225,7 +229,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Fisherman");
-				KitAPI.Fisherman.add(p.getName());
+				api.setKit(p, Kits.FISHERMAN);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lFISHERMAN");
 				KitAPI.setitem(p, Material.FISHING_ROD, "§e§lFISHERMAN", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lFISHERMAN");
@@ -239,7 +243,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Gladiator");
-				KitAPI.Gladiator.add(p.getName());
+				api.setKit(p, Kits.GLADIATOR);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lGLADIATOR");
 				KitAPI.setitem(p, Material.IRON_FENCE, "§e§lGLADIATOR", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lGLADIATOR");
@@ -253,7 +257,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Grappler");
-				KitAPI.Grappler.add(p.getName());
+				api.setKit(p, Kits.GRAPPLER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lGRAPPLER");
 				KitAPI.setitem(p, Material.LEASH, "§e§lGRAPPLER", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lGRAPPLER");
@@ -305,7 +309,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Kangaroo");
-				KitAPI.Kangaroo.add(p.getName());
+				api.setKit(p, Kits.KANGAROO);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lKANGAROO");
 				KitUtil.darItem(p, Material.FIREWORK, 1, "§e§lKANGAROO", 1);
 				TheTitle.sendTitle(p, "§e§lKANGAROO");
@@ -344,7 +348,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Ninja");
-				KitAPI.Ninja.add(p.getName());
+				api.setKit(p, Kits.NINJA);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lNINJA");
 				TheTitle.sendTitle(p, "§e§lNINJA");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -381,7 +385,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Snail");
-				KitAPI.Snail.add(p.getName());
+				api.setKit(p, Kits.SNAIL);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSNAIL");
 				TheTitle.sendTitle(p, "§e§lSNAIL");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -394,7 +398,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Sonic");
-				KitAPI.Sonic.add(p.getName());
+				api.setKit(p, Kits.SONIC);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSONIC");
 				KitAPI.setitem(p, Material.LAPIS_BLOCK, "§e§lSONIC", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lSONIC");
@@ -422,7 +426,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Stomper");
-				KitAPI.Stomper.add(p.getName());
+				api.setKit(p, Kits.STOMPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lSTOMPER");
 				TheTitle.sendTitle(p, "§e§lSTOMPER");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -460,7 +464,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "ForceField");
-				KitAPI.ForceField.add(p.getName());
+				api.setKit(p, Kits.FORCEFIELD);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lFORCEFIELD");
 				KitAPI.setitem(p, Material.NETHER_FENCE, "§e§lFORCEFIELD", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lFORCEFIELD");
@@ -487,7 +491,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Thresh");
-				KitAPI.Thresh.add(p.getName());
+				api.setKit(p, Kits.THRESH);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lTHRESH");
 				KitAPI.setitem(p, Material.LEVER, "§e§lTHRESH", 1, Enchantment.DAMAGE_ALL, 0, false);
 				TheTitle.sendTitle(p, "§e§lTHRESH");
@@ -513,7 +517,7 @@ public class KitCommand implements CommandExecutor {
 				KitAPI.sopa(p);
 				KitAPI.sword(p);
 				Habilidade.setAbility(p, "Viper");
-				KitAPI.Viper.add(p.getName());
+				api.setKit(p, Kits.VIPER);
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIPER");
 				TheTitle.sendTitle(p, "§e§lVIPER");
 				SetArenaCommand.TeleportArenaRandom(p);
@@ -529,7 +533,7 @@ public class KitCommand implements CommandExecutor {
 				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você selecionou o Kit: §a§lVIKING");
 				TheTitle.sendTitle(p, "§e§lVIKING");
 				SetArenaCommand.TeleportArenaRandom(p);
-				Main.getAPI().setWarp(p, Warps.ARENA);
+				api.setWarp(p, Warps.ARENA);
 			}
 		}
 		if (args[0].equalsIgnoreCase("madman")) {

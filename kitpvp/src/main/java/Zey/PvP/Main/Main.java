@@ -1,6 +1,10 @@
 package Zey.PvP.Main;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -66,89 +70,42 @@ import Zey.PvP.Warps.WarpRdm;
 import net.minecraft.util.com.google.common.collect.Lists;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.api.Warp;
 import tk.zeynetwork.utils.ClassGetter;
 import tk.zeynetwork.utils.ConfigUtils;
 
-public final class Main extends JavaPlugin {
+public final class Main extends JavaPlugin implements KitPvP {
+
+	private HashSet<Warp> warps = new HashSet<>();
+	private HashSet<Kit> kits = new HashSet<>();
+	private HashMap<Player, Warp> warpMap = new HashMap<>();
+	private HashMap<Player, Kit> kitMap = new HashMap<>();
 
 	public static final String PREFIX = "§6§lZey§f§lPvP",
 			MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.",
 			WHITELIST_MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.";
+
 	public static MyConfigManager manager;
-
 	public static List<String> admins = Lists.newArrayList();
-
-	private static KitPvPAPI api;
-
-	public static KitPvPAPI getAPI() {
-		return api;
-	}
 
 	public static Main getPlugin() {
 		return getPlugin(Main.class);
 	}
 
 	public void onEnable() {
-		SManager.onEnable();
-
-		api = new KitPvPAPI(this);
-		getAPI().addWarp(Warps.ARENA);
-		getAPI().addWarp(Warps.CHALLENGE);
-		getAPI().addWarp(Warps.EVENTO);
-		getAPI().addWarp(Warps.FPS);
-		getAPI().addWarp(Warps.MAIN);
-		getAPI().addWarp(Warps.NENHUMA);
-		getAPI().addWarp(Warps.PARKOUR);
-		getAPI().addWarp(Warps.SPAWN);
-
-		getAPI().addKit(Kits.PVP);
-		getAPI().addKit(Kits.AJNIN);
-		getAPI().addKit(Kits.ARCHER);
-		getAPI().addKit(Kits.ANCHOR);
-		getAPI().addKit(Kits.ANTITOWER);
-		getAPI().addKit(Kits.ARMOR);
-		getAPI().addKit(Kits.AVATAR);
-		getAPI().addKit(Kits.C4);
-		getAPI().addKit(Kits.CAMEL);
-		getAPI().addKit(Kits.CONFUSER);
-		getAPI().addKit(Kits.DESHFIRE);
-		getAPI().addKit(Kits.FISHERMAN);
-		getAPI().addKit(Kits.GLADIATOR);
-		getAPI().addKit(Kits.GRAPPLER);
-		getAPI().addKit(Kits.HOTPOTATO);
-		getAPI().addKit(Kits.HULK);
-		getAPI().addKit(Kits.JELLYFISH);
-		getAPI().addKit(Kits.KANGAROO);
-		getAPI().addKit(Kits.MADMAN);
-		getAPI().addKit(Kits.MAGMA);
-		getAPI().addKit(Kits.MONK);
-		getAPI().addKit(Kits.NINJA);
-		getAPI().addKit(Kits.POSEIDON);
-		getAPI().addKit(Kits.QUICKDROPPER);
-		getAPI().addKit(Kits.RAIN);
-		getAPI().addKit(Kits.RESOUPER);
-		getAPI().addKit(Kits.SNAIL);
-		getAPI().addKit(Kits.SONIC);
-		getAPI().addKit(Kits.SPECIALIST);
-		getAPI().addKit(Kits.STOMPER);
-		getAPI().addKit(Kits.SWITCHER);
-		getAPI().addKit(Kits.SWORDS);
-		getAPI().addKit(Kits.FORCEFIELD);
-		getAPI().addKit(Kits.THOR);
-		getAPI().addKit(Kits.THRESH);
-		getAPI().addKit(Kits.TIMELORD);
-		getAPI().addKit(Kits.TURTLE);
-		getAPI().addKit(Kits.VIKING);
-		getAPI().addKit(Kits.VIPER);
-
 		ConfigUtils.setupDefaultConfig(this);
+		KitPvPAPI.setInstance(this);
+		Warps.loadWarps();
+		Kits.loadKits();
 		ClassGetter.registerListeners(this, "Zey.PvP");
 		this.logPluginStatus(true);
 
+		SManager.onEnable();
 		manager = new MyConfigManager(this);
 		ZeyCoins.loadMoneyManager();
-
 		Comandos();
 	}
 
@@ -229,5 +186,90 @@ public final class Main extends JavaPlugin {
 		msg.append("\n§b§l§m-------------------------------------");
 		for (String s : msg.toString().split("\n"))
 			Bukkit.getConsoleSender().sendMessage(s);
+	}
+
+	@Override
+	public String getApiVersion() {
+		return "0.0.0";
+	}
+
+	@Override
+	public Set<Warp> getWarps() {
+		return Collections.unmodifiableSet(this.warps);
+	}
+
+	@Override
+	public Warp getWarp(String name) {
+		return this.getWarps().stream().filter(w -> w.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	}
+
+	@Override
+	public void addWarp(Warp warp) {
+		this.warps.add(warp);
+	}
+
+	@Override
+	public void removeWarp(Warp warp) {
+		this.warps.remove(warp);
+	}
+
+	@Override
+	public boolean hasWarp(Player player) {
+		return this.warpMap.containsKey(player);
+	}
+
+	@Override
+	public Warp getWarp(Player player) {
+		return this.warpMap.getOrDefault(player, Warps.NENHUMA);
+	}
+
+	@Override
+	public void setWarp(Player player, Warp warp) {
+		this.warpMap.put(player, warp);
+	}
+
+	@Override
+	public void removeWarp(Player player) {
+		this.warpMap.remove(player);
+	}
+
+	@Override
+	public Set<Kit> getKits() {
+		return Collections.unmodifiableSet(this.kits);
+	}
+
+	@Override
+	public Kit getKit(String name) {
+		return this.getKits().stream().filter(k -> k.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+	}
+
+	@Override
+	public void addKit(Kit kit) {
+		this.kits.add(kit);
+	}
+
+	@Override
+	public void removeKit(Kit kit) {
+		this.kits.remove(kit);
+	}
+
+	@Override
+	public boolean hasKit(Player player) {
+		return this.kitMap.containsKey(player);
+	}
+
+	@Override
+	public Kit getKit(Player player) {
+		return this.kitMap.getOrDefault(player, Kits.NENHUM);
+	}
+
+	@Override
+	public void setKit(Player player, Kit kit) {
+		this.kitMap.put(player, kit);
+	}
+
+	@Override
+	public void removeKit(Player player) {
+		this.kitMap.remove(player);
 	}
 }
