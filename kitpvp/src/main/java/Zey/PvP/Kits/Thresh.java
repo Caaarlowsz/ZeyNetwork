@@ -47,10 +47,10 @@ public class Thresh extends Kit implements Listener {
 				Thresh.tiros.put(p.getName(), tiro);
 				Thresh.cooldown.put(p.getName(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(15L));
 				p.playSound(p.getLocation(), Sound.GLASS, 1.0f, 1.0f);
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê usou seu Thresh.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê usou seu Thresh.");
 				return;
 			}
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde o cooldown terminar.");
 		}
 	}
 
@@ -72,7 +72,7 @@ public class Thresh extends Kit implements Listener {
 					hit.teleport(ploc);
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));
 					hit.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 1));
-					hit.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê foi pego por um Thresh.");
+					hit.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê foi pego por um Thresh.");
 				}
 			}
 		}

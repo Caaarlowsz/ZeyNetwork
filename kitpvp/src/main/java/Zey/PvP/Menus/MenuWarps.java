@@ -142,7 +142,7 @@ public class MenuWarps implements Listener, CommandExecutor {
 			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§e§l1v1")) {
 				e.setCancelled(true);
 				p.closeInventory();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEsta Warp. Está em desenvolvimento.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cEsta Warp. Está em desenvolvimento.");
 				p.playSound(p.getLocation(), Sound.LEVEL_UP, 5.0f, 5.0f);
 				return;
 			}

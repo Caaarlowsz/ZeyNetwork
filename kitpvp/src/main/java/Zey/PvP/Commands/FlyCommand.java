@@ -17,33 +17,33 @@ public class FlyCommand implements CommandExecutor {
 		final Player p = (Player) s;
 		if (!p.hasPermission("zey.pvp.fly")) {
 			p.sendMessage(
-					String.valueOf(Main.PREFIX) + " §7» §cVocê precisa ser §e[SUPREMO] §cou superior, para voar.");
+					String.valueOf(Main.NAME) + " §7» §cVocê precisa ser §e[SUPREMO] §cou superior, para voar.");
 			return true;
 		}
 
 		String warp = KitPvPAPI.getWarp(p).getName();
 		if (warp == "Arena") {
-			p.sendMessage(String.valueOf(Main.PREFIX)
+			p.sendMessage(String.valueOf(Main.NAME)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
 		if (warp == "Fps") {
-			p.sendMessage(String.valueOf(Main.PREFIX)
+			p.sendMessage(String.valueOf(Main.NAME)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
 		if (warp == "Challenge") {
-			p.sendMessage(String.valueOf(Main.PREFIX)
+			p.sendMessage(String.valueOf(Main.NAME)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
 		if (warp == "Parkour") {
-			p.sendMessage(String.valueOf(Main.PREFIX)
+			p.sendMessage(String.valueOf(Main.NAME)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
 		if (warp == "Main") {
-			p.sendMessage(String.valueOf(Main.PREFIX)
+			p.sendMessage(String.valueOf(Main.NAME)
 					+ " §7» §cVocê só pode voar no spawn, volte ao spawn usando o comando: /spawn");
 			return true;
 		}
@@ -52,13 +52,13 @@ public class FlyCommand implements CommandExecutor {
 			if (p.getAllowFlight()) {
 				p.setAllowFlight(false);
 				p.setFlying(false);
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Modo Fly §c§lDESABILITADO §7para o jogador(a): §e"
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Modo Fly §c§lDESABILITADO §7para o jogador(a): §e"
 						+ p.getName());
 				return true;
 			}
 			p.setAllowFlight(true);
 			p.setFlying(true);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Modo Fly §a§lHABILITADO §7para o jogador(a): §e"
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Modo Fly §a§lHABILITADO §7para o jogador(a): §e"
 					+ p.getName());
 			return true;
 		} else {
@@ -67,30 +67,30 @@ public class FlyCommand implements CommandExecutor {
 				return true;
 			}
 			if (!p.hasPermission("zey.pvp.fly.others")) {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cVocê precisa ser §a[FRIEND] §cou superior, para permitir um jogador(a) voar.");
 				return true;
 			}
 			final Player t = Bukkit.getPlayerExact(args[0]);
 			if (t == null) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline.");
 				return true;
 			}
 			if (t.getAllowFlight()) {
 				t.setAllowFlight(false);
 				t.setFlying(false);
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §c§lDESABILITOU §7o Fly para o jogador(a): §e"
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §c§lDESABILITOU §7o Fly para o jogador(a): §e"
 						+ t.getName());
-				t.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Fly §c§lDESABILITADO §7pelo jogador(a): §e"
+				t.sendMessage(String.valueOf(Main.NAME) + " §7» §7Fly §c§lDESABILITADO §7pelo jogador(a): §e"
 						+ p.getName());
 				return true;
 			}
 			t.setAllowFlight(true);
 			t.setFlying(true);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §a§lHABILITOU §7o modo Fly para o jogador(a): §e"
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §a§lHABILITOU §7o modo Fly para o jogador(a): §e"
 					+ t.getName());
 			t.sendMessage(
-					String.valueOf(Main.PREFIX) + " §7» §7Fly §a§lHABILITADO §7pelo jogador(a): §e" + p.getName());
+					String.valueOf(Main.NAME) + " §7» §7Fly §a§lHABILITADO §7pelo jogador(a): §e" + p.getName());
 			return true;
 		}
 	}

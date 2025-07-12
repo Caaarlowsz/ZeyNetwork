@@ -37,7 +37,7 @@ public class TimeLord extends Kit implements Listener {
 				&& player.getItemInHand().getType() == Material.WATCH
 				&& KitPvPAPI.getKit(player).equals(Kits.TIMELORD)) {
 			if (TimeLord.cooldownt.contains(player.getName())) {
-				player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
+				player.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde o cooldown terminar.");
 			} else {
 				for (final Entity frozen : player.getNearbyEntities(2.0, 3.0, 2.0)) {
 					if (frozen != null && frozen instanceof Player) {
@@ -56,7 +56,7 @@ public class TimeLord extends Kit implements Listener {
 										TimeLord.freezing.remove(player.getName());
 										TimeLord.cooldownt.remove(player.getName());
 										player.sendMessage(
-												String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown terminou.");
+												String.valueOf(Main.NAME) + " §7» §aSeu cooldown terminou.");
 									}
 								}, 500L);
 					}
@@ -70,7 +70,7 @@ public class TimeLord extends Kit implements Listener {
 		final Player player = event.getPlayer();
 		if (TimeLord.freeze.contains(player.getName()) && !TimeLord.freezing.contains(player.getName())) {
 			event.setTo(player.getLocation());
-			player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cUm §e§lTIMELORD§c congelou o tempo.");
+			player.sendMessage(String.valueOf(Main.NAME) + " §7» §cUm §e§lTIMELORD§c congelou o tempo.");
 			Main.getPlugin().getServer().getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(),
 					(Runnable) new Runnable() {
 						@Override

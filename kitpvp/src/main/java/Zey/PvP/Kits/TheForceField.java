@@ -39,7 +39,7 @@ public class TheForceField extends Kit implements Listener {
 				event.setCancelled(true);
 			}
 			if (TheForceField.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde o cooldown terminar.");
 				return;
 			}
 			final Location loc = p.getLocation();
@@ -49,7 +49,7 @@ public class TheForceField extends Kit implements Listener {
 				@Override
 				public void run() {
 					KitAPI.ForceField1.add(p.getName());
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você usou sua habilidade de ForceField.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você usou sua habilidade de ForceField.");
 				}
 			}, 0L);
 			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
@@ -62,7 +62,7 @@ public class TheForceField extends Kit implements Listener {
 				@Override
 				public void run() {
 					TheForceField.cooldownm.remove(p);
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 0.5f, 0.5f);
 				}
 			}, 300L);

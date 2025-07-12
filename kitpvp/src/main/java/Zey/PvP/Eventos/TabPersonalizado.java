@@ -31,7 +31,7 @@ public class TabPersonalizado implements Listener {
 			public void run() {
 				final PlayerConnection connect = ((CraftPlayer) jogador).getHandle().playerConnection;
 				final IChatBaseComponent top = ChatSerializer
-						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '        " + Main.PREFIX
+						.a("{'extra': [{text: '', color: 'aqua'}],'color': gold, 'text': '        " + Main.NAME
 								+ "       '}");
 				final IChatBaseComponent bottom = ChatSerializer
 						.a("{'extra': [{'color': 'aqua', 'text': ' §7» §eLoja: §b" + "Zeynetwork.tk"

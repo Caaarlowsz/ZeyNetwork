@@ -68,7 +68,7 @@ public class PlacaDaLava implements Listener {
 							&& (lines.length > 3) && (lines[3].equals("§7(Fácil)"))
 							&& warp == "Challenge") {
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §efácil§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você completou o challenge §efácil§7.");
 
 						ZeyCoins.addMoney(p, 200);
 
@@ -95,7 +95,7 @@ public class PlacaDaLava implements Listener {
 							p.updateInventory();
 						}
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você ganhou §e§l200 ZeyCoins§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você ganhou §e§l200 ZeyCoins§7.");
 
 					}
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
@@ -103,7 +103,7 @@ public class PlacaDaLava implements Listener {
 							&& (lines.length > 3) && (lines[3].equals("§7(Médio)"))
 							&& warp == "Challenge") {
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §emedio§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você completou o challenge §emedio§7.");
 
 						ZeyCoins.addMoney(p, 300);
 
@@ -130,7 +130,7 @@ public class PlacaDaLava implements Listener {
 							p.updateInventory();
 						}
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você ganhou §e§l300 ZeyCoins§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você ganhou §e§l300 ZeyCoins§7.");
 
 					}
 					if ((lines.length > 0) && (lines[0].equals("")) && (lines.length > 1)
@@ -138,7 +138,7 @@ public class PlacaDaLava implements Listener {
 							&& (lines.length > 3) && (lines[3].equals("§7(Difícil)"))
 							&& warp == "Challenge") {
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §edifício§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você completou o challenge §edifício§7.");
 
 						ZeyCoins.addMoney(p, 500);
 
@@ -165,7 +165,7 @@ public class PlacaDaLava implements Listener {
 							p.updateInventory();
 						}
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você ganhou §e§l500 ZeyCoins§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você ganhou §e§l500 ZeyCoins§7.");
 
 					}
 
@@ -174,10 +174,10 @@ public class PlacaDaLava implements Listener {
 							&& (lines.length > 3) && (lines[3].equals("§7(Extremo)"))
 							&& warp == "Challenge") {
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você completou o challenge §eextremo§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você completou o challenge §eextremo§7.");
 
 						Bukkit.broadcastMessage(" ");
-						Bukkit.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» O jogador(a): §e" + p.getName()
+						Bukkit.broadcastMessage(String.valueOf(Main.NAME) + " §7» O jogador(a): §e" + p.getName()
 								+ " §7compretou o challenger, §c§LEXTREMO§7.");
 						Bukkit.broadcastMessage(" ");
 
@@ -206,7 +206,7 @@ public class PlacaDaLava implements Listener {
 							p.updateInventory();
 						}
 
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você ganhou §e§l1500 ZeyCoins§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você ganhou §e§l1500 ZeyCoins§7.");
 
 					}
 

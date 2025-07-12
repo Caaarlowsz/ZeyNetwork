@@ -26,41 +26,41 @@ public class RecraftCommand implements CommandExecutor {
 
 			String warp = KitPvPAPI.getWarp(p).getName();
 			if (warp == "Challenge") {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
 			if (warp == "Main") {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
 			if (warp == "Fps") {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
 			if (warp == "Parkour") {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, volte ao spawn e pegue um kit, usando o comando: /spawn");
 				return true;
 			}
 			if (warp == "Spawn") {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §cVocê não pode usar esse comando nestá Warp. Para utilizar esse comando, pegue um Kit, usando o comando: /kit (kit)");
 				return true;
 			}
 
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Seu §a§lRECRAFT §7está a caminho.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Seu §a§lRECRAFT §7está a caminho.");
 
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Spawn.plugin, (Runnable) new Runnable() {
 
 				@Override
 				public void run() {
 
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu recraft chegou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu recraft chegou.");
 
 					final ItemStack sopas = new ItemStack(Material.BOWL, 64);
 					final ItemMeta ksopas = sopas.getItemMeta();

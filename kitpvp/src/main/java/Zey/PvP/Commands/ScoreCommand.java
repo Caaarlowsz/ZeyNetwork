@@ -14,7 +14,7 @@ public class ScoreCommand implements CommandExecutor {
 		Player p = (Player) Sender;
 
 		if (Cmd.getName().equalsIgnoreCase("score")) {
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEsse comando foi desativado, temporariamente.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cEsse comando foi desativado, temporariamente.");
 			return true;
 		}
 		// if(SPlayer.Score.contains(p)){

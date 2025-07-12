@@ -30,7 +30,7 @@ public class SetLava implements CommandExecutor {
 				SetLava.plugin.getConfig().set("lava.yaw", (Object) p.getLocation().getYaw());
 				SetLava.plugin.getConfig().set("lava.world", (Object) p.getLocation().getWorld().getName());
 				SetLava.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Challenge foi setada com sucesso");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aWarp Challenge foi setada com sucesso");
 			}
 			return true;
 		}

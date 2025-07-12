@@ -39,7 +39,7 @@ public class sKit implements CommandExecutor {
 			}
 			if (Args.length == 0) {
 				p.sendMessage("       ");
-				p.sendMessage("                " + Main.PREFIX);
+				p.sendMessage("                " + Main.NAME);
 				p.sendMessage("");
 				p.sendMessage("§b» §eUtilize /skit criar [Kit]");
 				p.sendMessage("§b» §eUtilize /skit aplicar [Kit] [Raio de Blocos]");
@@ -48,22 +48,22 @@ public class sKit implements CommandExecutor {
 			}
 			if (Args[0].equalsIgnoreCase("criar")) {
 				if (Args.length == 1) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cUse: /skit para ver um mini-tutorial.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cUse: /skit para ver um mini-tutorial.");
 					return true;
 				}
 				final String nome = Args[1];
 				this.itens.put(nome, p.getInventory().getContents());
 				this.armor.put(nome, p.getInventory().getArmorContents());
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aO Kit: §e" + Args[1] + " §aFoi Criado");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aO Kit: §e" + Args[1] + " §aFoi Criado");
 				return true;
 			} else if (Args[0].equalsIgnoreCase("aplicar")) {
 				if (Args.length <= 2) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cUtlize /skit para ver um mini-tutorial.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cUtlize /skit para ver um mini-tutorial.");
 					return true;
 				}
 				final String nome = Args[1];
 				if (!this.itens.containsKey(nome) && !this.armor.containsKey(nome)) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO Kit §e" + nome + " §cnão existe");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO Kit §e" + nome + " §cnão existe");
 					return true;
 				}
 				if (this.isInt(Args[2])) {
@@ -76,10 +76,10 @@ public class sKit implements CommandExecutor {
 						}
 					}
 					Bukkit.getServer().broadcastMessage("");
-					Bukkit.getServer().broadcastMessage(String.valueOf(Main.PREFIX) + " §f» §7O Kit §e" + nome
+					Bukkit.getServer().broadcastMessage(String.valueOf(Main.NAME) + " §f» §7O Kit §e" + nome
 							+ " §7foi aplicado em um raio de §e" + n + " §ablocos");
 					Bukkit.getServer().broadcastMessage("");
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você aplicou o kit §e" + nome
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você aplicou o kit §e" + nome
 							+ " §7em um raio de §e" + n + " §7blocos");
 					return true;
 				}

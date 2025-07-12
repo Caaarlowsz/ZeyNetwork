@@ -20,8 +20,8 @@ public class TpAllCommand implements CommandExecutor {
 				return true;
 			}
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você puxou §a§lTODOS §7os jogadores até você.");
-				Bukkit.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» §7O jogador(a): §e" + p.getName()
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você puxou §a§lTODOS §7os jogadores até você.");
+				Bukkit.broadcastMessage(String.valueOf(Main.NAME) + " §7» §7O jogador(a): §e" + p.getName()
 						+ "§7 puxou todos os jogadores até ele.");
 				for (Player todos : Bukkit.getOnlinePlayers()) {
 					if (todos != p) {

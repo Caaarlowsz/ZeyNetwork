@@ -49,21 +49,21 @@ public class Lava extends Warp implements CommandExecutor {
 
 			p.getInventory().clear();
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você está sendo teleportando para Warp §a§lCHALLENGE");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você está sendo teleportando para Warp §a§lCHALLENGE");
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Main.getPlugin(), (Runnable) new Runnable() {
 
 				@Override
 				public void run() {
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aTeleportado com sucesso");
 
 					TitleAPI.sendTitle(p, "§e§lCHALLENGE");
 
 					KitPvP api = KitPvPAPI.getInstance();
 					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você saiu do modo §c§lADMIN");
 
 						for (Player players : Bukkit.getOnlinePlayers()) {
 							players.showPlayer(p);

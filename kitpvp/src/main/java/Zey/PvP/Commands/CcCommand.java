@@ -15,7 +15,7 @@ public class CcCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, final Command cmd, final String commandLabel,
 			final String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cApenas jogadores podem usar isso.");
+			sender.sendMessage(String.valueOf(Main.NAME) + " §7» §cApenas jogadores podem usar isso.");
 			return false;
 		}
 		final Player p = (Player) sender;

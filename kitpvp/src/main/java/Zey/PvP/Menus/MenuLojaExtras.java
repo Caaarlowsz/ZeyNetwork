@@ -54,12 +54,12 @@ public class MenuLojaExtras implements Listener, CommandExecutor {
 					ZeyCoins.removeMoney(p, 10000);
 					Bukkit.dispatchCommand((CommandSender) Bukkit.getConsoleSender(),
 							"pex user " + p.getName() + " add kitpvp.cor");
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você Agora Pode §a§lFALAR COLORIDO");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você Agora Pode §a§lFALAR COLORIDO");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);
 				} else if (ZeyCoins.getPlayerMoney(p) < 10000) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cMoedas Insuficientes");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cMoedas Insuficientes");
 					e.setCancelled(true);
 					p.closeInventory();
 					p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 5.0f, 5.0f);

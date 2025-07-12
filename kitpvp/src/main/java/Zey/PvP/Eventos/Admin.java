@@ -33,7 +33,7 @@ public class Admin implements Listener {
 			if (player.getItemInHand().getType() == Material.AIR) {
 				player.openInventory(clicked.getInventory());
 
-				player.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você está vendo o inventario do jogador(a): §c"
+				player.sendMessage(String.valueOf(Main.NAME) + " §7» Você está vendo o inventario do jogador(a): §c"
 						+ clicked.getName());
 				e.setCancelled(true);
 			} else if (player.getItemInHand().getType().equals((Object) Material.BEDROCK)

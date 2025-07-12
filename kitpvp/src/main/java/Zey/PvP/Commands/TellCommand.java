@@ -24,25 +24,25 @@ public class TellCommand implements CommandExecutor {
 		final Player p = (Player) sender;
 		if (label.equalsIgnoreCase("tell")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cErrado, utilize a sintaxe correta: /tell [Jogador(a)] (msg)");
 				return true;
 			}
 			final Player target = Bukkit.getPlayer(args[0]);
 			if (args[0].toLowerCase().equalsIgnoreCase("on")) {
 				TellCommand.telloff.remove(p);
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §a§lHABILITOU §7seu tell");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §a§lHABILITOU §7seu tell");
 			} else if (args[0].toLowerCase().equalsIgnoreCase("off")) {
 				TellCommand.telloff.add(p);
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §c§lDESABILITOU §7seu tell");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §c§lDESABILITOU §7seu tell");
 			}
 			if (args.length > 1) {
 				if (target == null) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline ou não existe.");
 					return true;
 				}
 				if (TellCommand.telloff.contains(target)) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO tell desse player esta desabilitado.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO tell desse player esta desabilitado.");
 					return true;
 				}
 				final StringBuilder sb = new StringBuilder();
@@ -57,20 +57,20 @@ public class TellCommand implements CommandExecutor {
 			}
 		} else if (label.equalsIgnoreCase("off")) {
 			if (args.length == 0) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO tell desse player esta desabilitado.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO tell desse player esta desabilitado.");
 				return true;
 			}
 			if (!TellCommand.gettell.containsKey(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você não tem ninguem para responder.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você não tem ninguem para responder.");
 				return true;
 			}
 			final Player deslogo = TellCommand.gettell.get(p);
 			if (deslogo == null) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline ou não existe.");
 				return true;
 			}
 			if (TellCommand.telloff.contains(deslogo)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO tell desse player esta desabilitado.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO tell desse player esta desabilitado.");
 				return true;
 			}
 			final StringBuilder sb = new StringBuilder();

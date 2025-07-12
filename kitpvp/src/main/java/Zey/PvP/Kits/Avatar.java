@@ -104,7 +104,7 @@ public class Avatar extends Kit implements Listener {
 			e.setCancelled(true);
 			p.updateInventory();
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 30);
@@ -122,7 +122,7 @@ public class Avatar extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 600L);
 		}
@@ -149,7 +149,7 @@ public class Avatar extends Kit implements Listener {
 			e.setCancelled(true);
 			p.updateInventory();
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 30);
@@ -167,7 +167,7 @@ public class Avatar extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 600L);
 		}
@@ -193,7 +193,7 @@ public class Avatar extends Kit implements Listener {
 			e.setCancelled(true);
 			p.updateInventory();
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 30);
@@ -211,7 +211,7 @@ public class Avatar extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 600L);
 		}
@@ -240,7 +240,7 @@ public class Avatar extends Kit implements Listener {
 			e.setCancelled(true);
 			p.updateInventory();
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 30);
@@ -258,7 +258,7 @@ public class Avatar extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 600L);
 		}

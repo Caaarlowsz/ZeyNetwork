@@ -31,7 +31,7 @@ public class AdminCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			sender.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cApenas jogadores podem usar isso.");
+			sender.sendMessage(String.valueOf(Main.NAME) + " §7» §cApenas jogadores podem usar isso.");
 			return true;
 		}
 
@@ -109,7 +109,7 @@ public class AdminCommand implements CommandExecutor {
 
 					p.updateInventory();
 
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você entrou no modo §c§lADMIN");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» Você entrou no modo §c§lADMIN");
 
 				} else {
 					Main.admins.remove(p.getName());
@@ -126,7 +126,7 @@ public class AdminCommand implements CommandExecutor {
 					p.setGameMode(GameMode.SURVIVAL);
 					KitPvPAPI.removeWarp(p);
 
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» Você saiu do modo §c§lADMIN");
 					BuildCommand.embuild.remove(p);
 				}
 			}

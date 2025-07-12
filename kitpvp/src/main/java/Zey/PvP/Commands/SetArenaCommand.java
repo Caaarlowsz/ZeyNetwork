@@ -24,12 +24,12 @@ public class SetArenaCommand implements CommandExecutor {
 		if (p.hasPermission("zey.pvp.setarena") && label.equalsIgnoreCase("setarena")) {
 			if (args.length == 0) {
 				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §cErrado, utilize a sintaxe correta: /setarena (1 - 5)");
+						String.valueOf(Main.NAME) + " §7» §cErrado, utilize a sintaxe correta: /setarena (1 - 5)");
 				return true;
 			}
 			if (args[0].equalsIgnoreCase("1")) {
 				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aA Arena 1 Foi Setada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aA Arena 1 Foi Setada");
 				SetArenaCommand.plugin.getConfig().set("arena1.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena1.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena1.z", (Object) p.getLocation().getZ());
@@ -41,7 +41,7 @@ public class SetArenaCommand implements CommandExecutor {
 			}
 			if (args[0].equalsIgnoreCase("2")) {
 				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aA Arena 2 Foi Setada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aA Arena 2 Foi Setada");
 				SetArenaCommand.plugin.getConfig().set("arena2.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena2.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena2.z", (Object) p.getLocation().getZ());
@@ -53,7 +53,7 @@ public class SetArenaCommand implements CommandExecutor {
 			}
 			if (args[0].equalsIgnoreCase("3")) {
 				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aA Arena 3 Foi Setada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aA Arena 3 Foi Setada");
 				SetArenaCommand.plugin.getConfig().set("arena3.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena3.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena3.z", (Object) p.getLocation().getZ());
@@ -65,7 +65,7 @@ public class SetArenaCommand implements CommandExecutor {
 			}
 			if (args[0].equalsIgnoreCase("4")) {
 				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aA Arena 4 Foi Setada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aA Arena 4 Foi Setada");
 				SetArenaCommand.plugin.getConfig().set("arena4.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena4.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena4.z", (Object) p.getLocation().getZ());
@@ -77,7 +77,7 @@ public class SetArenaCommand implements CommandExecutor {
 			}
 			if (args[0].equalsIgnoreCase("5")) {
 				Main.getPlugin().getConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aA Arena 5 Foi Setada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aA Arena 5 Foi Setada");
 				SetArenaCommand.plugin.getConfig().set("arena5.x", (Object) p.getLocation().getX());
 				SetArenaCommand.plugin.getConfig().set("arena5.y", (Object) p.getLocation().getY());
 				SetArenaCommand.plugin.getConfig().set("arena5.z", (Object) p.getLocation().getZ());

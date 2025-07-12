@@ -112,21 +112,21 @@ public class MenuCabeças implements Listener {
 
 			if (e.getCurrentItem().getType() == Material.WORKBENCH) {
 				p.getInventory().setHelmet(new ItemStack(Material.WORKBENCH));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lCRAFTING TABLE");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lCRAFTING TABLE");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.REDSTONE_LAMP_OFF) {
 				p.getInventory().setHelmet(new ItemStack(Material.REDSTONE_LAMP_OFF));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lLAMPADA");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lLAMPADA");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.FURNACE) {
 				p.getInventory().setHelmet(new ItemStack(Material.FURNACE));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lFORNALHA");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lFORNALHA");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
@@ -137,31 +137,31 @@ public class MenuCabeças implements Listener {
 			}
 			if (e.getCurrentItem().getType() == Material.REDSTONE) {
 				if (!MenuCabeças.comchapeu.contains(p.getName())) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê Não Está Com Uma Cabeça Personalizada");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê Não Está Com Uma Cabeça Personalizada");
 				} else {
 					p.getInventory().setHelmet(new ItemStack(Material.AIR));
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lNENHUMA");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lNENHUMA");
 					MenuCabeças.comchapeu.remove(p.getName());
 				}
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.GLASS) {
 				p.getInventory().setHelmet(new ItemStack(Material.GLASS));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lVIDRO");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lVIDRO");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.ANVIL) {
 				p.getInventory().setHelmet(new ItemStack(Material.ANVIL));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lBIGORNA");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lBIGORNA");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.TNT) {
 				p.getInventory().setHelmet(new ItemStack(Material.TNT));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lTNT");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lTNT");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
@@ -169,7 +169,7 @@ public class MenuCabeças implements Listener {
 			}
 			if (e.getCurrentItem().getType() == Material.DIAMOND_BLOCK) {
 				p.getInventory().setHelmet(new ItemStack(Material.DIAMOND_BLOCK));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lDIAMANTE");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lDIAMANTE");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
@@ -179,14 +179,14 @@ public class MenuCabeças implements Listener {
 			}
 			if (e.getCurrentItem().getType() == Material.BOOKSHELF) {
 				p.getInventory().setHelmet(new ItemStack(Material.BOOKSHELF));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lESTANTE");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lESTANTE");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();
 			}
 			if (e.getCurrentItem().getType() == Material.MOB_SPAWNER) {
 				p.getInventory().setHelmet(new ItemStack(Material.MOB_SPAWNER));
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aCabeça Alterada Para: §e§lSPAWNER");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aCabeça Alterada Para: §e§lSPAWNER");
 				MenuCabeças.comchapeu.remove(p);
 				MenuCabeças.comchapeu.add(p.getName());
 				p.closeInventory();

@@ -22,7 +22,7 @@ public class CageCommand implements CommandExecutor {
 		if (label.equalsIgnoreCase("cage")) {
 			if (player.hasPermission("zey.pvp.cage")) {
 				if (args.length == 0) {
-					player.sendMessage(String.valueOf(Main.PREFIX)
+					player.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §cErrado, utilize a sintaxe correta: /cage [Jogador(a)]");
 					return true;
 				}
@@ -33,11 +33,11 @@ public class CageCommand implements CommandExecutor {
 					if (target != null) {
 						cagePlayer(target);
 
-						player.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você prendeu o jogador(a): §e"
+						player.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você prendeu o jogador(a): §e"
 								+ target.getName());
 					} else {
 						player.sendMessage(
-								String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
+								String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline ou não existe.");
 					}
 				}
 			}

@@ -64,7 +64,7 @@ public class Turtle extends Kit implements Listener {
 		}
 		if (KitPvPAPI.getKit(p).equals(Kits.TURTLE)) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê não pode `hitar' em quanto estiver de SHIFT.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê não pode `hitar' em quanto estiver de SHIFT.");
 		}
 	}
 }

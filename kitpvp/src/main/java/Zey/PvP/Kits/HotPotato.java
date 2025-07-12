@@ -40,15 +40,15 @@ public class HotPotato extends Kit implements Listener {
 				if (Gladiator.lutando.containsKey(p.getName())) {
 				} else {
 					if (Cooldown.add(p)) {
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 						return;
 					}
 					Cooldown.add(p, 20);
 					HotPotato.emhotpotato.add(k.getName());
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aHotPotato Colocada");
-					k.sendMessage(String.valueOf(Main.PREFIX)
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aHotPotato Colocada");
+					k.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §eVocê está com a tnt do hotpotato tire ou ira explodir em 5 segundos!");
-					k.sendMessage(String.valueOf(Main.PREFIX)
+					k.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §cClique com o botao direito na hotpotato para tira-la.");
 
 					final ItemStack tnt = new ItemStack(Material.TNT);
@@ -61,7 +61,7 @@ public class HotPotato extends Kit implements Listener {
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
-								k.sendMessage(String.valueOf(Main.PREFIX)
+								k.sendMessage(String.valueOf(Main.NAME)
 										+ " §7» §eVocê está com a tnt, ela será explodida em 4 segundos");
 							}
 						}
@@ -69,7 +69,7 @@ public class HotPotato extends Kit implements Listener {
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
-								k.sendMessage(String.valueOf(Main.PREFIX)
+								k.sendMessage(String.valueOf(Main.NAME)
 										+ " §7» §eVocê está com a tnt, ela será explodida em 3 segundos");
 							}
 						}
@@ -77,7 +77,7 @@ public class HotPotato extends Kit implements Listener {
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
-								k.sendMessage(String.valueOf(Main.PREFIX)
+								k.sendMessage(String.valueOf(Main.NAME)
 										+ " §7» §eVocê está com a tnt, ela será explodida em 2 segundos");
 							}
 						}
@@ -85,7 +85,7 @@ public class HotPotato extends Kit implements Listener {
 					new BukkitRunnable() {
 						public void run() {
 							if (HotPotato.emhotpotato.contains(k.getName())) {
-								k.sendMessage(String.valueOf(Main.PREFIX)
+								k.sendMessage(String.valueOf(Main.NAME)
 										+ " §7» §e§lVocê está com a tnt, ela será explodida em 1 segundo");
 							}
 						}
@@ -103,7 +103,7 @@ public class HotPotato extends Kit implements Listener {
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
-							p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+							p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 						}
 					}, 500L);
 				}
@@ -121,7 +121,7 @@ public class HotPotato extends Kit implements Listener {
 			e.setCancelled(true);
 			p.getInventory().setHelmet((ItemStack) null);
 			p.playSound(p.getLocation(), Sound.CREEPER_HISS, 2.0f, 2.0f);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê desarmou a hotpotato.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê desarmou a hotpotato.");
 			p.closeInventory();
 		}
 	}

@@ -17,12 +17,12 @@ public class PvPCommand implements CommandExecutor {
 		if (p.getWorld().getPVP()) {
 			p.getWorld().setPVP(false);
 			Bukkit.getServer()
-					.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» §7O PvP do servidor foi §c§lDESATIVADO§7.");
+					.broadcastMessage(String.valueOf(Main.NAME) + " §7» §7O PvP do servidor foi §c§lDESATIVADO§7.");
 			return true;
 		}
 		p.getWorld().setPVP(true);
 		Bukkit.getServer()
-				.broadcastMessage(String.valueOf(Main.PREFIX) + " §7» §7O PvP do servidor foi §a§lATIVADO§7.");
+				.broadcastMessage(String.valueOf(Main.NAME) + " §7» §7O PvP do servidor foi §a§lATIVADO§7.");
 		return true;
 	}
 }

@@ -156,7 +156,7 @@ public class SetGroupCommand implements CommandExecutor {
 						return true;
 					}
 			} else {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cErrado, utilize a sintaxe correta: /setgroup [Jogador(a)] [Grupo]");
 				p.sendMessage(
 						"§cGrupos disponiveis§f: §7[NORMAL]§f, §a[FRIEND]§f, §b[YOUTUBER]§f, §2[BUILDER]§f, §d[HELPER]§f, §d[TRIAL]§f, §5[MOD]§f, §c[GERENTE]§f, §3[DEVELOPER]§f, §4[SUB-DONA]§f, §4[SUB-DONO]§f, §4[DONA]§f, §4[DONO]§f.");

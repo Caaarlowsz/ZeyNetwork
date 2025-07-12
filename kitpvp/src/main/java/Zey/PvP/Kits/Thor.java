@@ -30,7 +30,7 @@ public class Thor extends Kit implements Listener {
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_AXE) {
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 5);
@@ -40,7 +40,7 @@ public class Thor extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 100L);
 		}

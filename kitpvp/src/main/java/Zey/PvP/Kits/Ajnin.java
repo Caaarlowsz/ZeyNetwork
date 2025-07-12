@@ -46,7 +46,7 @@ public class Ajnin extends Kit implements Listener {
 	public void aPlayerToggle(final PlayerToggleSneakEvent e) {
 		final Player p = e.getPlayer();
 		if (Cooldown.add(p)) {
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 			return;
 		}
 		if (e.isSneaking() && KitPvPAPI.getKit(p).equals(Kits.AJNIN) && this.ajinhash.containsKey(p)) {
@@ -57,16 +57,16 @@ public class Ajnin extends Kit implements Listener {
 				}
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê teleportou o jogador(a) para você.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê teleportou o jogador(a) para você.");
 					Cooldown.add(p, 3);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
-							p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+							p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 						}
 					}, 140L);
 				} else {
-					p.sendMessage(String.valueOf(Main.PREFIX)
+					p.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §cO ultimo jogador(a) hitado se afastou muito de voc§.");
 				}
 			}

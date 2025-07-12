@@ -40,7 +40,7 @@ public class C4 extends Kit implements Listener {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().getType() == Material.SLIME_BALL) {
 					if (Cooldown.add(p)) {
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 						return;
 					}
 					final Location loc = p.getLocation();
@@ -55,7 +55,7 @@ public class C4 extends Kit implements Listener {
 					itemb.setItemMeta(itembm);
 					p.getInventory().setItemInHand(itemb);
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cSua C4 foi implantada");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cSua C4 foi implantada");
 				}
 
 				else if (p.getItemInHand().getType() == Material.STONE_BUTTON) {
@@ -70,19 +70,19 @@ public class C4 extends Kit implements Listener {
 					C4.bomba.remove(p.getName());
 					item2.remove();
 					p.updateInventory();
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSua C4 foi ativada");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSua C4 foi ativada");
 					Cooldown.add(p, 20);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
-							p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+							p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 						}
 					}, 400L);
 				}
 			} else if ((e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)
 					&& p.getItemInHand().getType() == Material.STONE_BUTTON) {
 				if (Cooldown.add(p)) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 					return;
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);
@@ -94,7 +94,7 @@ public class C4 extends Kit implements Listener {
 				C4.bomba.remove(p.getName());
 				item2.remove();
 				p.updateInventory();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aC4 Desarmada");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aC4 Desarmada");
 			}
 		}
 	}

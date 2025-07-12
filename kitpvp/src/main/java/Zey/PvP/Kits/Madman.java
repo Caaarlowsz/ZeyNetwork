@@ -29,7 +29,7 @@ public class Madman extends Kit implements Listener {
 			if (KitPvPAPI.getKit(t).equals(Kits.MADMAN) && (t.getItemInHand().getType() == Material.STONE_SWORD)) {
 				if (new Random().nextInt(100) <= 40) {
 					p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 10 * 20, 3));
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê foi afetado, por um madman.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê foi afetado, por um madman.");
 				}
 			}
 		}

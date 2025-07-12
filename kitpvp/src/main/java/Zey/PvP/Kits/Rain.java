@@ -31,7 +31,7 @@ public class Rain extends Kit implements Listener {
 		final Player t = (Player) e.getRightClicked();
 		if (KitPvPAPI.getKit(p).equals(Kits.RAIN) && p.getItemInHand().getType() == Material.ARROW) {
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 25);
@@ -102,7 +102,7 @@ public class Rain extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 500L);
 		}

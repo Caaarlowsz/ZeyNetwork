@@ -26,22 +26,22 @@ public class DarCoinsCommand implements CommandExecutor {
 				p.sendMessage("§cVocê não tem permissão para isso.");
 			} else {
 				if (args.length == 0) {
-					sender.sendMessage(String.valueOf(Main.PREFIX)
+					sender.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §cErrado, utilize a sintaxe correta: /darcoins [jogador(a)] [quantidade]");
 					return true;
 				}
 				final Player target = Bukkit.getPlayerExact(args[0]);
 				if (target == null || !(target instanceof Player)) {
 					sender.sendMessage(
-							String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
+							String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline ou não existe.");
 					return true;
 				}
 				if (isNumeric(args[1])) {
 					final int coins = Integer.parseInt(args[1]);
 					ZeyCoins.addMoney(target, coins);
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê deu ao jogador(a): §e" + target.getName()
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê deu ao jogador(a): §e" + target.getName()
 							+ "§a " + coins + " ZeyCoins");
-					target.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aVocê recebeu do jogador(a): §e"
+					target.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê recebeu do jogador(a): §e"
 							+ p.getName() + "§a " + coins + " ZeyCoins");
 				}
 			}

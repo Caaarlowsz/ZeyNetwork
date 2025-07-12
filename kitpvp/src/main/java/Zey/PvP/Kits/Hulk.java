@@ -29,7 +29,7 @@ public class Hulk extends Kit implements Listener {
 			if (KitPvPAPI.getKit(p).equals(Kits.HULK)) {
 				final Player r = (Player) e.getRightClicked();
 				if (Cooldown.add(p)) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 					return;
 				}
 				if (p.getItemInHand().getType() != Material.SADDLE) {
@@ -37,7 +37,7 @@ public class Hulk extends Kit implements Listener {
 				}
 				if (p.getPassenger() != null) {
 					p.sendMessage(
-							String.valueOf(Main.PREFIX) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
+							String.valueOf(Main.NAME) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
 					return;
 				}
 				if (r.getPassenger() != null) {
@@ -46,7 +46,7 @@ public class Hulk extends Kit implements Listener {
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
 				r.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
+						String.valueOf(Main.NAME) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
 			}
 		}
 	}

@@ -51,7 +51,7 @@ public class Gladiator extends Kit implements Listener {
 				final Location loc3 = new Location(p.getWorld(), (double) (p.getLocation().getBlockX() - 8),
 						(double) (p.getLocation().getBlockY() + 82), (double) (p.getLocation().getBlockZ() - 8));
 				if (Gladiator.lutando.containsKey(p) || Gladiator.lutando.containsKey(r)) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê já está em uma arena Gladiator.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê já está em uma arena Gladiator.");
 					return;
 				}
 				final List<Location> cuboid = new ArrayList<Location>();
@@ -61,7 +61,7 @@ public class Gladiator extends Kit implements Listener {
 							final Block b = loc.clone().add((double) bX, (double) bY, (double) bZ).getBlock();
 							if (!b.isEmpty()) {
 								p.sendMessage(
-										String.valueOf(Main.PREFIX) + " §7» §cVocê não pode ultilizar esse kit aqui.");
+										String.valueOf(Main.NAME) + " §7» §cVocê não pode ultilizar esse kit aqui.");
 								return;
 							}
 							if (bY == 10) {
@@ -137,7 +137,7 @@ public class Gladiator extends Kit implements Listener {
 			final Player q = Bukkit.getPlayer(nome);
 			Gladiator.lutando.remove(p);
 			Gladiator.lutando.remove(q);
-			q.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO jogador(a): §e§l" + p.getDisplayName()
+			q.sendMessage(String.valueOf(Main.NAME) + " §7» §cO jogador(a): §e§l" + p.getDisplayName()
 					+ " §cdeslogou no gladiator.");
 			q.teleport((Location) this.lugar.get(q));
 			Bukkit.getScheduler().cancelTask(this.glad1);
@@ -160,8 +160,8 @@ public class Gladiator extends Kit implements Listener {
 		if (Gladiator.lutando.containsKey(p)) {
 			final String nome = Gladiator.lutando.get(p).getName();
 			final Player m = Bukkit.getPlayer(nome);
-			m.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §a§lGANHOU§7 a batalha no Gladiator.");
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você §c§lPERDEU§7 a batalha no Gladiator.");
+			m.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §a§lGANHOU§7 a batalha no Gladiator.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você §c§lPERDEU§7 a batalha no Gladiator.");
 			Gladiator.lutando.remove(p);
 			Gladiator.lutando.remove(m);
 			m.teleport((Location) this.lugar.get(m));
@@ -184,7 +184,7 @@ public class Gladiator extends Kit implements Listener {
 		final Player p = e.getPlayer();
 		if (Gladiator.lutando.containsKey(p)) {
 			e.setCancelled(true);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê não pode executar comandos na Arena Gladiator.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê não pode executar comandos na Arena Gladiator.");
 		}
 	}
 }

@@ -28,29 +28,29 @@ public final class BuildCommand implements Listener, CommandExecutor {
 				if (args.length == 0) {
 					if (!BuildCommand.embuild.contains(p)) {
 						BuildCommand.embuild.add(p);
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Seu Modo Build §a§lHABILITADO§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Seu Modo Build §a§lHABILITADO§7.");
 					} else {
 						BuildCommand.embuild.remove(p);
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Seu Modo Build §c§lDESABILITADO§7.");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Seu Modo Build §c§lDESABILITADO§7.");
 					}
 				} else {
 					final Player t = Bukkit.getPlayer(args[0]);
 					if (t == null) {
 						p.sendMessage(
-								String.valueOf(Main.PREFIX) + " §7» §cEste jogador(a) está offline ou não existe.");
+								String.valueOf(Main.NAME) + " §7» §cEste jogador(a) está offline ou não existe.");
 						return true;
 					}
 					if (!BuildCommand.embuild.contains(t)) {
 						BuildCommand.embuild.add(t);
-						p.sendMessage(String.valueOf(Main.PREFIX)
+						p.sendMessage(String.valueOf(Main.NAME)
 								+ " §7» Modo Build §a§lHABILITADO §7para o jogador(a): §e" + t.getName() + "§7.");
-						t.sendMessage(String.valueOf(Main.PREFIX)
+						t.sendMessage(String.valueOf(Main.NAME)
 								+ " §7» Seu Modo Build foi §a§lHABILITADO §7pelo jogador(a): §e" + p.getName() + "§7.");
 					} else {
 						BuildCommand.embuild.remove(t);
-						p.sendMessage(String.valueOf(Main.PREFIX)
+						p.sendMessage(String.valueOf(Main.NAME)
 								+ " §7» Modo Build §c§lDESABILITADO §7para o jogador(a): §e" + t.getName() + "§7.");
-						t.sendMessage(String.valueOf(Main.PREFIX)
+						t.sendMessage(String.valueOf(Main.NAME)
 								+ " §7» Seu Modo Build foi §c§lDESABILITADO §7pelo jogador(a): §e" + p.getName()
 								+ "§7.");
 					}

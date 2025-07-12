@@ -23,17 +23,17 @@ public class FinalizarCommand implements CommandExecutor {
 			}
 
 			if (Args.length == 0) {
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §cErrado, utilize a sintaxe correta: /finalizar [Evento] [FullKit]");
 				return true;
 			}
 			if (Args[0].equalsIgnoreCase("evento")) {
 
 				if (!IniciarCommand.evento) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO Evento [Evento] ainda não foi iniciado.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO Evento [Evento] ainda não foi iniciado.");
 				} else {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê finalizou o Evento [Evento].");
-					Bukkit.broadcastMessage(String.valueOf(Main.PREFIX)
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê finalizou o Evento [Evento].");
+					Bukkit.broadcastMessage(String.valueOf(Main.NAME)
 							+ " §7» §cO Evento [Evento] foi finalizado e não está mais disponivel para acesso.");
 					IniciarCommand.evento = false;
 					return true;
@@ -42,10 +42,10 @@ public class FinalizarCommand implements CommandExecutor {
 			if (Args[0].equalsIgnoreCase("fullkit")) {
 
 				if (!IniciarCommand.fullkit) {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cO Benefício [FullKit] não está liberado.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cO Benefício [FullKit] não está liberado.");
 				} else {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cVocê finalizou o Benefício [FullKit].");
-					Bukkit.broadcastMessage(String.valueOf(Main.PREFIX)
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cVocê finalizou o Benefício [FullKit].");
+					Bukkit.broadcastMessage(String.valueOf(Main.NAME)
 							+ " §7» §cO Benef§cio [FullKit] foi finalizado e não está mais disponivel.");
 					IniciarCommand.fullkit = false;
 					return true;

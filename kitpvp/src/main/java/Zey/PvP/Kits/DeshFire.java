@@ -49,7 +49,7 @@ public class DeshFire extends Kit implements Listener {
 				event.setCancelled(true);
 			}
 			if (DeshFire.cooldownm.contains(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde o cooldown terminar.");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde o cooldown terminar.");
 				return;
 			}
 			DeshFire.cooldownm.add(p);
@@ -98,7 +98,7 @@ public class DeshFire extends Kit implements Listener {
 				public void run() {
 					DeshFire.cooldownm.remove(p);
 					DeshFire.Deshfire.remove(p);
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

@@ -45,7 +45,7 @@ public class Fps extends Warp implements CommandExecutor {
 			lobby.setYaw((float) Fps.plugin.getConfig().getDouble("fps.yaw"));
 			p.getInventory().clear();
 			p.setHealthScale(1.0);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você está sendo teleportando para Warp §a§lFPS");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você está sendo teleportando para Warp §a§lFPS");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 500, 100));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 500, 100));
 			Bukkit.getScheduler().scheduleSyncDelayedTask((Plugin) Fps.plugin, (Runnable) new Runnable() {
@@ -63,14 +63,14 @@ public class Fps extends Warp implements CommandExecutor {
 					p.sendMessage("");
 					p.sendMessage("");
 					p.sendMessage("");
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aTeleportado com sucesso");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aTeleportado com sucesso");
 
 					TitleAPI.sendTitle(p, "§e§lFPS");
 
 					KitPvP api = KitPvPAPI.getInstance();
 					if (p.hasPermission("zey.pvp.admin") && api.getWarp(p).getName() == "Nenhuma") {
 						Main.admins.remove(p.getName());
-						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» Você saiu do modo §c§lADMIN");
+						p.sendMessage(String.valueOf(Main.NAME) + " §7» Você saiu do modo §c§lADMIN");
 
 						for (Player players : Bukkit.getOnlinePlayers()) {
 							players.showPlayer(p);

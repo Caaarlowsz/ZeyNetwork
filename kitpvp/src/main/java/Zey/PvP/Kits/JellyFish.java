@@ -28,7 +28,7 @@ public class JellyFish extends Kit implements Listener {
 	public static String naocolocaragua;
 
 	static {
-		JellyFish.naocolocaragua = String.valueOf(Main.PREFIX) + " §4 §7Seu kit não é útil quando colocado na água.";
+		JellyFish.naocolocaragua = String.valueOf(Main.NAME) + " §4 §7Seu kit não é útil quando colocado na água.";
 	}
 
 	public JellyFish() {

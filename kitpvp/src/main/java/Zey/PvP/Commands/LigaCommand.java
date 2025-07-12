@@ -168,7 +168,7 @@ public class LigaCommand implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("liga")) {
 			if (args.length == 0) {
 				p.sendMessage(" ");
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §fAqui estão há lista de todas as Ligas/Ranks, do servidor:");
 				p.sendMessage("                              ");
 				p.sendMessage("§7(§4✪§7) §4LENDARIO");
@@ -183,7 +183,7 @@ public class LigaCommand implements CommandExecutor {
 				p.sendMessage("§7(§a⚌§7) §aINICIANTE");
 				p.sendMessage("§7(§f-§7) §7Unranked");
 				p.sendMessage("                              ");
-				p.sendMessage(String.valueOf(Main.PREFIX)
+				p.sendMessage(String.valueOf(Main.NAME)
 						+ " §7» §fVocê pode adquirir estas Ligas/Ranks, matando jogadores. Apos matar os jogadores você ganhara kills, e com essas kills você ira upar! Boa sorte.");
 				p.sendMessage(" ");
 			}

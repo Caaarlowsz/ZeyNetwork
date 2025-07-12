@@ -41,12 +41,12 @@ public class Armor extends Kit implements Listener {
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_INGOT) {
 			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
 			p.getInventory().setArmorContents(null);
-			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §7Você recebeu sua armadura temporaria.");
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você recebeu sua armadura temporaria.");
 			p.getInventory()
 					.setArmorContents(new ItemStack[] { darArmaduraI(Material.GOLD_HELMET),
 							darArmaduraI(Material.GOLD_CHESTPLATE), darArmaduraI(Material.GOLD_LEGGINGS),
@@ -65,7 +65,7 @@ public class Armor extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 500L);
 		}

@@ -27,7 +27,7 @@ public class Entrar implements Listener {
 	public void Join(final PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
 
-		TitleAPI.sendTitle(p, Main.PREFIX, "§fTreine para se tornar o melhor!");
+		TitleAPI.sendTitle(p, Main.NAME, "§fTreine para se tornar o melhor!");
 
 		KitPvP api = KitPvPAPI.getInstance();
 		api.removeKit(p);
@@ -41,7 +41,7 @@ public class Entrar implements Listener {
 		p.sendMessage("§a  ");
 		p.sendMessage("§a  ");
 		p.sendMessage("§a  ");
-		p.sendMessage("§c" + Main.PREFIX + " §7» §fTreine para se tornar o melhor!");
+		p.sendMessage("§c" + Main.NAME + " §7» §fTreine para se tornar o melhor!");
 		p.sendMessage("§a  ");
 
 		p.teleport(p.getWorld().getSpawnLocation());
@@ -104,7 +104,7 @@ public class Entrar implements Listener {
 		p.getInventory().setItem(7, vidrohot);
 		p.getInventory().setItem(8, vidrohot);
 
-		TitleAPI.sendTitle(p, Main.PREFIX, "§7Você morreu.");
+		TitleAPI.sendTitle(p, Main.NAME, "§7Você morreu.");
 	}
 
 	public static void setitem(final Player p, final Material mat, final String nome, final int lugar,

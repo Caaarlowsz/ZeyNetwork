@@ -30,7 +30,7 @@ public class SetEvento implements CommandExecutor {
 				SetEvento.plugin.getConfig().set("evento.yaw", (Object) p.getLocation().getYaw());
 				SetEvento.plugin.getConfig().set("evento.world", (Object) p.getLocation().getWorld().getName());
 				SetEvento.plugin.saveConfig();
-				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aWarp Evento foi setada com sucesso");
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §aWarp Evento foi setada com sucesso");
 			}
 			return true;
 		}
