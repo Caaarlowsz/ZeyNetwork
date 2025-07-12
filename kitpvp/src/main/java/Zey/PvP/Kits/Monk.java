@@ -11,7 +11,6 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -30,7 +29,7 @@ public class Monk extends Kit implements Listener {
 			final Player jogadorClicado = (Player) e.getRightClicked();
 			if (KitPvPAPI.getKit(p).equals(Kits.MONK) && p.getItemInHand().getType() == Material.BLAZE_ROD) {
 				if (Cooldown.add(p)) {
-					KitUtil.MensagemCooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 					return;
 				}
 				final int random = new Random().nextInt(jogadorClicado.getInventory().getSize() - 10 + 1 + 10);
@@ -45,7 +44,7 @@ public class Monk extends Kit implements Listener {
 				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 					@Override
 					public void run() {
-						KitUtil.ccooldown(p);
+						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 					}
 				}, 400L);
 			}

@@ -8,7 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -30,7 +29,7 @@ public class Hulk extends Kit implements Listener {
 			if (KitPvPAPI.getKit(p).equals(Kits.HULK)) {
 				final Player r = (Player) e.getRightClicked();
 				if (Cooldown.add(p)) {
-					KitUtil.MensagemCooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 					return;
 				}
 				if (p.getItemInHand().getType() != Material.SADDLE) {

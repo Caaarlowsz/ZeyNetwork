@@ -13,7 +13,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -33,7 +32,7 @@ public class Confuser extends Kit implements Listener {
 				&& p.getItemInHand().getType() == Material.COAL) {
 			e.setCancelled(true);
 			if (Cooldown.add(p)) {
-				KitUtil.MensagemCooldown(p);
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 40);
@@ -45,7 +44,7 @@ public class Confuser extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					KitUtil.ccooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 800L);
 		}

@@ -22,7 +22,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -112,7 +111,7 @@ public class Sonic extends Kit implements Listener {
 				public void run() {
 					Zey.PvP.Kits.Sonic.cooldownm.remove(p);
 					Zey.PvP.Kits.Sonic.Sonic.remove(p);
-					KitUtil.ccooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 5.0f, 5.0f);
 				}
 			}, 700L);

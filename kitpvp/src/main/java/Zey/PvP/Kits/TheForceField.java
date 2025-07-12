@@ -17,7 +17,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
 import Zey.PvP.Essencial.KitAPI;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -63,7 +62,7 @@ public class TheForceField extends Kit implements Listener {
 				@Override
 				public void run() {
 					TheForceField.cooldownm.remove(p);
-					KitUtil.ccooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 					p.getWorld().playSound(p.getLocation(), Sound.BURP, 0.5f, 0.5f);
 				}
 			}, 300L);

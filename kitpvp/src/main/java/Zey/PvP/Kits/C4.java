@@ -20,7 +20,6 @@ import org.bukkit.util.Vector;
 
 import Zey.PvP.Config.ZeyCoins;
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
@@ -41,7 +40,7 @@ public class C4 extends Kit implements Listener {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().getType() == Material.SLIME_BALL) {
 					if (Cooldown.add(p)) {
-						KitUtil.MensagemCooldown(p);
+						p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 						return;
 					}
 					final Location loc = p.getLocation();
@@ -76,14 +75,14 @@ public class C4 extends Kit implements Listener {
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
-							KitUtil.ccooldown(p);
+							p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 						}
 					}, 400L);
 				}
 			} else if ((e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)
 					&& p.getItemInHand().getType() == Material.STONE_BUTTON) {
 				if (Cooldown.add(p)) {
-					KitUtil.MensagemCooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 					return;
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);

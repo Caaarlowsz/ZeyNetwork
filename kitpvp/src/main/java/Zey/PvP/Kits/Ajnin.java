@@ -13,7 +13,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -47,7 +46,7 @@ public class Ajnin extends Kit implements Listener {
 	public void aPlayerToggle(final PlayerToggleSneakEvent e) {
 		final Player p = e.getPlayer();
 		if (Cooldown.add(p)) {
-			KitUtil.MensagemCooldown(p);
+			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 			return;
 		}
 		if (e.isSneaking() && KitPvPAPI.getKit(p).equals(Kits.AJNIN) && this.ajinhash.containsKey(p)) {
@@ -63,7 +62,7 @@ public class Ajnin extends Kit implements Listener {
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
-							KitUtil.ccooldown(p);
+							p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 						}
 					}, 140L);
 				} else {

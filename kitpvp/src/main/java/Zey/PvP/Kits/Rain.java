@@ -11,7 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import Zey.PvP.Essencial.Cooldown;
-import Zey.PvP.Essencial.KitUtil;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
@@ -32,7 +31,7 @@ public class Rain extends Kit implements Listener {
 		final Player t = (Player) e.getRightClicked();
 		if (KitPvPAPI.getKit(p).equals(Kits.RAIN) && p.getItemInHand().getType() == Material.ARROW) {
 			if (Cooldown.add(p)) {
-				KitUtil.MensagemCooldown(p);
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 				return;
 			}
 			Cooldown.add(p, 25);
@@ -103,7 +102,7 @@ public class Rain extends Kit implements Listener {
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
-					KitUtil.ccooldown(p);
+					p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aSeu cooldown acabou.");
 				}
 			}, 500L);
 		}
