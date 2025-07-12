@@ -5,10 +5,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import Zey.PvP.APIs.ChatInterativo;
 import Zey.PvP.APIs.TagsAPI;
 import Zey.PvP.Main.Main;
 import ca.wacos.nametagedit.NametagAPI;
+import tk.zeynetwork.utils.ChatUtils;
 
 public class TagCommand implements CommandExecutor {
 
@@ -21,443 +21,263 @@ public class TagCommand implements CommandExecutor {
 		Player p = (Player) sender;
 		if (args.length == 0) {
 			if (p.getName().equalsIgnoreCase("Neewaska_") || p.getName().equalsIgnoreCase("OwCry")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[DONA]", "/tag dona",
-						"§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONA]", "/tag subdona",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§3[DEVELOPER]", "/tag developer",
-						"§e(Clique) §7" + "§7Exemplo: §3[DEVELOPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[FRIEND]", "/tag friend",
-						"§e(Clique) §7" + "§7Exemplo: §a[FRIEND] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[DONA]", "§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName(), "/tag dona");
+				ChatUtils.runCommand(p, "§4[SUB-DONA]", "§e(Clique) §7Exemplo: §4[SUB-DONA] §7" + p.getName(), "/tag subdona");
+				ChatUtils.runCommand(p, "§3[DEVELOPER]", "§e(Clique) §7Exemplo: §3[DEVELOPER] §7" + p.getName(), "/tag developer");
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§a[FRIEND]", "§e(Clique) §7Exemplo: §a[FRIEND] §7" + p.getName(), "/tag friend");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.dono")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[DONO]", "/tag dono",
-						"§e(Clique) §7" + "§7Exemplo: §4[DONO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONO]", "/tag subdono",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§3[DEVELOPER]", "/tag developer",
-						"§e(Clique) §7" + "§7Exemplo: §3[DEVELOPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[FRIEND]", "/tag friend",
-						"§e(Clique) §7" + "§7Exemplo: §a[FRIEND] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[DONO]", "§e(Clique) §7Exemplo: §4[DONO] §7" + p.getName(), "/tag dono");
+				ChatUtils.runCommand(p, "§4[SUB-DONO]", "§e(Clique) §7Exemplo: §4[SUB-DONO] §7" + p.getName(), "/tag subdono");
+				ChatUtils.runCommand(p, "§3[DEVELOPER]", "§e(Clique) §7Exemplo: §3[DEVELOPER] §7" + p.getName(), "/tag developer");
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§a[FRIEND]", "§e(Clique) §7Exemplo: §a[FRIEND] §7" + p.getName(), "/tag friend");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.dona")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[DONA]", "/tag dona",
-						"§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONA]", "/tag subdona",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§3[DEVELOPER]", "/tag developer",
-						"§e(Clique) §7" + "§7Exemplo: §3[DEVELOPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[FRIEND]", "/tag friend",
-						"§e(Clique) §7" + "§7Exemplo: §a[FRIEND] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[DONA]", "§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName(), "§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[SUB-DONA]", "§e(Clique) §7Exemplo: §4[SUB-DONA] §7" + p.getName(), "§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
+				ChatUtils.runCommand(p, "§3[DEVELOPER]", "§e(Clique) §7Exemplo: §3[DEVELOPER] §7" + p.getName(), "/tag developer");
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§a[FRIEND]", "§e(Clique) §7Exemplo: §a[FRIEND] §7" + p.getName(), "/tag friend");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.subdono")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONO]", "/tag subdono",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[SUB-DONO]", "§e(Clique) §7Exemplo: §4[SUB-DONO] §7" + p.getName(), "/tag subdono");
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.subdona")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONA]", "/tag subdona",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§4[SUB-DONA]", "§e(Clique) §7Exemplo: §4[SUB-DONA] §7" + p.getName(), "§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.developer")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§4[DONO]", "/tag dono",
-						"§e(Clique) §7" + "§7Exemplo: §4[DONO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[DONA]", "/tag dona",
-						"§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONO]", "/tag subdono",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§4[SUB-DONA]", "/tag subdona",
-						"§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§3[DEVELOPER]", "/tag developer",
-						"§e(Clique) §7" + "§7Exemplo: §3[DEVELOPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[FRIEND]", "/tag friend",
-						"§e(Clique) §7" + "§7Exemplo: §a[FRIEND] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§3[DEVELOPER]", "§e(Clique) §7Exemplo: §3[DEVELOPER] §7" + p.getName(), "/tag developer");
+				ChatUtils.runCommand(p, "§4[DONA]", "§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName(), "§e(Clique) §7" + "§7Exemplo: §4[DONA] §7" + p.getName());
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§4[SUB-DONA]", "§e(Clique) §7Exemplo: §4[SUB-DONA] §7" + p.getName(), "§e(Clique) §7" + "§7Exemplo: §4[SUB-DONA] §7" + p.getName());
+				ChatUtils.runCommand(p, "§3[DEVELOPER]", "§e(Clique) §7Exemplo: §3[DEVELOPER] §7" + p.getName(), "/tag developer");
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§a[FRIEND]", "§e(Clique) §7Exemplo: §a[FRIEND] §7" + p.getName(), "/tag friend");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.gerente")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§c[GERENTE]", "/tag gerente",
-						"§e(Clique) §7" + "§7Exemplo: §C[GERENTE] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§c[GERENTE]", "§e(Clique) §7Exemplo: §c[GERENTE] §7" + p.getName(), "/tag gerente");
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.admin")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§c[ADMIN]", "/tag admin",
-						"§e(Clique) §7" + "§7Exemplo: §c[ADMIN] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§c[ADMIN]", "§e(Clique) §7Exemplo: §c[ADMIN] §7" + p.getName(), "/tag admin");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.mod")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§5[MOD]", "/tag mod",
-						"§e(Clique) §7" + "§7Exemplo: §5[MOD] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§5[MOD]", "§e(Clique) §7Exemplo: §5[MOD] §7" + p.getName(), "/tag mod");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.trial")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§d[TRIAL]", "/tag trial",
-						"§e(Clique) §7" + "§7Exemplo: §d[TRIAL] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§d[TRIAL]", "§e(Clique) §7Exemplo: §d[TRIAL] §7" + p.getName(), "/tag trial");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.helper")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§d[HELPER]", "/tag helper",
-						"§e(Clique) §7" + "§7Exemplo: §d[HELPER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§d[HELPER]", "§e(Clique) §7Exemplo: §d[HELPER] §7" + p.getName(), "/tag helper");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.builder")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§2[BUILDER]", "/tag builder",
-						"§e(Clique) §7" + "§7Exemplo: §2[BUILDER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§2[BUILDER]", "§e(Clique) §7Exemplo: §2[BUILDER] §7" + p.getName(), "/tag builder");
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.youtuber")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§b[YOUTUBER]", "/tag youtuber",
-						"§e(Clique) §7" + "§7Exemplo: §b[YOUTUBER] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§b[YOUTUBER]", "§e(Clique) §7Exemplo: §b[YOUTUBER] §7" + p.getName(), "/tag youtuber");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.friend")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§a[FRIEND]", "/tag friend",
-						"§e(Clique) §7" + "§7Exemplo: §a[FRIEND] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§a[FRIEND]", "§e(Clique) §7Exemplo: §a[FRIEND] §7" + p.getName(), "/tag friend");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.beta")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§1[BETA]", "/tag beta",
-						"§e(Clique) §7" + "§7Exemplo: §1[BETA] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§1[BETA]", "§e(Clique) §7Exemplo: §1[BETA] §7" + p.getName(), "/tag beta");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.supremo")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§e[SUPREMO]", "/tag supremo",
-						"§e(Clique) §7" + "§7Exemplo: §e[SUPREMO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§e[SUPREMO]", "§e(Clique) §7Exemplo: §e[SUPREMO] §7" + p.getName(), "/tag supremo");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.pro")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§6[PRO]", "/tag pro",
-						"§e(Clique) §7" + "§7Exemplo: §6[PRO] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§6[PRO]", "§e(Clique) §7Exemplo: §6[PRO] §7" + p.getName(), "/tag pro");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.mvp")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§9[MVP]", "/tag mvp",
-						"§e(Clique) §7" + "§7Exemplo: §9[MVP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§9[MVP]", "§e(Clique) §7Exemplo: §9[MVP] §7" + p.getName(), "/tag mvp");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			if (p.hasPermission("grupo.vip")) {
-				p.sendMessage(
-						String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
+				p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 				p.sendMessage("§E");
-				ChatInterativo.Comando(p.getName(), "§a[VIP]", "/tag vip",
-						"§e(Clique) §7" + "§7Exemplo: §a[VIP] §7" + p.getName());
-				ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-						"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+				ChatUtils.runCommand(p, "§a[VIP]", "§e(Clique) §7Exemplo: §a[VIP] §7" + p.getName(), "/tag vip");
+				ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 				return true;
 			}
 			p.sendMessage(String.valueOf(Main.PREFIX) + " §7» §aLista de §fTODAS§a as §fTAGS§a disponiveis para você:");
 			p.sendMessage("§E");
-			ChatInterativo.Comando(p.getName(), "§7[NORMAL]", "/tag normal",
-					"§e(Clique) §7" + "§7Exemplo: §7" + p.getName());
+			ChatUtils.runCommand(p, "§7[NORMAL]", "§e(Clique) §7Exemplo: §7[NORMAL] §7" + p.getName(), "/tag normal");
 			return true;
 		}
 		if (p.getName().equalsIgnoreCase("OwCry")) {
