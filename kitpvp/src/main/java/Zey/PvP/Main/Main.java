@@ -84,7 +84,7 @@ public final class Main extends JavaPlugin implements KitPvP {
 	private HashMap<Player, Warp> warpMap = new HashMap<>();
 	private HashMap<Player, Kit> kitMap = new HashMap<>();
 
-	public static final String NAME = "§6§lZey§f§lPvP",
+	public static final String NAME = "§6§lZey§f§lPvP", PREFIX = NAME + " §7» §r",
 			MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§e§lServidor, ZeyPvP - 1.",
 			WHITELIST_MOTD = "§6§lZey§f§lNetwork §7(1.7, 1.8) \n§c§lServidor em manutenção.";
 
