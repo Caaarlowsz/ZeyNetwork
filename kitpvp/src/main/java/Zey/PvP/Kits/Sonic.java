@@ -26,11 +26,18 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Sonic extends Kit implements Listener {
 
 	public Sonic() {
 		super("Sonic");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.LAPIS_BLOCK, "§e§lSONIC"));
 	}
 
 	public int boost = 6;

@@ -9,11 +9,18 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Viking extends Kit implements Listener {
 
 	public Viking() {
 		super("Viking");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(0, ItemUtils.item(Material.STONE_AXE, "§e§lVIKING"));
 	}
 
 	@EventHandler

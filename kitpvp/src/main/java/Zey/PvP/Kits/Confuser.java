@@ -17,11 +17,18 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Confuser extends Kit implements Listener {
 
 	public Confuser() {
 		super("Confuser");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.COAL, "§e§lCONFUSER"));
 	}
 
 	@EventHandler

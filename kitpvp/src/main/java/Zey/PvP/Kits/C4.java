@@ -25,12 +25,19 @@ import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class C4 extends Kit implements Listener {
 	public static HashMap<String, Item> bomba = new HashMap<>();
 
 	public C4() {
 		super("C4");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.SLIME_BALL, "§e§lC4"));
 	}
 
 	@EventHandler
@@ -40,7 +47,8 @@ public class C4 extends Kit implements Listener {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().getType() == Material.SLIME_BALL) {
 					if (Cooldown.add(p)) {
-						p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+						p.sendMessage(
+								String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 						return;
 					}
 					final Location loc = p.getLocation();

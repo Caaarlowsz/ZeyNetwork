@@ -184,6 +184,12 @@ public class MenuKits2 implements Listener, CommandExecutor {
 				p.chat("/kit specialist");
 				return;
 			}
+			if (e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§e§lHotPotato")) {
+				e.setCancelled(true);
+				p.closeInventory();
+				p.chat("/kit hotpotato");
+				return;
+			}
 		}
 	}
 }

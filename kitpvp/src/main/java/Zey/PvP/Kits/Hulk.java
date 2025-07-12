@@ -12,11 +12,18 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Hulk extends Kit implements Listener {
 
 	public Hulk() {
 		super("Hulk");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.SADDLE, "§e§lHULK"));
 	}
 
 	@EventHandler
@@ -36,8 +43,7 @@ public class Hulk extends Kit implements Listener {
 					return;
 				}
 				if (p.getPassenger() != null) {
-					p.sendMessage(
-							String.valueOf(Main.NAME) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde o outro jogador(a) sair da sua cabeça.");
 					return;
 				}
 				if (r.getPassenger() != null) {
@@ -45,8 +51,7 @@ public class Hulk extends Kit implements Listener {
 				}
 				Cooldown.add(p, 6);
 				p.setPassenger((Entity) r);
-				r.sendMessage(
-						String.valueOf(Main.NAME) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
+				r.sendMessage(String.valueOf(Main.NAME) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
 			}
 		}
 	}

@@ -21,12 +21,19 @@ import net.minecraft.server.v1_7_R4.EntityHuman;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Grappler extends Kit implements Listener {
 	Map<Player, Cordinha> hooks = new HashMap<>();
 
 	public Grappler() {
 		super("Grappler");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.LEASH, "§e§lGRAPPLER"));
 	}
 
 	@EventHandler

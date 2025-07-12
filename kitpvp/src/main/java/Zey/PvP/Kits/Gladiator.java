@@ -24,11 +24,18 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Gladiator extends Kit implements Listener {
 
 	public Gladiator() {
 		super("Gladiator");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.IRON_FENCE, "§e§lGLADIATOR"));
 	}
 
 	private List<Block> gladiatorbloco = new ArrayList<>();

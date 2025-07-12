@@ -19,12 +19,19 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Armor extends Kit implements Listener {
 	public static HashMap<String, ItemStack[]> salvararmor = new HashMap<>();
 
 	public Armor() {
 		super("Armor");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.GOLD_INGOT, "§e§lARMOR"));
 	}
 
 	public static ItemStack darArmaduraI(final Material material) {

@@ -11,11 +11,18 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Specialist extends Kit implements Listener {
 
 	public Specialist() {
 		super("Specialist");
+	}
+	
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.ENCHANTED_BOOK, "§e§lSPECIALIST"));
 	}
 
 	@EventHandler

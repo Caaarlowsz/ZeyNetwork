@@ -21,12 +21,19 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class HotPotato extends Kit implements Listener {
 	public static ArrayList<String> emhotpotato = new ArrayList<>();
 
 	public HotPotato() {
 		super("HotPotato");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.POTATO, "§e§lHOTPOTATO"));
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
@@ -40,7 +47,8 @@ public class HotPotato extends Kit implements Listener {
 				if (Gladiator.lutando.containsKey(p.getName())) {
 				} else {
 					if (Cooldown.add(p)) {
-						p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+						p.sendMessage(
+								String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
 						return;
 					}
 					Cooldown.add(p, 20);
@@ -48,8 +56,8 @@ public class HotPotato extends Kit implements Listener {
 					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aHotPotato Colocada");
 					k.sendMessage(String.valueOf(Main.NAME)
 							+ " §7» §eVocê está com a tnt do hotpotato tire ou ira explodir em 5 segundos!");
-					k.sendMessage(String.valueOf(Main.NAME)
-							+ " §7» §cClique com o botao direito na hotpotato para tira-la.");
+					k.sendMessage(
+							String.valueOf(Main.NAME) + " §7» §cClique com o botao direito na hotpotato para tira-la.");
 
 					final ItemStack tnt = new ItemStack(Material.TNT);
 					final ItemMeta tntmeta = tnt.getItemMeta();

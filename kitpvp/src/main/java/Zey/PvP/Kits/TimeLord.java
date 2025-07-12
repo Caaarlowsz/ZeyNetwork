@@ -19,6 +19,7 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class TimeLord extends Kit implements Listener {
 	public static ArrayList<String> freeze = new ArrayList<>();
@@ -28,6 +29,12 @@ public class TimeLord extends Kit implements Listener {
 
 	public TimeLord() {
 		super("TimeLord");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.WATCH, "§e§lTIMELORD"));
 	}
 
 	@EventHandler
@@ -55,8 +62,7 @@ public class TimeLord extends Kit implements Listener {
 									public void run() {
 										TimeLord.freezing.remove(player.getName());
 										TimeLord.cooldownt.remove(player.getName());
-										player.sendMessage(
-												String.valueOf(Main.NAME) + " §7» §aSeu cooldown terminou.");
+										player.sendMessage(String.valueOf(Main.NAME) + " §7» §aSeu cooldown terminou.");
 									}
 								}, 500L);
 					}

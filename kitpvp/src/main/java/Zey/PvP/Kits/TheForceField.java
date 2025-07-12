@@ -21,12 +21,19 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class TheForceField extends Kit implements Listener {
 	public static List<Player> cooldownm = new ArrayList<>();
 
 	public TheForceField() {
 		super("ForceField");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.NETHER_FENCE, "§e§lFORCEFIELD"));
 	}
 
 	@EventHandler

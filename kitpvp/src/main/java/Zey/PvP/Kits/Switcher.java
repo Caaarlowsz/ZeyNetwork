@@ -16,11 +16,18 @@ import org.bukkit.inventory.meta.ItemMeta;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Switcher extends Kit implements Listener {
 
 	public Switcher() {
 		super("Switcher");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.SNOW_BALL, 64, "§e§lSWITCHER"));
 	}
 
 	@EventHandler

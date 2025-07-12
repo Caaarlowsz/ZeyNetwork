@@ -24,6 +24,7 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class DeshFire extends Kit implements Listener {
 	public int boost = 6;
@@ -36,6 +37,12 @@ public class DeshFire extends Kit implements Listener {
 
 	public DeshFire() {
 		super("DeshFire");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.REDSTONE_BLOCK, "§e§lDESHFIRE"));
 	}
 
 	@EventHandler
