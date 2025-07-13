@@ -14,14 +14,13 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Armor extends Kit implements Listener {
+public class Armor extends CooldownKit implements Listener {
 	public static HashMap<String, ItemStack[]> salvararmor = new HashMap<>();
 
 	public Armor() {
@@ -47,8 +46,8 @@ public class Armor extends Kit implements Listener {
 		if (KitPvPAPI.getKit(p).equals(Kits.ARMOR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_INGOT) {
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
 			Armor.salvararmor.put(p.getName(), p.getInventory().getArmorContents());
@@ -59,7 +58,7 @@ public class Armor extends Kit implements Listener {
 							darArmaduraI(Material.GOLD_CHESTPLATE), darArmaduraI(Material.GOLD_LEGGINGS),
 							darArmaduraI(Material.GOLD_BOOTS) });
 			p.updateInventory();
-			Cooldown.add(p, 25);
+			this.addCooldown(Main.getPlugin(), p, 25);
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override
 				public void run() {
@@ -76,6 +75,7 @@ public class Armor extends Kit implements Listener {
 				}
 			}, 500L);
 		}
+
 	}
 
 	@EventHandler

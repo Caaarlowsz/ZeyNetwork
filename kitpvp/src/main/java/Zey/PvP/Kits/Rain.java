@@ -10,14 +10,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Rain extends Kit implements Listener {
+public class Rain extends CooldownKit implements Listener {
 
 	public Rain() {
 		super("Rain");
@@ -37,11 +36,11 @@ public class Rain extends Kit implements Listener {
 		final Player p = e.getPlayer();
 		final Player t = (Player) e.getRightClicked();
 		if (KitPvPAPI.getKit(p).equals(Kits.RAIN) && p.getItemInHand().getType() == Material.ARROW) {
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 25);
+			this.addCooldown(Main.getPlugin(), p, 25);
 			final Location loc = t.getLocation();
 			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 				@Override

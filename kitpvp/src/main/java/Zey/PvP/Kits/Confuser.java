@@ -12,14 +12,13 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Confuser extends Kit implements Listener {
+public class Confuser extends CooldownKit implements Listener {
 
 	public Confuser() {
 		super("Confuser");
@@ -38,11 +37,11 @@ public class Confuser extends Kit implements Listener {
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.COAL) {
 			e.setCancelled(true);
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 40);
+			this.addCooldown(Main.getPlugin(), p, 40);
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 200, 1));
 			for (final Entity pertos : p.getNearbyEntities(5.0, 5.0, 5.0)) {
 				((LivingEntity) pertos).addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 1));

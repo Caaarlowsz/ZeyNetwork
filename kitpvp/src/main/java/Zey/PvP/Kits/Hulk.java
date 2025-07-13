@@ -7,14 +7,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Hulk extends Kit implements Listener {
+public class Hulk extends CooldownKit implements Listener {
 
 	public Hulk() {
 		super("Hulk");
@@ -35,8 +34,8 @@ public class Hulk extends Kit implements Listener {
 			final Player p = e.getPlayer();
 			if (KitPvPAPI.getKit(p).equals(Kits.HULK)) {
 				final Player r = (Player) e.getRightClicked();
-				if (Cooldown.add(p)) {
-					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				if (this.hasCooldown(p)) {
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 					return;
 				}
 				if (p.getItemInHand().getType() != Material.SADDLE) {
@@ -49,7 +48,7 @@ public class Hulk extends Kit implements Listener {
 				if (r.getPassenger() != null) {
 					return;
 				}
-				Cooldown.add(p, 6);
+				this.addCooldown(Main.getPlugin(), p, 6);
 				p.setPassenger((Entity) r);
 				r.sendMessage(String.valueOf(Main.NAME) + " §7» Um Hulk lhe predeu Aperde §a§lSHIFT§7 para se soltar.");
 			}

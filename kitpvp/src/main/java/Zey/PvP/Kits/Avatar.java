@@ -27,14 +27,13 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.BlockIterator;
 import org.bukkit.util.Vector;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Avatar extends Kit implements Listener {
+public class Avatar extends CooldownKit implements Listener {
 	public static List<String> arAvatar = new ArrayList<>();
 	public static List<String> águaAvatar = new ArrayList<>();
 	public static List<String> terraAvatar = new ArrayList<>();
@@ -110,11 +109,11 @@ public class Avatar extends Kit implements Listener {
 				&& p.getItemInHand().getType() == Material.WOOL) {
 			e.setCancelled(true);
 			p.updateInventory();
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 30);
+			this.addCooldown(Main.getPlugin(), p, 30);
 			final Location location = p.getEyeLocation();
 			final BlockIterator blocksToAdd = new BlockIterator(location, 0.0, 40);
 			while (blocksToAdd.hasNext()) {
@@ -155,11 +154,11 @@ public class Avatar extends Kit implements Listener {
 				&& p.getItemInHand().getType() == Material.LAPIS_BLOCK) {
 			e.setCancelled(true);
 			p.updateInventory();
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 30);
+			this.addCooldown(Main.getPlugin(), p, 30);
 			final Location location = p.getEyeLocation();
 			final BlockIterator blocksToAdd = new BlockIterator(location, 0.0, 40);
 			while (blocksToAdd.hasNext()) {
@@ -199,11 +198,11 @@ public class Avatar extends Kit implements Listener {
 				&& p.getItemInHand().getType() == Material.GRASS) {
 			e.setCancelled(true);
 			p.updateInventory();
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 30);
+			this.addCooldown(Main.getPlugin(), p, 30);
 			final Location location = p.getEyeLocation();
 			final BlockIterator blocksToAdd = new BlockIterator(location, 0.0, 40);
 			while (blocksToAdd.hasNext()) {
@@ -246,11 +245,11 @@ public class Avatar extends Kit implements Listener {
 				&& p.getItemInHand().getType() == Material.REDSTONE_BLOCK) {
 			e.setCancelled(true);
 			p.updateInventory();
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 30);
+			this.addCooldown(Main.getPlugin(), p, 30);
 			final Location location = p.getEyeLocation();
 			final BlockIterator blocksToAdd = new BlockIterator(location, 0.0, 40);
 			while (blocksToAdd.hasNext()) {

@@ -12,13 +12,12 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 
-public class Ajnin extends Kit implements Listener {
+public class Ajnin extends CooldownKit implements Listener {
 	public HashMap<Player, Player> ajinhash = new HashMap<>();
 	public HashMap<Player, Long> ajincooldown = new HashMap<>();
 
@@ -45,8 +44,8 @@ public class Ajnin extends Kit implements Listener {
 	@EventHandler
 	public void aPlayerToggle(final PlayerToggleSneakEvent e) {
 		final Player p = e.getPlayer();
-		if (Cooldown.add(p)) {
-			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+		if (this.hasCooldown(p)) {
+			p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 			return;
 		}
 		if (e.isSneaking() && KitPvPAPI.getKit(p).equals(Kits.AJNIN) && this.ajinhash.containsKey(p)) {
@@ -58,7 +57,7 @@ public class Ajnin extends Kit implements Listener {
 				if (p.getLocation().distance(t.getLocation()) < 200.0) {
 					t.teleport(p.getLocation());
 					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aVocê teleportou o jogador(a) para você.");
-					Cooldown.add(p, 3);
+					this.addCooldown(Main.getPlugin(), p, 3);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -66,8 +65,8 @@ public class Ajnin extends Kit implements Listener {
 						}
 					}, 140L);
 				} else {
-					p.sendMessage(String.valueOf(Main.NAME)
-							+ " §7» §cO ultimo jogador(a) hitado se afastou muito de voc§.");
+					p.sendMessage(
+							String.valueOf(Main.NAME) + " §7» §cO ultimo jogador(a) hitado se afastou muito de voc§.");
 				}
 			}
 		}

@@ -11,14 +11,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Thor extends Kit implements Listener {
+public class Thor extends CooldownKit implements Listener {
 
 	public Thor() {
 		super("Thor");
@@ -36,11 +35,11 @@ public class Thor extends Kit implements Listener {
 		if (KitPvPAPI.getKit(p).equals(Kits.THOR)
 				&& (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)
 				&& p.getItemInHand().getType() == Material.GOLD_AXE) {
-			if (Cooldown.add(p)) {
-				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+			if (this.hasCooldown(p)) {
+				p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 				return;
 			}
-			Cooldown.add(p, 5);
+			this.addCooldown(Main.getPlugin(), p, 5);
 			final Location loc = p.getTargetBlock((HashSet<Byte>) null, 30).getLocation();
 			p.getWorld().strikeLightning(loc);
 			e.setCancelled(true);

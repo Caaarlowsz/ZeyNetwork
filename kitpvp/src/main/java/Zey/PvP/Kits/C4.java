@@ -19,15 +19,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import Zey.PvP.Config.ZeyCoins;
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class C4 extends Kit implements Listener {
+public class C4 extends CooldownKit implements Listener {
 	public static HashMap<String, Item> bomba = new HashMap<>();
 
 	public C4() {
@@ -46,9 +45,9 @@ public class C4 extends Kit implements Listener {
 		if (KitPvPAPI.getKit(p).equals(Kits.C4)) {
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().getType() == Material.SLIME_BALL) {
-					if (Cooldown.add(p)) {
+					if (this.hasCooldown(p)) {
 						p.sendMessage(
-								String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+								String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 						return;
 					}
 					final Location loc = p.getLocation();
@@ -79,7 +78,7 @@ public class C4 extends Kit implements Listener {
 					item2.remove();
 					p.updateInventory();
 					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aSua C4 foi ativada");
-					Cooldown.add(p, 20);
+					this.addCooldown(Main.getPlugin(), p, 20);
 					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), (Runnable) new Runnable() {
 						@Override
 						public void run() {
@@ -89,8 +88,8 @@ public class C4 extends Kit implements Listener {
 				}
 			} else if ((e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK)
 					&& p.getItemInHand().getType() == Material.STONE_BUTTON) {
-				if (Cooldown.add(p)) {
-					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+				if (this.hasCooldown(p)) {
+					p.sendMessage(String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 					return;
 				}
 				final ItemStack itemb2 = new ItemStack(Material.SLIME_BALL);

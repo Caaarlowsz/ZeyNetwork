@@ -16,14 +16,14 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import Zey.PvP.Essencial.Cooldown;
 import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
-import tk.zeynetwork.kitpvp.api.Kit;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class HotPotato extends Kit implements Listener {
+public class HotPotato extends CooldownKit implements Listener {
+
 	public static ArrayList<String> emhotpotato = new ArrayList<>();
 
 	public HotPotato() {
@@ -46,12 +46,12 @@ public class HotPotato extends Kit implements Listener {
 					&& KitPvPAPI.getKit(p).equals(Kits.HOTPOTATO)) {
 				if (Gladiator.lutando.containsKey(p.getName())) {
 				} else {
-					if (Cooldown.add(p)) {
+					if (this.hasCooldown(p)) {
 						p.sendMessage(
-								String.valueOf(Main.NAME) + " §7» §cAguarde " + Cooldown.CoolDown(p) + " segundos");
+								String.valueOf(Main.NAME) + " §7» §cAguarde " + this.getRemaingTime(p) + " segundos");
 						return;
 					}
-					Cooldown.add(p, 20);
+					this.addCooldown(Main.getPlugin(), p, 20);
 					HotPotato.emhotpotato.add(k.getName());
 					p.sendMessage(String.valueOf(Main.NAME) + " §7» §aHotPotato Colocada");
 					k.sendMessage(String.valueOf(Main.NAME)
