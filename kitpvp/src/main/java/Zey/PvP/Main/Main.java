@@ -70,6 +70,7 @@ import net.minecraft.util.com.google.common.collect.Lists;
 import tk.zeynetwork.kitpvp.KitCommand;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.Warps;
+import tk.zeynetwork.kitpvp.api.CooldownKit;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvP;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
@@ -273,6 +274,8 @@ public final class Main extends JavaPlugin implements KitPvP {
 
 	@Override
 	public void removeKit(Player player) {
-		this.kitMap.remove(player);
+		Kit kit = this.kitMap.remove(player);
+		if (kit != null && kit instanceof CooldownKit)
+			((CooldownKit) kit).removeCooldown(player);
 	}
 }
