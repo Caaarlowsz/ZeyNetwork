@@ -23,6 +23,7 @@ import Zey.PvP.Main.Main;
 import tk.zeynetwork.kitpvp.Kits;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.utils.ItemUtils;
 
 public class Thresh extends Kit implements Listener {
 	public static HashMap<String, Long> cooldown = new HashMap<>();
@@ -30,6 +31,12 @@ public class Thresh extends Kit implements Listener {
 
 	public Thresh() {
 		super("Thresh");
+	}
+
+	@Override
+	public void giveItems(Player player) {
+		super.giveItems(player);
+		player.getInventory().setItem(1, ItemUtils.item(Material.LEVER, "§e§lTHRESH"));
 	}
 
 	@EventHandler
@@ -54,7 +61,6 @@ public class Thresh extends Kit implements Listener {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onEntityDamagerByEntity(final EntityDamageByEntityEvent e) {
 		final Entity ent = e.getEntity();

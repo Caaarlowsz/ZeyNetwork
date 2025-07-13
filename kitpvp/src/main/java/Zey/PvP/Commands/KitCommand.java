@@ -318,7 +318,6 @@ public class KitCommand implements CommandExecutor {
 			if (p.hasPermission("kit.thresh") || IniciarCommand.fullkit) {
 				api.setKit(p, Kits.THRESH);
 				p.sendMessage(String.valueOf(Main.NAME) + " §7» §7Você selecionou o Kit: §a§lTHRESH");
-				p.getInventory().setItem(1, ItemUtils.item(Material.LEVER, "§e§lTHRESH"));
 				TitleAPI.sendTitle(p, "§e§lTHRESH");
 				SetArenaCommand.TeleportArenaRandom(p);
 			}
