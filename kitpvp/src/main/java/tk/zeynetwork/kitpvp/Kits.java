@@ -1,7 +1,6 @@
 package tk.zeynetwork.kitpvp;
 
 import Zey.PvP.Kits.Ajnin;
-import Zey.PvP.Kits.Anchor;
 import Zey.PvP.Kits.AntiTower;
 import Zey.PvP.Kits.Armor;
 import Zey.PvP.Kits.Avatar;
@@ -38,6 +37,7 @@ import Zey.PvP.Kits.Viking;
 import Zey.PvP.Kits.Viper;
 import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
+import tk.zeynetwork.kitpvp.kits.Anchor;
 import tk.zeynetwork.kitpvp.kits.Archer;
 import tk.zeynetwork.kitpvp.kits.Nenhum;
 import tk.zeynetwork.kitpvp.kits.PvP;
