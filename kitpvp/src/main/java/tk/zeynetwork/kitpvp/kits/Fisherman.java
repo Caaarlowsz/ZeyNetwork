@@ -1,8 +1,6 @@
-package Zey.PvP.Kits;
+package tk.zeynetwork.kitpvp.kits;
 
 import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,7 +11,7 @@ import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Fisherman extends Kit implements Listener {
+public final class Fisherman extends Kit implements Listener {
 
 	public Fisherman() {
 		super("Fisherman");
@@ -26,11 +24,20 @@ public class Fisherman extends Kit implements Listener {
 	}
 
 	@EventHandler
-	public void onPlayerFish(final PlayerFishEvent event) {
-		final Entity caught = event.getCaught();
-		final Block block = event.getHook().getLocation().getBlock();
-		if (caught != null && caught != block && KitPvPAPI.getKit(event.getPlayer()).equals(Kits.FISHERMAN)) {
-			caught.teleport(event.getPlayer().getLocation());
-		}
+	private void onPlayerFish(PlayerFishEvent event) {
+		if (!(event.getCaught() instanceof Player))
+			return;
+		Player player = event.getPlayer(), caught = (Player) event.getCaught();
+		if (caught == null)
+			return;
+		if (caught == player)
+			return;
+
+		if (KitPvPAPI.getKit(player).equals(Kits.FISHERMAN))
+			this.applyFishermanEffect(player, caught);
+	}
+
+	private void applyFishermanEffect(Player player, Player target) {
+		target.teleport(player.getLocation());
 	}
 }
