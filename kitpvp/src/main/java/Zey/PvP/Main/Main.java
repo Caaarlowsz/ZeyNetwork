@@ -102,6 +102,7 @@ public final class Main extends JavaPlugin implements KitPvP {
 		Warps.loadWarps();
 		Kits.loadKits();
 		ClassGetter.registerListeners(this, "Zey.PvP");
+		ClassGetter.registerListeners(this, "tk.zeynetwork.kitpvp");
 		this.logPluginStatus(true);
 
 		SManager.onEnable();
