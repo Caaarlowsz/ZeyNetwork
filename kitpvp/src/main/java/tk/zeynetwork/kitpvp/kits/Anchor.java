@@ -21,10 +21,8 @@ public final class Anchor extends Kit implements Listener {
 
 	@EventHandler
 	private void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
-		if (!(event.getEntity() instanceof Player))
-			return;
-		if (!(event.getDamager() instanceof Player))
-			return;
+		if (!(event.getEntity() instanceof Player)) return;
+		if (!(event.getDamager() instanceof Player)) return;
 
 		Player player = (Player) event.getEntity();
 		if (KitPvPAPI.getKit(player).equals(Kits.ANCHOR)) {

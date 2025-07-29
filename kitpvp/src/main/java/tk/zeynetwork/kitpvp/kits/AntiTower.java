@@ -18,14 +18,14 @@ public final class AntiTower extends Kit implements Listener {
 
 	@EventHandler
 	private void onEntityDamage(EntityDamageEvent event) {
-		if (!(event.getEntity() instanceof Player))
-			return;
-		if (!event.getCause().equals(DamageCause.FALL))
-			return;
+		if (!(event.getEntity() instanceof Player)) return;
+		if (!event.getCause().equals(DamageCause.FALL)) return;
 
 		Player player = (Player) event.getEntity();
-		if (KitPvPAPI.getKit(player).equals(Kits.ANTITOWER))
+		if (KitPvPAPI.getKit(player).equals(Kits.ANTITOWER)) {
 			this.applyAntiTowerEffect(event);
+			return;
+		}
 	}
 
 	private void applyAntiTowerEffect(EntityDamageEvent damageFallEvent) {

@@ -22,16 +22,14 @@ public final class Camel extends Kit implements Listener {
 	@EventHandler
 	private void onPlayerMove(PlayerMoveEvent event) {
 		Location from = event.getFrom(), to = event.getTo();
-		if (from.getBlockX() == to.getBlockX()
-				&& from.getBlockY() == to.getBlockY()
-				&& from.getBlockZ() == to.getBlockZ())
-			return;
-		if (!to.getBlock().getRelative(BlockFace.DOWN).getType().name().contains("SAND"))
-			return;
+		if (from.getBlockX() == to.getBlockX() && from.getBlockY() == to.getBlockY() && from.getBlockZ() == to.getBlockZ()) return;
+		if (!to.getBlock().getRelative(BlockFace.DOWN).getType().name().contains("SAND")) return;
 
 		Player player = event.getPlayer();
-		if (KitPvPAPI.getKit(player).equals(Kits.CAMEL))
+		if (KitPvPAPI.getKit(player).equals(Kits.CAMEL)) {
 			this.applyCamelEffect(player);
+			return;
+		}
 	}
 
 	private void applyCamelEffect(Player player) {

@@ -19,7 +19,7 @@ import tk.zeynetwork.kitpvp.api.Kit;
 import tk.zeynetwork.kitpvp.api.KitPvPAPI;
 import tk.zeynetwork.utils.ItemUtils;
 
-public class Kangaroo extends Kit implements Listener {
+public final class Kangaroo extends Kit implements Listener {
 
 	private HashMap<Player, Byte> boostMap = new HashMap<>();
 
@@ -35,8 +35,7 @@ public class Kangaroo extends Kit implements Listener {
 
 	@EventHandler
 	private void onPlayerInteract(PlayerInteractEvent event) {
-		if (!event.hasItem())
-			return;
+		if (!event.hasItem()) return;
 
 		Player player = event.getPlayer();
 		if (KitPvPAPI.getKit(player).equals(Kits.KANGAROO) && event.getItem().getType().equals(Material.FIREWORK)) {
@@ -47,32 +46,34 @@ public class Kangaroo extends Kit implements Listener {
 				this.applyKangarooEffect(player);
 				this.boostMap.put(player, ++b);
 			}
+			return;
 		}
 	}
 
 	@EventHandler
 	private void onPlayerMove(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
-		if (!this.boostMap.containsKey(player))
-			return;
+		if (!this.boostMap.containsKey(player)) return;
 
 		Block block = player.getLocation().getBlock();
-		if (!block.getType().equals(Material.AIR) || !block.getRelative(BlockFace.DOWN).getType().equals(Material.AIR))
+		if (!block.getType().equals(Material.AIR) || !block.getRelative(BlockFace.DOWN).getType().equals(Material.AIR)) {
 			this.boostMap.remove(player);
+			return;
+		}
 	}
 
 	@EventHandler
 	private void onEntityDamage(EntityDamageEvent event) {
-		if (!(event.getEntity() instanceof Player))
-			return;
-		if (!event.getCause().equals(DamageCause.FALL))
-			return;
+		if (!(event.getEntity() instanceof Player)) return;
+		if (!event.getCause().equals(DamageCause.FALL)) return;
 
 		Player player = (Player) event.getEntity();
-		if (!KitPvPAPI.getKit(player).equals(Kits.KANGAROO))
-			return;
-		if (event.getDamage() >= 12.0)
+		if (!KitPvPAPI.getKit(player).equals(Kits.KANGAROO)) return;
+
+		if (event.getDamage() >= 12.0) {
 			event.setDamage(12.0);
+			return;
+		}
 	}
 
 	private void applyKangarooEffect(Player player) {

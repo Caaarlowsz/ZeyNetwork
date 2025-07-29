@@ -25,16 +25,16 @@ public final class Fisherman extends Kit implements Listener {
 
 	@EventHandler
 	private void onPlayerFish(PlayerFishEvent event) {
-		if (!(event.getCaught() instanceof Player))
-			return;
-		Player player = event.getPlayer(), caught = (Player) event.getCaught();
-		if (caught == null)
-			return;
-		if (caught == player)
-			return;
+		if (!(event.getCaught() instanceof Player)) return;
 
-		if (KitPvPAPI.getKit(player).equals(Kits.FISHERMAN))
+		Player player = event.getPlayer(), caught = (Player) event.getCaught();
+		if (caught == null) return;
+		if (caught == player) return;
+
+		if (KitPvPAPI.getKit(player).equals(Kits.FISHERMAN)) {
 			this.applyFishermanEffect(player, caught);
+			return;
+		}
 	}
 
 	private void applyFishermanEffect(Player player, Player target) {
