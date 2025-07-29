@@ -12,7 +12,6 @@ import Zey.PvP.Kits.Hulk;
 import Zey.PvP.Kits.JellyFish;
 import Zey.PvP.Kits.Monk;
 import Zey.PvP.Kits.Ninja;
-import Zey.PvP.Kits.Poseidon;
 import Zey.PvP.Kits.QuickDropper;
 import Zey.PvP.Kits.Rain;
 import Zey.PvP.Kits.Resouper;
@@ -40,6 +39,7 @@ import tk.zeynetwork.kitpvp.kits.Kangaroo;
 import tk.zeynetwork.kitpvp.kits.Madman;
 import tk.zeynetwork.kitpvp.kits.Magma;
 import tk.zeynetwork.kitpvp.kits.Nenhum;
+import tk.zeynetwork.kitpvp.kits.Poseidon;
 import tk.zeynetwork.kitpvp.kits.PvP;
 
 public final class Kits {
