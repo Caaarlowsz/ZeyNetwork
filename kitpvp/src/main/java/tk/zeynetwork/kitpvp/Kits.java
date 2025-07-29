@@ -10,7 +10,6 @@ import Zey.PvP.Kits.Grappler;
 import Zey.PvP.Kits.HotPotato;
 import Zey.PvP.Kits.Hulk;
 import Zey.PvP.Kits.JellyFish;
-import Zey.PvP.Kits.Kangaroo;
 import Zey.PvP.Kits.Madman;
 import Zey.PvP.Kits.Magma;
 import Zey.PvP.Kits.Monk;
@@ -39,6 +38,7 @@ import tk.zeynetwork.kitpvp.kits.AntiTower;
 import tk.zeynetwork.kitpvp.kits.Archer;
 import tk.zeynetwork.kitpvp.kits.Camel;
 import tk.zeynetwork.kitpvp.kits.Fisherman;
+import tk.zeynetwork.kitpvp.kits.Kangaroo;
 import tk.zeynetwork.kitpvp.kits.Nenhum;
 import tk.zeynetwork.kitpvp.kits.PvP;
 
